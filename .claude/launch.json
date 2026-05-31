@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "la-cabine",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/adrienfrederic/CLAUDE CODE/La Cabine Podcasts/.claude/dev.sh"],
+      "port": 4321
+    }
+  ]
+}

@@ -1,0 +1,1070 @@
+---
+const title = "Studio Podcast à La Réunion | La Cabine Podcasts";
+const description = "Studio podcast professionnel à Saint-Denis de La Réunion. Enregistrement audio et vidéo, production clé en main, diffusion Spotify, Apple Podcasts, YouTube.";
+const siteUrl = "https://lacabinepodcasts.re";
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={siteUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={siteUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}/images/hero.jpg`} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}/images/hero.jpg`} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Cabine Podcasts",
+    "description": description,
+    "url": siteUrl,
+    "telephone": "+262692450573",
+    "email": "lacabinepodcast@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "18 rue Rontaunay",
+      "addressLocality": "Saint-Denis",
+      "addressRegion": "La Réunion",
+      "postalCode": "97400",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/lacabinepodcasts",
+      "https://www.youtube.com/@LaCabinePodcasts",
+      "https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS",
+      "https://www.facebook.com/profile.php?id=61561358285099"
+    ]
+  })}
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="La Cabine Podcasts – Studio podcast La Réunion" width="160" height="48" />
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#equipe">Équipe</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://wa.me/262692450573" class="btn btn-white nav-cta" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="badge-onair">
+      <span class="badge-dot"></span>
+      ON AIR
+    </div>
+    <h1>Studio Podcast<br />à La Réunion</h1>
+    <p class="hero-sub">Créez un podcast professionnel de A à Z avec La Cabine Podcasts.<br />Enregistrement audio et vidéo, direction éditoriale, production, montage, diffusion et promotion.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
+      <a href="https://form.typeform.com/to/GBzndp6A" class="btn btn-outline" target="_blank" rel="noopener">Demander un devis</a>
+    </div>
+    <ul class="hero-checks">
+      <li>Direction éditoriale</li>
+      <li>Captation audio &amp; vidéo professionnelle</li>
+      <li>Régie vidéo multicaméra</li>
+      <li>Montage &amp; post-production</li>
+      <li>Diffusion Spotify, Apple Podcasts, YouTube</li>
+      <li>Promotion et acquisition d'audience</li>
+    </ul>
+  </div>
+  <div class="hero-image">
+    <img src="/images/hero.jpg" alt="Enregistrement podcast en direct à La Réunion – La Cabine Podcasts" width="620" height="780" />
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <p class="stats-label">Un studio pensé pour les créateurs</p>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">1→4</div>
+        <div class="stat-desc">intervenants simultanés</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-desc">caméras — plans variés &amp; dynamique visuelle</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-desc">opérateurs — technique &amp; réalisation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">360°</div>
+        <div class="stat-desc">stratégie de contenu complète</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFS -->
+<section class="refs">
+  <div class="container">
+    <p class="refs-label">Ils nous font confiance</p>
+    <div class="refs-logos">
+      <img src="/logos/cite-metiers.png" alt="La Cité des Métiers de La Réunion" class="ref-logo" width="120" height="60" />
+      <img src="/logos/hemisphere.png" alt="Hémisphère Event" class="ref-logo" width="120" height="60" />
+      <img src="/logos/reunion974.svg" alt="Département de La Réunion 974" class="ref-logo" width="120" height="60" />
+    </div>
+    <p class="refs-more">Et de nombreux artistes, entrepreneurs et institutions réunionnaises.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>Nos services</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">🎙️</div>
+        <h3>Location de studio podcast</h3>
+        <p>Notre studio à Saint-Denis est équipé pour l'enregistrement audio et vidéo professionnel.</p>
+        <ul>
+          <li>Traitement acoustique</li>
+          <li>Micros professionnels</li>
+          <li>Régie audio</li>
+          <li>Éclairage professionnel</li>
+          <li>Décors personnalisables</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>Production clé en main</h3>
+        <p>De l'idée à la diffusion. Nous créons votre podcast de A à Z.</p>
+        <ul>
+          <li>Concept &amp; naming</li>
+          <li>Ligne éditoriale</li>
+          <li>Recherche d'invités</li>
+          <li>Animation, jingle &amp; bruitages</li>
+          <li>Enregistrement, montage &amp; diffusion</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">✍️</div>
+        <h3>Direction éditoriale</h3>
+        <p>Un bon podcast commence avant d'appuyer sur REC. Nous co-construisons avec vous :</p>
+        <ul>
+          <li>Positionnement &amp; thématiques</li>
+          <li>Formats &amp; Do&Don't</li>
+          <li>Questions &amp; storytelling</li>
+        </ul>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">📡</div>
+        <h3>Diffusion &amp; promotion</h3>
+        <p>Votre podcast mérite d'être entendu. Nous assurons la diffusion sur :</p>
+        <ul>
+          <li>Spotify, Apple Podcasts, Deezer</li>
+          <li>YouTube &amp; réseaux sociaux</li>
+          <li>Shorts &amp; Reels</li>
+          <li>SEO Podcast</li>
+        </ul>
+      </article>
+      <article class="service-card service-card--full">
+        <div class="service-icon">🏢</div>
+        <h3>Podcast marque blanche</h3>
+        <p>Pour les entreprises, collectivités et institutions. Créez votre média propriétaire et prenez la parole autrement. Chaque épisode devient un actif à 360° qui travaille pour vous pendant 6 à 18 mois.</p>
+        <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Nous contacter</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <h2>Comment ça marche ?<br /><span>Votre podcast en 3 étapes</span></h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Pré-production</h3>
+        <ul>
+          <li>Direction éditoriale</li>
+          <li>Co-création du concept</li>
+          <li>Définition des objectifs</li>
+          <li>Chargé de production dédié</li>
+        </ul>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Production</h3>
+        <ul>
+          <li>Captation audio &amp; vidéo</li>
+          <li>Jusqu'à 3 caméras</li>
+          <li>Régie vidéo en direct</li>
+          <li>Éclairage professionnel</li>
+          <li>Décor personnalisable</li>
+          <li>Avec ou sans animateur</li>
+        </ul>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Post-production</h3>
+        <ul>
+          <li>Montage &amp; habillage sonore</li>
+          <li>Sous-titrage</li>
+          <li>Extraits réseaux sociaux</li>
+          <li>Diffusion multi-plateformes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="studio" id="studio">
+  <div class="container">
+    <h2>Le studio</h2>
+    <div class="studio-layout">
+      <div class="studio-gallery">
+        <img src="/images/studio1.jpg" alt="Studio podcast La Cabine Podcasts – vue intérieure" class="studio-img studio-img--main" width="600" height="400" />
+        <img src="/images/studio2.png" alt="Studio d'enregistrement La Cabine Podcasts à Saint-Denis" class="studio-img" width="290" height="190" />
+        <img src="/images/studio3.png" alt="La Cabine Podcasts à la Cité des Métiers de La Réunion" class="studio-img" width="290" height="190" />
+      </div>
+      <div class="studio-specs">
+        <h3>Équipements &amp; ambiance</h3>
+        <div class="spec-list">
+          <div class="spec-item">
+            <span class="spec-icon">📷</span>
+            <div>
+              <strong>3 caméras</strong>
+              <p>Plans variés et dynamique visuelle professionnelle</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">🎙️</span>
+            <div>
+              <strong>4 micros professionnels</strong>
+              <p>Traitement acoustique et régie audio dédiée</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">👥</span>
+            <div>
+              <strong>2 opérateurs</strong>
+              <p>Un pour la technique, un pour la réalisation</p>
+            </div>
+          </div>
+          <div class="spec-item">
+            <span class="spec-icon">☕</span>
+            <div>
+              <strong>Café à volonté</strong>
+              <p>Parce que les meilleures conversations prennent leur temps</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver le studio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section class="realisations" id="realisations">
+  <div class="container">
+    <h2>Nos réalisations</h2>
+    <p class="section-sub">Des podcasts qui donnent la parole aux entrepreneurs, artistes, créateurs et acteurs du territoire.</p>
+    <div class="guests-grid">
+      <div class="guest-card">
+        <div class="guest-avatar">M</div>
+        <div class="guest-name">Marie-Alice Sinaman</div>
+        <div class="guest-tag">Artiste</div>
+      </div>
+      <div class="guest-card">
+        <div class="guest-avatar">M</div>
+        <div class="guest-name">Maya Kamaty</div>
+        <div class="guest-tag">Artiste</div>
+      </div>
+      <div class="guest-card">
+        <div class="guest-avatar">B</div>
+        <div class="guest-name">Briice Lie</div>
+        <div class="guest-tag">Créateur</div>
+      </div>
+      <div class="guest-card">
+        <div class="guest-avatar">G</div>
+        <div class="guest-name">Goulam Jaffar</div>
+        <div class="guest-tag">Entrepreneur</div>
+      </div>
+    </div>
+    <div class="realisations-cta">
+      <a href="https://www.youtube.com/@LaCabinePodcasts" class="btn btn-white" target="_blank" rel="noopener">Découvrir nos réalisations sur YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <div class="container">
+    <h2>Rencontrez l'équipe</h2>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="/images/team-adrien.jpg" alt="Adrien Frédéric – Direction éditoriale et marketing digital, La Cabine Podcasts" width="280" height="320" />
+        </div>
+        <div class="team-info">
+          <h3>Adrien Frédéric</h3>
+          <p class="team-roles">Direction éditoriale · Production · Marketing digital · Acquisition d'audience</p>
+          <p>Consultant en marketing digital et créateur de formats éditoriaux.</p>
+          <a href="https://www.linkedin.com/in/adrien-frédéric/" class="team-linkedin" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo team-photo--placeholder">
+          <span>LC</span>
+        </div>
+        <div class="team-info">
+          <h3>Laurent CoolCool</h3>
+          <p class="team-roles">Direction artistique · Captation · Production audiovisuelle · Montage</p>
+          <p>Photographe, vidéaste et créateur de contenus.</p>
+          <a href="https://www.linkedin.com/in/laurentdecool/" class="team-linkedin" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="temoignages">
+  <div class="container">
+    <h2>Ce qu'ils disent de nous</h2>
+    <div class="temoignages-grid">
+      <blockquote class="temoignage-card">
+        <p>"Pro et bienveillant 🥳"</p>
+        <footer>— Marie-Alice Sinaman, Artiste</footer>
+      </blockquote>
+      <blockquote class="temoignage-card">
+        <p>"Du professionnalisme, de la technique, du matos dernier cri et tout cela dans un lieu cosy. Une ambiance de travail bienveillante, sans stress et amicale. Une journée de boulot comme on les voudrait toute!"</p>
+        <footer>— Dorothée Make Up</footer>
+      </blockquote>
+      <blockquote class="temoignage-card">
+        <p>"Une expérience fluide du début à la fin."</p>
+        <footer>— Mélanie P., La Cité des Métiers</footer>
+      </blockquote>
+      <blockquote class="temoignage-card">
+        <p>"Bien plus qu'un studio : un véritable accompagnement avec une deadline courte."</p>
+        <footer>— Mélanie G., GIP SAP</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Combien coûte un podcast ?</summary>
+        <div class="faq-answer">Chaque projet est différent. Nous réalisons un devis sur mesure selon vos objectifs, votre format et le niveau de prestation souhaité.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Peut-on enregistrer un podcast vidéo ?</summary>
+        <div class="faq-answer">Oui. Nous proposons des captations multicaméras avec régie vidéo professionnelle pour des rendus de haute qualité.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Où se situe le studio ?</summary>
+        <div class="faq-answer">Notre studio podcast est situé au 18 rue Rontaunay, à Saint-Denis de La Réunion.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Proposez-vous le montage ?</summary>
+        <div class="faq-answer">Oui. Nous pouvons prendre en charge la totalité de la post-production : montage, habillage sonore, sous-titrage et extraits réseaux sociaux.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Diffusez-vous les épisodes ?</summary>
+        <div class="faq-answer">Oui. Nous assurons la diffusion sur Spotify, Apple Podcasts, Deezer, Ausha et YouTube.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Peut-on créer un podcast même sans expérience ?</summary>
+        <div class="faq-answer">Absolument. C'est précisément notre rôle de vous accompagner de A à Z, de la première idée jusqu'à la diffusion.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Donnez vie à votre<br />projet podcast</h2>
+    <p>Vous avez une idée ? Une histoire à raconter ? Une communauté à fédérer ?<br />Nous vous accompagnons de la première idée jusqu'à la diffusion.</p>
+    <div class="cta-final-btns">
+      <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
+      <a href="https://form.typeform.com/to/GBzndp6A" class="btn btn-outline" target="_blank" rel="noopener">Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" />
+        <p>Studio de création de podcasts à La Réunion</p>
+        <address>18 rue Rontaunay, Saint-Denis, La Réunion</address>
+        <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation secondaire">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#equipe">Équipe</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h4>Retrouvez-nous</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/lacabinepodcasts" aria-label="Instagram La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LaCabinePodcasts" aria-label="YouTube La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS" aria-label="Spotify La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61561358285099" aria-label="Facebook La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 La Cabine Podcasts · Saint-Denis, La Réunion · <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: #174A96;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+  h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); opacity: 0.92; }
+
+  .btn-white { background: #ffffff; color: #174A96; }
+  .btn-outline {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  .btn-outline:hover { border-color: #ffffff; }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(23, 74, 150, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-logo img { height: 40px; width: auto; }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.75rem;
+    margin-left: auto;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.15s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { margin-left: 1rem; }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+  }
+  .nav-burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+  }
+  .hero-content { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .badge-onair {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff3b30;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    opacity: 0.8;
+    max-width: 520px;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    list-style: none;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+  .hero-checks li::before { content: "✓ "; color: #90BFFF; font-weight: 700; }
+
+  .hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+
+  /* STATS */
+  .stats {
+    background: rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 3.5rem 0;
+  }
+  .stats-label {
+    text-align: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 2.5rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-desc { font-size: 0.9rem; opacity: 0.7; }
+
+  /* REFS */
+  .refs {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .refs-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 2rem;
+  }
+  .refs-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .ref-logo {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .ref-logo:hover { opacity: 1; }
+  .refs-more { font-size: 0.9rem; opacity: 0.5; font-style: italic; }
+
+  /* SERVICES */
+  .services {
+    padding: 6rem 0;
+  }
+  .services h2 { text-align: center; margin-bottom: 3rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+  .service-card--full { grid-column: 1 / -1; display: flex; align-items: center; gap: 2rem; }
+  .service-card--full .btn { margin-top: 0; flex-shrink: 0; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-card h3 { margin-bottom: 0.75rem; }
+  .service-card p { opacity: 0.75; font-size: 0.95rem; margin-bottom: 1rem; }
+  .service-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  .service-card ul li::before { content: "— "; }
+
+  /* PROCESS */
+  .process {
+    background: rgba(0,0,0,0.15);
+    padding: 6rem 0;
+  }
+  .process h2 { text-align: center; margin-bottom: 3.5rem; }
+  .process h2 span { opacity: 0.6; font-size: 0.7em; display: block; margin-top: 0.3rem; }
+  .process-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .process-step {
+    flex: 1;
+    max-width: 300px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  .process-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .process-step h3 { margin-bottom: 1rem; }
+  .process-step ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.9rem; opacity: 0.7; }
+  .process-step ul li::before { content: "→ "; opacity: 0.5; }
+  .process-arrow {
+    font-size: 1.8rem;
+    opacity: 0.3;
+    padding-top: 3.5rem;
+    flex-shrink: 0;
+  }
+
+  /* STUDIO */
+  .studio { padding: 6rem 0; }
+  .studio h2 { margin-bottom: 3rem; }
+  .studio-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .studio-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+  .studio-img {
+    border-radius: 16px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .studio-img--main {
+    grid-column: 1 / -1;
+    height: 260px;
+  }
+  .studio-img:not(.studio-img--main) { height: 160px; }
+
+  .studio-specs h3 { margin-bottom: 1.5rem; }
+  .spec-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+  .spec-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .spec-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+  .spec-item strong { display: block; margin-bottom: 0.2rem; }
+  .spec-item p { font-size: 0.9rem; opacity: 0.65; }
+
+  /* REALISATIONS */
+  .realisations {
+    padding: 6rem 0;
+    background: rgba(0,0,0,0.15);
+    text-align: center;
+  }
+  .realisations h2 { margin-bottom: 1rem; }
+  .section-sub { opacity: 0.7; max-width: 600px; margin: 0 auto 3rem; }
+  .guests-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .guest-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    transition: background 0.2s;
+  }
+  .guest-card:hover { background: rgba(255,255,255,0.1); }
+  .guest-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin: 0 auto 1rem;
+  }
+  .guest-name { font-weight: 500; margin-bottom: 0.4rem; font-size: 0.95rem; }
+  .guest-tag { font-size: 0.8rem; opacity: 0.5; }
+  .realisations-cta { display: flex; justify-content: center; }
+
+  /* EQUIPE */
+  .equipe { padding: 6rem 0; }
+  .equipe h2 { margin-bottom: 3rem; }
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .team-card {
+    display: flex;
+    gap: 2rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .team-photo { flex-shrink: 0; width: 180px; }
+  .team-photo img { width: 180px; height: 220px; object-fit: cover; object-position: top; }
+  .team-photo--placeholder {
+    width: 180px;
+    height: 220px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    opacity: 0.4;
+  }
+  .team-info { padding: 1.75rem 1.75rem 1.75rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .team-info h3 { margin-bottom: 0; }
+  .team-roles { font-size: 0.8rem; opacity: 0.55; }
+  .team-info p:last-of-type { font-size: 0.92rem; opacity: 0.75; }
+  .team-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.6;
+    margin-top: auto;
+    transition: opacity 0.15s;
+  }
+  .team-linkedin:hover { opacity: 1; }
+
+  /* TEMOIGNAGES */
+  .temoignages {
+    background: rgba(0,0,0,0.15);
+    padding: 6rem 0;
+  }
+  .temoignages h2 { text-align: center; margin-bottom: 3rem; }
+  .temoignages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .temoignage-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .temoignage-card p { font-size: 1rem; line-height: 1.65; opacity: 0.85; font-style: italic; }
+  .temoignage-card footer { font-size: 0.85rem; opacity: 0.5; font-style: normal; margin-top: auto; }
+
+  /* FAQ */
+  .faq { padding: 6rem 0; }
+  .faq h2 { text-align: center; margin-bottom: 3rem; }
+  .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1.25rem 1.5rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item summary:hover { background: rgba(255,255,255,0.05); }
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+    font-size: 0.95rem;
+    opacity: 0.75;
+    line-height: 1.65;
+  }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: rgba(0,0,0,0.25);
+    padding: 7rem 0;
+    text-align: center;
+  }
+  .cta-final h2 { margin-bottom: 1.25rem; }
+  .cta-final p { opacity: 0.7; max-width: 560px; margin: 0 auto 2.5rem; }
+  .cta-final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  .footer {
+    background: rgba(0,0,0,0.3);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-brand img { margin-bottom: 0.25rem; }
+  .footer-brand p, .footer-brand address, .footer-brand a {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    font-style: normal;
+  }
+  .footer-brand a:hover { opacity: 1; }
+  .footer-nav h4, .footer-social h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+  .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-nav a { font-size: 0.9rem; opacity: 0.65; transition: opacity 0.15s; }
+  .footer-nav a:hover { opacity: 1; }
+  .social-links { display: flex; gap: 1rem; }
+  .social-links a { opacity: 0.5; transition: opacity 0.15s; }
+  .social-links a:hover { opacity: 1; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    font-size: 0.82rem;
+    opacity: 0.4;
+    text-align: center;
+  }
+  .footer-bottom a { opacity: 0.8; }
+  .footer-bottom a:hover { opacity: 1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: #174A96; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { display: flex; }
+    .nav-burger { display: flex; }
+    .nav-cta { display: none; }
+
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; min-height: auto; }
+    .hero-image { order: -1; }
+    .hero-image img { height: 340px; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card--full { flex-direction: column; }
+
+    .process-steps { flex-direction: column; align-items: center; }
+    .process-arrow { transform: rotate(90deg); padding-top: 0; }
+    .process-step { max-width: 100%; width: 100%; }
+
+    .studio-layout { grid-template-columns: 1fr; }
+
+    .guests-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .team-grid { grid-template-columns: 1fr; }
+    .team-card { flex-direction: column; }
+    .team-photo img, .team-photo--placeholder { width: 100%; height: 200px; }
+
+    .temoignages-grid { grid-template-columns: 1fr; }
+
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+
+    .refs-logos { gap: 2rem; }
+  }
+</style>
+
+<script>
+  // Mobile nav
+  const burger = document.getElementById('navBurger');
+  const links = document.getElementById('navLinks');
+  burger?.addEventListener('click', () => links?.classList.toggle('open'));
+  links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
