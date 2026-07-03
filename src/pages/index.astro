@@ -102,7 +102,14 @@ const siteUrl = "https://lacabinepodcasts.re";
     </ul>
   </div>
   <div class="hero-image">
-    <img src="/images/hero.png" alt="Enregistrement podcast en direct à La Réunion – La Cabine Podcasts" width="620" height="780" />
+    <video
+      src="/images/hero.webm"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-label="Studio podcast La Cabine Podcasts à La Réunion"
+    ></video>
   </div>
 </section>
 
@@ -701,11 +708,17 @@ const siteUrl = "https://lacabinepodcasts.re";
     border-radius: 24px;
     overflow: hidden;
   }
-  .hero-image img {
+  .hero-image img,
+  .hero-image video {
     width: 100%;
     height: 600px;
     object-fit: cover;
     border-radius: 24px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .hero-image video { height: 340px; }
   }
 
   /* STATS */
