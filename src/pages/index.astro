@@ -136,9 +136,15 @@ const siteUrl = "https://lacabinepodcasts.re";
   <div class="container">
     <p class="refs-label">Ils nous font confiance</p>
     <div class="refs-logos">
-      <img src="/logos/cite-metiers.png" alt="La Cité des Métiers de La Réunion" class="ref-logo" width="120" height="60" />
-      <img src="/logos/hemisphere.png" alt="Hémisphère Event" class="ref-logo" width="120" height="60" />
-      <img src="/logos/reunion974.svg" alt="Département de La Réunion 974" class="ref-logo" width="120" height="60" />
+      <div class="ref-logo-wrap">
+        <img src="/logos/cite-metiers.png" alt="La Cité des Métiers de La Réunion" class="ref-logo" width="120" height="60" />
+      </div>
+      <div class="ref-logo-wrap">
+        <img src="/logos/hemisphere.png" alt="Hémisphère Event" class="ref-logo" width="120" height="60" />
+      </div>
+      <div class="ref-logo-wrap">
+        <img src="/logos/reunion974.svg" alt="Département de La Réunion 974" class="ref-logo" width="120" height="60" />
+      </div>
     </div>
     <p class="refs-more">Et de nombreux artistes, entrepreneurs et institutions réunionnaises.</p>
   </div>
@@ -752,19 +758,28 @@ const siteUrl = "https://lacabinepodcasts.re";
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.5rem;
+    gap: 2rem;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
   }
-  .ref-logo {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-    transition: opacity 0.2s;
+  .ref-logo-wrap {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 130px;
+    height: 80px;
   }
-  .ref-logo:hover { opacity: 1; }
+  .ref-logo-wrap:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .ref-logo {
+    height: 48px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+  }
   .refs-more { font-size: 0.9rem; opacity: 0.5; font-style: italic; }
 
   /* SERVICES */
