@@ -30,7 +30,9 @@ const siteUrl = "https://lacabinepodcasts.re";
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
@@ -106,6 +108,7 @@ const siteUrl = "https://lacabinepodcasts.re";
   <div class="hero-image">
     <video
       src="/images/hero.webm"
+      poster="/images/hero-poster.webp"
       autoplay
       muted
       loop
@@ -146,13 +149,13 @@ const siteUrl = "https://lacabinepodcasts.re";
     <p class="refs-label">Ils nous font confiance</p>
     <div class="refs-logos">
       <div class="ref-logo-wrap">
-        <img src="/logos/cite-metiers.png" alt="La Cité des Métiers de La Réunion" class="ref-logo" width="120" height="60" />
+        <img src="/logos/cite-metiers.png" loading="lazy" alt="La Cité des Métiers de La Réunion" class="ref-logo" width="120" height="60" />
       </div>
       <div class="ref-logo-wrap">
-        <img src="/logos/hemisphere.png" alt="Hémisphère Event" class="ref-logo" width="120" height="60" />
+        <img src="/logos/hemisphere.png" loading="lazy" alt="Hémisphère Event" class="ref-logo" width="120" height="60" />
       </div>
       <div class="ref-logo-wrap">
-        <img src="/logos/reunion974.svg" alt="Département de La Réunion 974" class="ref-logo" width="120" height="60" />
+        <img src="/logos/reunion974.svg" loading="lazy" alt="Département de La Réunion 974" class="ref-logo" width="120" height="60" />
       </div>
     </div>
     <p class="refs-more">Et de nombreux artistes, entrepreneurs et institutions réunionnaises.</p>
@@ -268,9 +271,9 @@ const siteUrl = "https://lacabinepodcasts.re";
     <h2>Le studio</h2>
     <div class="studio-layout">
       <div class="studio-gallery">
-        <img src="/images/studio1.jpg" alt="Studio podcast La Cabine Podcasts – vue intérieure" class="studio-img studio-img--main" width="600" height="400" />
-        <img src="/images/studio2.png" alt="Studio d'enregistrement La Cabine Podcasts à Saint-Denis" class="studio-img" width="290" height="190" />
-        <img src="/images/studio3.png" alt="La Cabine Podcasts à la Cité des Métiers de La Réunion" class="studio-img" width="290" height="190" />
+        <img src="/images/studio1.webp" loading="lazy" alt="Studio podcast La Cabine Podcasts – vue intérieure" class="studio-img studio-img--main" width="600" height="400" />
+        <img src="/images/studio2.webp" loading="lazy" alt="Studio d'enregistrement La Cabine Podcasts à Saint-Denis" class="studio-img" width="290" height="190" />
+        <img src="/images/studio3.webp" loading="lazy" alt="La Cabine Podcasts à la Cité des Métiers de La Réunion" class="studio-img" width="290" height="190" />
       </div>
       <div class="studio-specs">
         <h3>Équipements &amp; ambiance</h3>
@@ -321,7 +324,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 1 -->
       <a class="projet-card" href="https://youtu.be/5rVb6wqybk4?si=8gNrHTAkGIvJ7bB7" target="_blank" rel="noopener">
         <div class="projet-img-wrap">
-          <img src="/images/projet-mariaz-tangaz.png" alt="Mariaz Tangaz Le Podcast – La Cabine Podcasts" />
+          <img src="/images/projet-mariaz-tangaz.webp" loading="lazy" alt="Mariaz Tangaz Le Podcast – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">MARIAZ TANGAZ : Le Podcast</h3>
@@ -331,7 +334,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 2 -->
       <a class="projet-card" href="https://www.youtube.com/watch?v=OPWUuuq7PGw" target="_blank" rel="noopener">
         <div class="projet-img-wrap">
-          <img src="/images/projet-gip-sap.png" alt="GIP SAP – Département de la Réunion – La Cabine Podcasts" />
+          <img src="/images/projet-gip-sap.webp" loading="lazy" alt="GIP SAP – Département de la Réunion – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">GIP SAP</h3>
@@ -341,7 +344,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 3 -->
       <a class="projet-card" href="https://podcast.ausha.co/koze-cite" target="_blank" rel="noopener">
         <div class="projet-img-wrap">
-          <img src="/images/projet-koze-cite.png" alt="Kozé Cité – La Cité des Métiers – La Cabine Podcasts" />
+          <img src="/images/projet-koze-cite.webp" loading="lazy" alt="Kozé Cité – La Cité des Métiers – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">KOZÉ CITÉ</h3>
@@ -351,7 +354,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 4 -->
       <a class="projet-card" href="https://youtube.com/playlist?list=PL8KUVqWMu0aSC5pUx6eOGku9JccQBF1l0&si=QY-HhcTPdlf3T1uk" target="_blank" rel="noopener">
         <div class="projet-img-wrap">
-          <img src="/images/projet-escaliers.png" alt="Les escaliers sont en papier – La Cabine Podcasts" />
+          <img src="/images/projet-escaliers.webp" loading="lazy" alt="Les escaliers sont en papier – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">Les escaliers sont en papier</h3>
@@ -361,7 +364,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 5 -->
       <a class="projet-card" href="https://youtube.com/playlist?list=PL8KUVqWMu0aRcXhCsrRcojWnSScpJvP2B&si=VqmRB1bDhuAxMoph" target="_blank" rel="noopener">
         <div class="projet-img-wrap">
-          <img src="/images/projet-kozman.png" alt="Kozman – La Cabine Podcasts" />
+          <img src="/images/projet-kozman.webp" loading="lazy" alt="Kozman – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">KOZMAN</h3>
@@ -371,7 +374,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <!-- PROJET 6 -->
       <div class="projet-card">
         <div class="projet-img-wrap">
-          <img src="/images/projet-face-b.png" alt="Face B : Derrière le dirigeant – La Cabine Podcasts" />
+          <img src="/images/projet-face-b.webp" loading="lazy" alt="Face B : Derrière le dirigeant – La Cabine Podcasts" />
         </div>
         <div class="projet-info">
           <h3 class="projet-title">FACE B : Derrière le dirigeant</h3>
@@ -394,7 +397,7 @@ const siteUrl = "https://lacabinepodcasts.re";
     <div class="team-grid">
       <article class="team-card">
         <div class="team-photo">
-          <img src="/images/team-adrien.png" alt="Adrien Frédéric – Direction éditoriale et marketing digital, La Cabine Podcasts" width="280" height="320" />
+          <img src="/images/team-adrien.webp" loading="lazy" alt="Adrien Frédéric – Direction éditoriale et marketing digital, La Cabine Podcasts" width="280" height="320" />
         </div>
         <div class="team-info">
           <h3>Adrien Frédéric</h3>
@@ -408,7 +411,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       </article>
       <article class="team-card">
         <div class="team-photo">
-          <img src="/images/team-laurent.png" alt="Laurent CoolCool – Direction artistique et production audiovisuelle, La Cabine Podcasts" width="280" height="320" />
+          <img src="/images/team-laurent.webp" loading="lazy" alt="Laurent CoolCool – Direction artistique et production audiovisuelle, La Cabine Podcasts" width="280" height="320" />
         </div>
         <div class="team-info">
           <h3>Laurent CoolCool</h3>
