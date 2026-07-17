@@ -60,29 +60,332 @@ const siteUrl = "https://lacabinepodcasts.com";
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
-  <!-- Schema.org LocalBusiness -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "La Cabine Podcasts",
-    "description": "Studio podcast professionnel à Saint-Denis de La Réunion. Enregistrement audio et vidéo, production clé en main, diffusion Spotify, Apple Podcasts, YouTube.",
-    "url": "https://lacabinepodcasts.com",
-    "telephone": "+262692450573",
-    "email": "lacabinepodcast@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "18 rue Rontaunay",
-      "addressLocality": "Saint-Denis",
-      "addressRegion": "La Réunion",
-      "postalCode": "97400",
-      "addressCountry": "FR"
-    },
-    "sameAs": [
-      "https://www.instagram.com/lacabinepodcasts",
-      "https://www.youtube.com/@LaCabinePodcasts",
-      "https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS",
-      "https://www.facebook.com/profile.php?id=61561358285099"
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://lacabinepodcasts.com/#business",
+        "name": "La Cabine Podcasts",
+        "alternateName": "La Cabine Podcast",
+        "url": "https://lacabinepodcasts.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://lacabinepodcasts.com/#logo",
+          "url": "https://lacabinepodcasts.com/logo.png",
+          "contentUrl": "https://lacabinepodcasts.com/logo.png",
+          "caption": "La Cabine Podcasts"
+        },
+        "image": [
+          "https://lacabinepodcasts.com/images/studio1.webp",
+          "https://lacabinepodcasts.com/images/studio2.webp",
+          "https://lacabinepodcasts.com/images/studio3.webp"
+        ],
+        "description": "Studio podcast professionnel basé à Saint-Denis de La Réunion. La Cabine Podcasts accompagne les créateurs de contenus, les marques, les établissements et les institutions publiques dans la conception, l'enregistrement, la production et la diffusion de podcasts audio et vidéo. Le studio peut également être installé chez un professionnel, chez un particulier ou déployé sur une scène.",
+        "slogan": "Faire entendre les voix de La Réunion",
+        "telephone": "+262692450573",
+        "email": "lacabinepodcast@gmail.com",
+        "priceRange": "À partir de 300 €",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Virement bancaire, carte bancaire",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "18 rue Rontaunay",
+          "addressLocality": "Saint-Denis",
+          "addressRegion": "La Réunion",
+          "postalCode": "97400",
+          "addressCountry": "FR"
+        },
+        "hasMap": "https://share.google/hQpVB647By0ciENMy",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Disponibilité le week-end",
+            "value": "Enregistrement possible le samedi et le dimanche sur demande"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Studio mobile",
+            "value": "Installation possible chez les professionnels, les particuliers, dans les institutions ou directement sur une scène"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Capacité du studio",
+            "value": "Jusqu'à 4 intervenants en simultané"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Équipement vidéo",
+            "value": "3 caméras Sony 4K UHD"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Équipement audio",
+            "value": "4 micros professionnels et régie audio dédiée"
+          }
+        ],
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Saint-Denis",
+            "containedInPlace": {
+              "@type": "AdministrativeArea",
+              "name": "La Réunion"
+            }
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "La Réunion"
+          }
+        ],
+        "knowsLanguage": ["fr-FR"],
+        "keywords": [
+          "studio podcast La Réunion",
+          "location studio podcast",
+          "location studio podcast La Réunion",
+          "podcast vidéo",
+          "podcast vidéo La Réunion",
+          "production podcast",
+          "production podcast La Réunion",
+          "podcast d'entreprise",
+          "podcast d'entreprise La Réunion",
+          "direction éditoriale",
+          "montage podcast",
+          "diffusion podcast",
+          "podcast marque blanche",
+          "studio podcast Saint-Denis",
+          "studio podcast mobile",
+          "captation podcast sur scène",
+          "production audiovisuelle La Réunion"
+        ],
+        "sameAs": [
+          "https://share.google/hQpVB647By0ciENMy",
+          "https://www.instagram.com/lacabinepodcasts",
+          "https://www.youtube.com/@LaCabinePodcasts",
+          "https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS",
+          "https://www.facebook.com/profile.php?id=61561358285099"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+262692450573",
+            "url": "https://wa.me/262692450573",
+            "availableLanguage": ["French"],
+            "areaServed": "La Réunion"
+          }
+        ],
+        "potentialAction": [
+          {
+            "@type": "CommunicateAction",
+            "name": "Contacter La Cabine Podcasts sur WhatsApp",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://wa.me/262692450573",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/MobileWebPlatform"
+              ]
+            }
+          }
+        ],
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "Créateurs de contenus"
+          },
+          {
+            "@type": "BusinessAudience",
+            "audienceType": "Marques basées à La Réunion"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Établissements et institutions publiques réunionnaises"
+          }
+        ],
+        "employee": [
+          {
+            "@type": "Person",
+            "@id": "https://lacabinepodcasts.com/#laurent-coolcool",
+            "name": "Laurent CoolCool",
+            "jobTitle": "Directeur artistique et producteur audiovisuel",
+            "description": "Direction artistique, captation, production audiovisuelle et montage.",
+            "sameAs": ["https://www.linkedin.com/in/laurentdecool/"],
+            "worksFor": { "@id": "https://lacabinepodcasts.com/#business" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://lacabinepodcasts.com/#adrien-frederic",
+            "name": "Adrien Frédéric",
+            "jobTitle": "Directeur éditorial et responsable marketing digital",
+            "description": "Direction éditoriale, production, stratégie de diffusion, marketing digital et acquisition d'audience.",
+            "sameAs": ["https://www.linkedin.com/in/adrien-fr%C3%A9d%C3%A9ric/"],
+            "worksFor": { "@id": "https://lacabinepodcasts.com/#business" }
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "@id": "https://lacabinepodcasts.com/#services",
+          "name": "Services de production de podcasts à La Réunion",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Location de studio podcast",
+              "url": "https://lacabinepodcasts.com/#services",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Location de studio podcast à Saint-Denis",
+                "serviceType": "Location de studio podcast",
+                "description": "Location d'un studio professionnel à Saint-Denis avec traitement acoustique, micros, régie audio, éclairage et décors personnalisables.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" },
+                "audience": { "@type": "Audience", "audienceType": "Créateurs de contenus, entreprises et institutions" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Production de podcast clé en main",
+              "url": "https://lacabinepodcasts.com/#services",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Production de podcast à La Réunion",
+                "serviceType": "Production de podcast",
+                "description": "Création et production complète d'un podcast, de la définition du concept jusqu'à l'enregistrement, au montage et à la diffusion.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Production de podcast vidéo",
+              "url": "https://lacabinepodcasts.com/#services",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Podcast vidéo à La Réunion",
+                "serviceType": "Enregistrement et captation de podcast vidéo",
+                "description": "Captation audio et vidéo professionnelle avec plusieurs caméras Sony 4K, éclairage, régie vidéo et jusqu'à quatre intervenants.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Studio podcast mobile",
+              "url": "https://lacabinepodcasts.com/#services",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Installation d'un studio podcast mobile",
+                "serviceType": "Studio podcast mobile et captation événementielle",
+                "description": "Déploiement d'un studio podcast chez un professionnel, chez un particulier, dans un établissement public, lors d'un événement ou directement sur une scène.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Direction éditoriale",
+              "url": "https://lacabinepodcasts.com/#services",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Direction éditoriale de podcast",
+                "serviceType": "Direction éditoriale",
+                "description": "Définition du positionnement, des thématiques, du format, du storytelling, des questions et de la ligne éditoriale du podcast.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Montage et post-production",
+              "url": "https://lacabinepodcasts.com/#services",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Montage de podcast audio et vidéo",
+                "serviceType": "Montage et post-production de podcast",
+                "description": "Montage audio et vidéo, habillage sonore, sous-titrage et création d'extraits adaptés aux réseaux sociaux.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Diffusion et promotion",
+              "url": "https://lacabinepodcasts.com/#services",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Diffusion et promotion de podcast",
+                "serviceType": "Diffusion de podcast",
+                "description": "Diffusion sur Spotify, Apple Podcasts, Deezer, Ausha et YouTube, accompagnée d'une stratégie de promotion et d'acquisition d'audience.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Podcast d'entreprise en marque blanche",
+              "url": "https://lacabinepodcasts.com/#services",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Podcast d'entreprise et podcast marque blanche",
+                "serviceType": "Podcast d'entreprise",
+                "description": "Création d'un média propriétaire et d'une série de podcasts pour les marques, les établissements et les institutions publiques de La Réunion.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "audience": [
+                  { "@type": "BusinessAudience", "audienceType": "Marques basées à La Réunion" },
+                  { "@type": "Audience", "audienceType": "Établissements et institutions publiques réunionnaises" }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lacabinepodcasts.com/#website",
+        "url": "https://lacabinepodcasts.com/",
+        "name": "La Cabine Podcasts",
+        "alternateName": "Studio podcast La Réunion",
+        "description": "Studio de création, d'enregistrement et de production de podcasts audio et vidéo à La Réunion.",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://lacabinepodcasts.com/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lacabinepodcasts.com/#webpage",
+        "url": "https://lacabinepodcasts.com/",
+        "name": "Studio podcast à La Réunion | La Cabine Podcasts",
+        "description": "Studio podcast professionnel à Saint-Denis de La Réunion. Location de studio, podcast vidéo, production, direction éditoriale, montage et diffusion.",
+        "isPartOf": { "@id": "https://lacabinepodcasts.com/#website" },
+        "about": { "@id": "https://lacabinepodcasts.com/#business" },
+        "mainEntity": { "@id": "https://lacabinepodcasts.com/#business" },
+        "inLanguage": "fr-FR"
+      }
     ]
   }
   </script>
