@@ -116,7 +116,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       <span class="badge-dot"></span>
       ON AIR
     </div>
-    <h1>Studio Podcast<br />Professionnel à La Réunion</h1>
+    <h1 class="hero-h1"><span class="h1-prefix">Studio Podcast</span><span class="h1-typewriter"> <span id="typewriter-text"></span><span class="typewriter-cursor" aria-hidden="true">|</span></span></h1>
     <p class="hero-sub">La Cabine Podcasts : votre studio podcast basé à Saint-Denis. De l'enregistrement audio et vidéo au montage, en passant par la direction éditoriale et la stratégie de diffusion. Nous produisons votre podcast professionnel de A à Z, pensé pour capter et fidéliser votre audience.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
@@ -141,6 +141,28 @@ const siteUrl = "https://lacabinepodcasts.com";
       playsinline
       aria-label="Studio podcast La Cabine Podcasts à La Réunion"
     ></video>
+  </div>
+</section>
+
+<!-- À LA UNE -->
+<section class="alaune">
+  <div class="container">
+    <h2>À la une</h2>
+    <div class="alaune-grid">
+      <div class="alaune-main">
+        <div class="alaune-embed">
+          <iframe src="https://www.youtube.com/embed/RzTr5jL-jtE" title="FACE B : Derrière le dirigeant – La Cabine Podcasts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="alaune-secondary">
+        <div class="alaune-embed">
+          <iframe src="https://www.youtube.com/embed/5rVb6wqybk4" title="La Cabine Podcasts – vidéo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="alaune-embed">
+          <iframe src="https://www.youtube.com/embed/QZjNUF-4K9Y" title="La Cabine Podcasts – vidéo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1160,6 +1182,47 @@ const siteUrl = "https://lacabinepodcasts.com";
   .footer-bottom a { opacity: 0.8; }
   .footer-bottom a:hover { opacity: 1; }
 
+  /* TYPEWRITER H1 */
+  .hero-h1 { text-transform: uppercase; }
+  .h1-typewriter { white-space: normal; }
+  .typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    background: currentColor;
+    margin-left: 2px;
+    vertical-align: baseline;
+    animation: blink 0.75s step-end infinite;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 0.9em;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* À LA UNE */
+  .alaune { padding: 5rem 0 4rem; }
+  .alaune h2 { margin-bottom: 2rem; }
+  .alaune-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .alaune-secondary { display: flex; flex-direction: column; gap: 1.25rem; }
+  .alaune-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+  }
+  .alaune-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 16px;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: #174A96; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
@@ -1193,6 +1256,8 @@ const siteUrl = "https://lacabinepodcasts.com";
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
 
     .refs-logos { gap: 2rem; }
+
+    .alaune-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -1206,6 +1271,35 @@ const siteUrl = "https://lacabinepodcasts.com";
   const links = document.getElementById('navLinks');
   burger?.addEventListener('click', () => links?.classList.toggle('open'));
   links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Typewriter H1
+  (function() {
+    const el = document.getElementById('typewriter-text');
+    if (!el) return;
+    const phrases = [
+      'pour raconter des histoires.',
+      'qui se déplace chez vous.',
+      'pour faire entendre votre voix.',
+      'pour développer des sujets complexes.'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const SPEED_TYPE = 55, SPEED_DELETE = 40, PAUSE = 1800;
+    function tick() {
+      const phrase = phrases[pi];
+      if (!deleting) {
+        el.textContent = phrase.slice(0, ci + 1);
+        ci++;
+        if (ci === phrase.length) { deleting = true; setTimeout(tick, PAUSE); return; }
+        setTimeout(tick, SPEED_TYPE);
+      } else {
+        el.textContent = phrase.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 400); return; }
+        setTimeout(tick, SPEED_DELETE);
+      }
+    }
+    setTimeout(tick, 600);
+  })();
 
   // Drag-to-scroll bandeau projets
   const wrapper = document.querySelector('.projets-track-wrapper');
