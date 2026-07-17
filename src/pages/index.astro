@@ -1,7 +1,7 @@
 ---
 const title = "Studio Podcast à La Réunion | La Cabine Podcasts";
 const description = "Studio podcast professionnel à Saint-Denis de La Réunion. Enregistrement audio et vidéo, production clé en main, diffusion Spotify, Apple Podcasts, YouTube.";
-const siteUrl = "https://lacabinepodcasts.re";
+const siteUrl = "https://lacabinepodcasts.com";
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,11 @@ const siteUrl = "https://lacabinepodcasts.re";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="keywords" content="studio podcast, podcast La Réunion, studio podcast La Réunion, enregistrement podcast, production podcast, La Cabine Podcasts, Saint-Denis Réunion" />
+  <meta name="author" content="La Cabine Podcasts" />
+  <meta name="publisher" content="La Cabine Podcasts" />
   <link rel="canonical" href={siteUrl} />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -67,7 +71,7 @@ const siteUrl = "https://lacabinepodcasts.re";
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
-      <img src="/logo.png" alt="La Cabine Podcasts – Studio podcast La Réunion" width="160" height="48" />
+      <img src="/logo.png" alt="La Cabine Podcasts – Studio podcast La Réunion" width="220" height="66" />
     </a>
     <button class="nav-burger" id="navBurger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -90,7 +94,7 @@ const siteUrl = "https://lacabinepodcasts.re";
       <span class="badge-dot"></span>
       ON AIR
     </div>
-    <h1>Studio Podcast<br />à La Réunion</h1>
+    <h1>Studio Podcast<br />Professionnel à La Réunion</h1>
     <p class="hero-sub">La Cabine Podcasts : votre studio podcast basé à Saint-Denis. De l'enregistrement audio et vidéo au montage, en passant par la direction éditoriale et la stratégie de diffusion. Nous produisons votre podcast professionnel de A à Z, pensé pour capter et fidéliser votre audience.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
@@ -620,7 +624,7 @@ const siteUrl = "https://lacabinepodcasts.re";
     align-items: center;
     gap: 2rem;
   }
-  .nav-logo img { height: 40px; width: auto; }
+  .nav-logo img { height: 56px; width: auto; }
   .nav-links {
     display: flex;
     list-style: none;
