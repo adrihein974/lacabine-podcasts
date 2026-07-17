@@ -62,12 +62,12 @@ const siteUrl = "https://lacabinepodcasts.com";
 
   <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
-  {JSON.stringify({
+  {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "La Cabine Podcasts",
-    "description": description,
-    "url": siteUrl,
+    "description": "Studio podcast professionnel à Saint-Denis de La Réunion. Enregistrement audio et vidéo, production clé en main, diffusion Spotify, Apple Podcasts, YouTube.",
+    "url": "https://lacabinepodcasts.com",
     "telephone": "+262692450573",
     "email": "lacabinepodcast@gmail.com",
     "address": {
@@ -84,7 +84,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       "https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS",
       "https://www.facebook.com/profile.php?id=61561358285099"
     ]
-  })}
+  }
   </script>
 </head>
 <body>
@@ -116,7 +116,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       <span class="badge-dot"></span>
       ON AIR
     </div>
-    <h1 class="hero-h1"><span class="h1-prefix">Studio podcast</span><span class="h1-typewriter"> <span id="typewriter-text"></span><span class="typewriter-cursor" aria-hidden="true">|</span></span></h1>
+    <h1 class="hero-h1"><span class="h1-prefix">Studio podcast</span><span class="h1-typewriter"> <span id="typewriter-text">à la Réunion</span><span class="typewriter-cursor" aria-hidden="true">|</span></span></h1>
     <p class="hero-sub">La Cabine Podcasts : votre studio podcast basé à Saint-Denis. De l'enregistrement audio et vidéo au montage, en passant par la direction éditoriale et la stratégie de diffusion. Nous produisons votre podcast professionnel de A à Z, pensé pour capter et fidéliser votre audience.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
@@ -1279,6 +1279,7 @@ const siteUrl = "https://lacabinepodcasts.com";
   (function() {
     const el = document.getElementById('typewriter-text');
     if (!el) return;
+    el.textContent = '';
     const phrases = [
       'pour raconter des histoires.',
       'qui se déplace chez vous.',
