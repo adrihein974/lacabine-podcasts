@@ -869,6 +869,14 @@ const siteUrl = "https://lacabinepodcasts.com";
   </div>
 </section>
 
+<!-- TEASER RÉALISATIONS -->
+<section class="teaser-realisations">
+  <div class="container">
+    <p class="teaser-text">Découvrez les podcasts produits dans notre studio à La Réunion.</p>
+    <a href="#realisations" class="teaser-link">Découvrir nos réalisations <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="container">
@@ -1464,6 +1472,43 @@ const siteUrl = "https://lacabinepodcasts.com";
     font-size: 0.95rem;
     color: rgba(23, 74, 150, 0.7);
     line-height: 1.65;
+  }
+
+  /* TEASER RÉALISATIONS */
+  .teaser-realisations {
+    background: #ffffff;
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+  .teaser-realisations .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .teaser-text {
+    color: #174A96;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .teaser-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #174A96;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid #174A96;
+    border-radius: 50px;
+    padding: 0.55rem 1.4rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .teaser-link:hover {
+    background: #174A96;
+    color: #ffffff;
   }
 
   /* CTA FINAL */
