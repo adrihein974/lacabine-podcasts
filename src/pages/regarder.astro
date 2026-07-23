@@ -15,7 +15,10 @@ function formatDate(iso) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
-  <meta name="description" content={episode.hook} />
+  <meta name="description" content="Nouvel épisode en ligne : écoute La Cabine Podcast sur YouTube et Spotify. Studio de création de podcasts et vidéos à Saint-Denis, La Réunion." />
+  <meta name="keywords" content="studio podcast, podcast La Réunion, studio podcast et vidéos La Réunion, enregistrement podcast, production podcast, La Cabine Podcasts" />
+  <meta name="author" content="La Cabine Podcasts" />
+  <meta name="publisher" content="La Cabine Podcasts" />
   <link rel="canonical" href={`${siteUrl}/regarder`} />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -45,7 +48,7 @@ function formatDate(iso) {
       <li><a href="/#services">Services</a></li>
       <li><a href="/#studio">Studio</a></li>
       <li><a href="/#realisations">Réalisations</a></li>
-      <li><a href="/#equipe">Équipe</a></li>
+      <li><a href="/regarder" aria-current="page">Regarder</a></li>
       <li><a href="/#faq">FAQ</a></li>
     </ul>
     <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -57,8 +60,9 @@ function formatDate(iso) {
 <header class="page-hero">
   <div class="container">
     <span class="badge-new">Dernier épisode</span>
-    <h1>{episode.title}</h1>
-    <p class="page-hook">{episode.hook}</p>
+    <h1 class="sr-only">Dernier épisode</h1>
+    <p class="episode-title" aria-hidden="true">{episode.title}</p>
+    <p class="page-hook">Les dirigeants réunionnais se confient comme jamais. Leurs doutes, leurs décisions, leurs trajectoires… sans filtre et sans bulls**t.</p>
     <time class="page-date" datetime={episode.date}>{formatDate(episode.date)}</time>
   </div>
 </header>
@@ -174,6 +178,9 @@ function formatDate(iso) {
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .episode-title { font-family: 'Hanken Grotesk', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: 1rem; }
 
   body {
     background: #174A96;

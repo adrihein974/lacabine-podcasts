@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "src/pages/index.astro"
+        ],
+        "createdAt": "2026-07-23T14:35:15.760Z",
+        "reason": "Testimonial attributions — typographic convention"
+      },
+      {
+        "rule": "numbered-section-markers",
+        "value": "*",
+        "files": [
+          "src/pages/index.astro"
+        ],
+        "createdAt": "2026-07-23T14:35:16.229Z",
+        "reason": "False positive from SVG path data"
+      }
+    ]
+  }
+}
