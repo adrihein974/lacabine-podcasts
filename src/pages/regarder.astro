@@ -1,0 +1,427 @@
+---
+import episode from '../data/episode.json';
+
+const siteUrl = "https://lacabinepodcasts.com";
+const pageTitle = `À la une — ${episode.title} | La Cabine Podcasts`;
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={episode.hook} />
+  <link rel="canonical" href={`${siteUrl}/regarder`} />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={`${siteUrl}/regarder`} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={episode.hook} />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="La Cabine Podcasts" width="220" height="66" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#studio">Studio</a></li>
+      <li><a href="/#realisations">Réalisations</a></li>
+      <li><a href="/#equipe">Équipe</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="https://wa.me/262692450573" class="btn btn-white nav-cta" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</nav>
+
+<!-- HERO PAGE -->
+<header class="page-hero">
+  <div class="container">
+    <span class="badge-new">Dernier épisode</span>
+    <h1>{episode.title}</h1>
+    <p class="page-hook">{episode.hook}</p>
+    <time class="page-date" datetime={episode.date}>{formatDate(episode.date)}</time>
+  </div>
+</header>
+
+<!-- EMBEDS -->
+<main class="embeds-section">
+  <div class="container">
+
+    <!-- YouTube -->
+    <div class="embed-block">
+      <div class="embed-label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        YouTube
+      </div>
+      <div class="embed-frame">
+        <iframe
+          src={episode.youtube_embed_url}
+          title={episode.title}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <a href={episode.youtube_url} class="embed-cta" target="_blank" rel="noopener">
+        Ouvrir sur YouTube
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+
+    <!-- Spotify -->
+    <div class="embed-block">
+      <div class="embed-label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        Spotify
+      </div>
+      <div class="embed-frame embed-frame--spotify">
+        <iframe
+          src={`${episode.spotify_embed_url}?utm_source=generator&theme=0`}
+          title={`${episode.title} — Spotify`}
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <a href={episode.spotify_url} class="embed-cta" target="_blank" rel="noopener">
+        Ouvrir sur Spotify
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Donnez vie à votre<br />projet podcast</h2>
+    <p>Vous avez une idée ? Une histoire à raconter ? Une communauté à fédérer ?<br />Nous vous accompagnons de la première idée jusqu'à la diffusion.</p>
+    <div class="cta-final-btns">
+      <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
+      <a href="https://form.typeform.com/to/GBzndp6A" class="btn btn-outline" target="_blank" rel="noopener">Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" />
+        <p>Studio de création de podcasts à La Réunion</p>
+        <address>18 rue Rontaunay, Saint-Denis, La Réunion</address>
+        <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation secondaire">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#studio">Studio</a></li>
+          <li><a href="/#realisations">Réalisations</a></li>
+          <li><a href="/#equipe">Équipe</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h4>Retrouvez-nous</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/lacabinepodcasts" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LaCabinePodcasts" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS" aria-label="Spotify" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61561358285099" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="footerYear">2026</span> La Cabine Podcasts · Saint-Denis, La Réunion · <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #174A96;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(23,74,150,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-logo img { height: 56px; width: auto; }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.75rem;
+    margin-left: auto;
+  }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: opacity 0.15s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { margin-left: 1rem; }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+  }
+  .nav-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); opacity: 0.92; }
+  .btn-white { background: #ffffff; color: #174A96; }
+  .btn-outline { background: transparent; color: #ffffff; border: 2px solid rgba(255,255,255,0.5); }
+  .btn-outline:hover { border-color: #ffffff; }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .badge-new::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff3b30;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+
+  .page-hook {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.75;
+    max-width: 600px;
+    margin: 1.25rem auto 1rem;
+    line-height: 1.65;
+  }
+  .page-date {
+    display: block;
+    font-size: 0.82rem;
+    opacity: 0.4;
+    letter-spacing: 0.05em;
+  }
+
+  /* EMBEDS */
+  .embeds-section {
+    padding: 0 0 6rem;
+  }
+  .embeds-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .embed-block {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .embed-block:hover { border-color: rgba(255,255,255,0.22); }
+
+  .embed-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .embed-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+  .embed-frame iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+
+  .embed-frame--spotify {
+    padding-bottom: 0;
+    height: 232px;
+  }
+  .embed-frame--spotify iframe {
+    position: static;
+    width: 100%;
+    height: 232px;
+  }
+
+  .embed-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.1rem 1.5rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    opacity: 0.65;
+    transition: opacity 0.15s, background 0.15s;
+  }
+  .embed-cta:hover { opacity: 1; background: rgba(255,255,255,0.05); }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: rgba(0,0,0,0.25);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  .cta-final .container { max-width: 1200px; }
+  .cta-final h2 { margin-bottom: 1.25rem; }
+  .cta-final p { opacity: 0.7; max-width: 560px; margin: 0 auto 2.5rem; }
+  .cta-final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  .footer {
+    background: rgba(0,0,0,0.3);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer .container { max-width: 1200px; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-brand p, .footer-brand address, .footer-brand a { font-size: 0.9rem; opacity: 0.6; font-style: normal; }
+  .footer-brand a:hover { opacity: 1; }
+  .footer-nav h4, .footer-social h4 { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5; margin-bottom: 1rem; }
+  .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-nav a { font-size: 0.9rem; opacity: 0.65; transition: opacity 0.15s; }
+  .footer-nav a:hover { opacity: 1; }
+  .social-links { display: flex; gap: 1rem; }
+  .social-links a { opacity: 0.5; transition: opacity 0.15s; }
+  .social-links a:hover { opacity: 1; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; font-size: 0.82rem; opacity: 0.4; text-align: center; }
+  .footer-bottom a { opacity: 0.8; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: #174A96; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { display: flex; }
+    .nav-burger { display: flex; }
+    .nav-cta { display: none; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+
+<script>
+  const yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('navBurger');
+  const links = document.getElementById('navLinks');
+  burger?.addEventListener('click', () => links?.classList.toggle('open'));
+  links?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
