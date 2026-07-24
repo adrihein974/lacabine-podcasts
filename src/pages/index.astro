@@ -1763,5 +1763,155 @@ const siteUrl = "https://lacabinepodcasts.com";
   }
 </script>
 
+<!-- VIDEO WIDGET -->
+<div id="video-widget" aria-label="Aperçu vidéo La Cabine Podcasts">
+  <button id="video-widget-close" aria-label="Fermer le widget">&times;</button>
+  <div id="video-preview" role="button" tabindex="0" aria-label="Voir la vidéo de présentation">
+    <img src="/La Cabine Podcasts.gif" alt="Aperçu La Cabine Podcasts" />
+    <div class="widget-play-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="white" width="38" height="38"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO LIGHTBOX -->
+<div id="video-lightbox" role="dialog" aria-modal="true" aria-label="Vidéo La Cabine Podcasts" hidden>
+  <div id="video-backdrop"></div>
+  <div id="video-modal">
+    <button id="lightbox-close" aria-label="Fermer la vidéo">&times;</button>
+    <div class="video-ratio">
+      <iframe
+        id="cabine-iframe"
+        src=""
+        data-src="https://www.youtube.com/embed/RzTr5jL-jtE?autoplay=1&rel=0"
+        title="La Cabine Podcasts — vidéo de présentation"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* WIDGET */
+  #video-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 900;
+    width: 210px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #video-widget:hover { transform: translateY(-4px); box-shadow: 0 16px 44px rgba(0,0,0,0.5); }
+
+  #video-widget-close {
+    position: absolute;
+    top: 7px; right: 9px;
+    z-index: 2;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+    width: 26px; height: 26px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0; line-height: 1;
+    transition: background 0.15s;
+  }
+  #video-widget-close:hover { background: rgba(0,0,0,0.9); }
+
+  #video-preview { position: relative; display: block; width: 100%; }
+  #video-preview img { display: block; width: 100%; height: 130px; object-fit: cover; }
+
+  .widget-play-icon {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(23,74,150,0.38);
+    transition: background 0.2s;
+  }
+  #video-preview:hover .widget-play-icon { background: rgba(23,74,150,0.58); }
+
+  /* LIGHTBOX */
+  #video-lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #video-lightbox[hidden] { display: none; }
+
+  #video-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(8,12,28,0.88);
+    backdrop-filter: blur(5px);
+  }
+  #video-modal {
+    position: relative; z-index: 1;
+    width: min(900px, 92vw);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.75);
+    background: #000;
+  }
+  .video-ratio {
+    position: relative; width: 100%; padding-top: 56.25%;
+  }
+  .video-ratio iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    border: none;
+  }
+  #lightbox-close {
+    position: absolute; top: -40px; right: 0; z-index: 2;
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    color: #fff; font-size: 1.3rem;
+    width: 34px; height: 34px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0; line-height: 1;
+    transition: background 0.15s;
+  }
+  #lightbox-close:hover { background: rgba(255,255,255,0.3); }
+
+  @media (max-width: 480px) {
+    #video-widget { width: 155px; bottom: 1rem; left: 1rem; }
+    #video-preview img { height: 95px; }
+    #lightbox-close { top: -38px; }
+  }
+</style>
+
+<script>
+  const widget   = document.getElementById('video-widget');
+  const closeBtn = document.getElementById('video-widget-close');
+  const preview  = document.getElementById('video-preview');
+  const lightbox = document.getElementById('video-lightbox');
+  const backdrop = document.getElementById('video-backdrop');
+  const lbClose  = document.getElementById('lightbox-close');
+  const iframe   = document.getElementById('cabine-iframe');
+
+  function openLightbox() {
+    iframe.src = iframe.dataset.src;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    iframe.src = '';
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  preview.addEventListener('click', openLightbox);
+  preview.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(); });
+  backdrop.addEventListener('click', closeLightbox);
+  lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+  closeBtn.addEventListener('click', (e) => { e.stopPropagation(); widget.style.display = 'none'; });
+</script>
+
 </body>
 </html>
