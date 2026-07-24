@@ -404,7 +404,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       <span class="badge-dot"></span>
       ON AIR
     </div>
-    <h1 class="hero-h1"><span class="h1-prefix">Studio podcast</span><span class="h1-typewriter"> <span id="typewriter-text">à la Réunion</span><span class="typewriter-cursor" aria-hidden="true">|</span></span></h1>
+    <h1 class="hero-h1">Studio podcast<br><span class="h1-cycle" id="h1Cycle">pour raconter des histoires.</span></h1>
     <p class="hero-sub">La Cabine Podcasts : votre studio podcast basé à Saint-Denis. De l'enregistrement audio et vidéo au montage, en passant par la direction éditoriale et la stratégie de diffusion. Nous produisons votre podcast professionnel de A à Z, pensé pour capter et fidéliser votre audience.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
@@ -1675,7 +1675,18 @@ const siteUrl = "https://lacabinepodcasts.com";
 
   /* TYPEWRITER H1 */
   .hero-h1 { text-transform: none; }
-  .h1-typewriter { white-space: normal; }
+  .h1-cycle { display: block; }
+  @keyframes cycleOut {
+    from { opacity: 1; filter: blur(0px); transform: translateY(0); }
+    to   { opacity: 0; filter: blur(10px); transform: translateY(-8px); }
+  }
+  @keyframes cycleIn {
+    from { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+    to   { opacity: 1; filter: blur(0px); transform: translateY(0); }
+  }
+  .h1-cycle.anim-out { animation: cycleOut 0.28s ease forwards; }
+  .h1-cycle.anim-in  { animation: cycleIn  0.38s ease forwards; }
+  /* legacy — keep rule empty to avoid breaking anything */
   .typewriter-cursor {
     display: inline-block;
     width: 3px;
@@ -1792,32 +1803,28 @@ const siteUrl = "https://lacabinepodcasts.com";
 
   // Typewriter H1
   (function() {
-    const el = document.getElementById('typewriter-text');
-    if (!el) return;
-    el.textContent = '';
+    const cycleEl = document.getElementById('h1Cycle');
+    if (!cycleEl) return;
     const phrases = [
       'pour raconter des histoires.',
       'qui se déplace chez vous.',
       'pour faire entendre votre voix.',
       'pour développer des sujets complexes.'
     ];
-    let pi = 0, ci = 0, deleting = false;
-    const SPEED_TYPE = 55, SPEED_DELETE = 40, PAUSE = 1800;
-    function tick() {
-      const phrase = phrases[pi];
-      if (!deleting) {
-        el.textContent = phrase.slice(0, ci + 1);
-        ci++;
-        if (ci === phrase.length) { deleting = true; setTimeout(tick, PAUSE); return; }
-        setTimeout(tick, SPEED_TYPE);
-      } else {
-        el.textContent = phrase.slice(0, ci - 1);
-        ci--;
-        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 400); return; }
-        setTimeout(tick, SPEED_DELETE);
-      }
+    let idx = 0;
+    const HOLD = 2800;
+    function next() {
+      cycleEl.classList.remove('anim-in');
+      cycleEl.classList.add('anim-out');
+      setTimeout(() => {
+        idx = (idx + 1) % phrases.length;
+        cycleEl.textContent = phrases[idx];
+        cycleEl.classList.remove('anim-out');
+        cycleEl.classList.add('anim-in');
+        setTimeout(next, HOLD);
+      }, 280);
     }
-    setTimeout(tick, 600);
+    setTimeout(next, HOLD);
   })();
 
   // Drag-to-scroll bandeau projets
