@@ -257,7 +257,8 @@ const categoryText: Record<string, string> = {
     display: flex; align-items: center; justify-content: space-between;
     height: 70px; gap: 2rem;
   }
-  .nav-logo img { display: block; }
+  .nav-logo { flex-shrink: 0; }
+  .nav-logo img { display: block; width: 220px; height: auto; }
   .nav-links { display: flex; list-style: none; gap: 1.75rem; }
   .nav-links a { font-size: 0.95rem; font-weight: 500; opacity: 0.85; transition: opacity 0.2s; }
   .nav-links a:hover { opacity: 1; }
