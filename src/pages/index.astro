@@ -588,44 +588,67 @@ const siteUrl = "https://lacabinepodcasts.com";
 </section>
 
 <!-- PROCESS -->
-<section class="process">
+<section class="process" id="process">
   <div class="container">
-    <h2>Comment ça marche ?<br /><span>Votre podcast en 3 étapes</span></h2>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <h3>Pré-production</h3>
-        <ul>
-          <li>Direction éditoriale</li>
-          <li>Co-création du concept</li>
-          <li>Définition des objectifs</li>
-          <li>Chargé de production dédié</li>
-        </ul>
+    <div class="process-header">
+      <p class="process-label">Comment ça marche ?</p>
+      <h2>Votre podcast en 3 étapes</h2>
+    </div>
+
+    <div class="process-steps" id="processSteps">
+      <div class="process-step" data-step="0">
+        <div class="process-left">
+          <div class="process-num">01</div>
+          <div class="process-vline" aria-hidden="true"></div>
+        </div>
+        <div class="process-card">
+          <h3>Préparez</h3>
+          <p>On définit ensemble votre concept, vos objectifs et votre ligne éditoriale. Un chargé de production vous accompagne de la première idée jusqu'à la séance.</p>
+          <ul>
+            <li>Direction éditoriale</li>
+            <li>Co-création du concept</li>
+            <li>Définition des objectifs</li>
+            <li>Chargé de production dédié</li>
+          </ul>
+        </div>
       </div>
-      <div class="process-arrow">→</div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <h3>Production</h3>
-        <ul>
-          <li>Captation audio &amp; vidéo</li>
-          <li>Jusqu'à 3 caméras</li>
-          <li>Régie vidéo en direct</li>
-          <li>Éclairage professionnel</li>
-          <li>Décor personnalisable</li>
-          <li>Avec ou sans animateur</li>
-        </ul>
+
+      <div class="process-step" data-step="1">
+        <div class="process-left">
+          <div class="process-num">02</div>
+          <div class="process-vline" aria-hidden="true"></div>
+        </div>
+        <div class="process-card">
+          <h3>Enregistrez</h3>
+          <p>Vous arrivez, vous parlez. On s'occupe du reste : réglages, réalisation, éclairage. Jusqu'à 4 intervenants simultanément dans un studio entièrement équipé.</p>
+          <ul>
+            <li>Captation audio &amp; vidéo 4K</li>
+            <li>Jusqu'à 3 caméras Sony</li>
+            <li>Régie vidéo en direct</li>
+            <li>Décor personnalisable</li>
+          </ul>
+        </div>
       </div>
-      <div class="process-arrow">→</div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <h3>Post-production</h3>
-        <ul>
-          <li>Montage &amp; habillage sonore</li>
-          <li>Sous-titrage</li>
-          <li>Extraits réseaux sociaux</li>
-          <li>Diffusion multi-plateformes</li>
-        </ul>
+
+      <div class="process-step" data-step="2">
+        <div class="process-left">
+          <div class="process-num">03</div>
+        </div>
+        <div class="process-card">
+          <h3>Recevez</h3>
+          <p>Vos fichiers montés, mixés et prêts à diffuser vous sont livrés directement. Audio, vidéo, extraits réseaux : tout est prêt à publier.</p>
+          <ul>
+            <li>Montage &amp; habillage sonore</li>
+            <li>Sous-titrage</li>
+            <li>Extraits réseaux sociaux</li>
+            <li>Diffusion multi-plateformes</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <div class="process-cta">
+      <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver une session</a>
     </div>
   </div>
 </section>
@@ -1215,39 +1238,92 @@ const siteUrl = "https://lacabinepodcasts.com";
     background: rgba(0,0,0,0.15);
     padding: 6rem 0;
   }
-  .process h2 { text-align: center; margin-bottom: 3.5rem; }
-  .process h2 span { opacity: 0.6; font-size: 0.7em; display: block; margin-top: 0.3rem; }
-  .process-steps {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    justify-content: center;
+  .process-header { text-align: center; margin-bottom: 4rem; }
+  .process-label {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; opacity: 0.45; margin-bottom: 0.75rem;
   }
+  .process h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+
+  .process-steps {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* chaque étape part invisible */
   .process-step {
-    flex: 1;
-    max-width: 300px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .process-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .process-step[data-step="1"] { transition-delay: 0.15s; }
+  .process-step[data-step="2"] { transition-delay: 0.30s; }
+
+  .process-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
   .process-num {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.18);
     line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-  .process-step h3 { margin-bottom: 1rem; }
-  .process-step ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.9rem; opacity: 0.7; }
-  .process-step ul li::before { content: "→ "; opacity: 0.5; }
-  .process-arrow {
-    font-size: 1.8rem;
-    opacity: 0.3;
-    padding-top: 3.5rem;
     flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    padding-top: 0.2rem;
   }
+  .process-step.visible .process-num { color: rgba(255,255,255,0.9); transition: color 0.55s ease; }
+
+  .process-vline {
+    width: 1px;
+    flex: 1;
+    min-height: 60px;
+    background: rgba(255,255,255,0.12);
+    margin: 0.75rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .process-vline::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 0%;
+    background: rgba(255,255,255,0.5);
+    transition: height 0.6s ease 0.4s;
+  }
+  .process-step.visible .process-vline::after { height: 100%; }
+
+  .process-card {
+    padding: 0 0 3.5rem 0;
+  }
+  .process-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .process-card p { font-size: 0.95rem; opacity: 0.65; line-height: 1.65; margin-bottom: 1rem; }
+  .process-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .process-card ul li {
+    font-size: 0.88rem; opacity: 0.55;
+    padding-left: 1.1rem; position: relative;
+  }
+  .process-card ul li::before { content: "—"; position: absolute; left: 0; opacity: 0.4; }
+
+  .process-cta { text-align: center; margin-top: 1rem; }
 
   /* STUDIO */
   .studio { padding: 6rem 0; }
@@ -1637,7 +1713,8 @@ const siteUrl = "https://lacabinepodcasts.com";
     .services-grid { grid-template-columns: 1fr; }
     .service-card--full { flex-direction: column; }
 
-    .process-steps { flex-direction: column; align-items: center; }
+    .process-step { grid-template-columns: 56px 1fr; gap: 1.25rem; }
+    .process-num { font-size: 2rem; width: 56px; }
     .process-arrow { transform: rotate(90deg); padding-top: 0; }
     .process-step { max-width: 100%; width: 100%; }
 
@@ -1742,6 +1819,15 @@ const siteUrl = "https://lacabinepodcasts.com";
       const x = e.pageX - wrapper.offsetLeft;
       wrapper.scrollLeft = scrollLeft - (x - startX) * 1.2;
     });
+  }
+
+  // Animation scroll section process
+  const steps = document.querySelectorAll('.process-step');
+  if (steps.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    steps.forEach(s => obs.observe(s));
   }
 </script>
 
