@@ -158,6 +158,13 @@ function formatDate(iso) {
           <li><a href="/blog">Blog & Ressources</a></li>
         </ul>
       </nav>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
       <div class="footer-social">
         <h4>Retrouvez-nous</h4>
         <div class="social-links">
@@ -442,7 +449,11 @@ function formatDate(iso) {
     border-top: 1px solid rgba(255,255,255,0.08);
   }
   .footer .container { max-width: 1200px; }
-  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-legal h4 { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5; margin-bottom: 1rem; }
+  .footer-legal ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-legal a { font-size: 0.9rem; opacity: 0.65; transition: opacity 0.15s; }
+  .footer-legal a:hover { opacity: 1; }
   .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; }
   .footer-brand p, .footer-brand address, .footer-brand a { font-size: 0.9rem; opacity: 0.6; font-style: normal; }
   .footer-brand a:hover { opacity: 1; }

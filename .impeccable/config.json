@@ -29,6 +29,22 @@
         ],
         "createdAt": "2026-07-24T14:48:16.132Z",
         "reason": "Règle éditoriale : pas de tiret cadratin dans les articles de blog"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "src/pages/politique-de-confidentialite.astro"
+        ],
+        "createdAt": "2026-07-24T15:36:29.251Z"
+      },
+      {
+        "rule": "numbered-section-markers",
+        "value": "*",
+        "files": [
+          "src/pages/politique-de-confidentialite.astro"
+        ],
+        "createdAt": "2026-07-24T15:36:29.891Z"
       }
     ]
   }
