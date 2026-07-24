@@ -1,6 +1,6 @@
 ---
 title: "Studio vidéo à La Réunion : tournez votre podcast vidéo comme un pro"
-description: "La Réunion dispose d'un studio vidéo professionnel dédié au podcast vidéo. Caméras 4K, éclairage, régie multicaméra — tout pour un rendu TV-ready à Saint-Denis."
+description: "La Réunion dispose d'un studio vidéo professionnel dédié au podcast vidéo. Caméras 4K, éclairage, régie multicaméra: tout pour un rendu TV-ready à Saint-Denis."
 date: 2026-06-20
 category: Conseils
 image: /images/projet-face-b.webp
@@ -8,7 +8,7 @@ imageAlt: Studio vidéo La Réunion podcast vidéo La Cabine Podcasts
 author: La Cabine Podcasts
 ---
 
-Le podcast vidéo s'est imposé comme le format de contenu le plus puissant des dernières années. YouTube, Instagram, TikTok, LinkedIn — partout, les créateurs et les marques misent sur la vidéo pour toucher leur audience. La Réunion dispose désormais d'un **studio vidéo professionnel** dédié à ce format.
+Le podcast vidéo s'est imposé comme le format de contenu le plus puissant des dernières années. YouTube, Instagram, TikTok, LinkedIn: partout, les créateurs et les marques misent sur la vidéo pour toucher leur audience. La Réunion dispose désormais d'un **studio vidéo professionnel** dédié à ce format.
 
 ## Pourquoi le podcast vidéo s'impose en 2026
 
@@ -40,9 +40,9 @@ La Cabine Podcasts est le seul studio à La Réunion entièrement dédié au for
 
 ### Décors et plateaux
 
-- **Décor signature La Cabine** — bois, plantes, lumières d'ambiance
+- **Décor signature La Cabine**: bois, plantes, lumières d'ambiance
 - **Fond neutre** pour un rendu épuré et intemporel
-- **Branded content** — intégration de vos couleurs et votre logo
+- **Branded content**: intégration de vos couleurs et votre logo
 - Jusqu'à 4 intervenants simultanément en cadre
 
 ## Le podcast vidéo pour les entreprises réunionnaises
@@ -60,11 +60,11 @@ Des institutions publiques aux PME locales, en passant par les professions libé
 
 Notre studio vidéo à La Réunion propose une solution complète :
 
-1. **Direction artistique** — choix du décor, du cadrage, du storytelling visuel
-2. **Tournage multicaméra** — captation professionnelle avec réalisation en temps réel
-3. **Montage vidéo** — sélection des meilleurs angles, transitions, habillage graphique
-4. **Sous-titrage** — pour maximiser l'accessibilité et l'engagement
-5. **Formats réseaux sociaux** — extraits verticaux (Reels, Shorts, TikTok), carrousels, thumbnails YouTube
+1. **Direction artistique**: choix du décor, du cadrage, du storytelling visuel
+2. **Tournage multicaméra**: captation professionnelle avec réalisation en temps réel
+3. **Montage vidéo**: sélection des meilleurs angles, transitions, habillage graphique
+4. **Sous-titrage**: pour maximiser l'accessibilité et l'engagement
+5. **Formats réseaux sociaux**: extraits verticaux (Reels, Shorts, TikTok), carrousels, thumbnails YouTube
 
 ## Un studio mobile pour les événements
 

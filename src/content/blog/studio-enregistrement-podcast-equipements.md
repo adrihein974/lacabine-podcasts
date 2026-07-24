@@ -1,6 +1,6 @@
 ---
 title: "Studio d'enregistrement podcast : équipements, configuration et conseils"
-description: "Quels équipements dans un studio d'enregistrement podcast professionnel ? Micros, interfaces audio, caméras, acoustique — tout ce qu'il faut pour un son et une image irréprochables."
+description: "Quels équipements dans un studio d'enregistrement podcast professionnel ? Micros, interfaces audio, caméras, acoustique: tout ce qu'il faut pour un son et une image irréprochables."
 date: 2026-06-28
 category: Outils
 image: /images/hero.webp
@@ -26,13 +26,13 @@ Sans traitement acoustique, même le meilleur micro du monde ne donnera pas un r
 En studio podcast professionnel, on travaille exclusivement avec des micros dynamiques ou à condensateur de qualité broadcasting.
 
 ### Micros dynamiques (recommandés en studio)
-- **Shure SM7B** — le micro des radios professionnelles, référence absolue
-- **Electro-Voice RE20** — utilisé dans les plus grandes stations de radio mondiales
-- **Rode PodMic** — excellent rapport qualité/prix pour du podcast vidéo
+- **Shure SM7B**: le micro des radios professionnelles, référence absolue
+- **Electro-Voice RE20**: utilisé dans les plus grandes stations de radio mondiales
+- **Rode PodMic**: excellent rapport qualité/prix pour du podcast vidéo
 
 ### Micros à condensateur (pour les voix douces)
-- **Rode NT1** — bruit de fond extrêmement bas, idéal pour les voix délicates
-- **Audio-Technica AT4050** — polyvalent et précis
+- **Rode NT1**: bruit de fond extrêmement bas, idéal pour les voix délicates
+- **Audio-Technica AT4050**: polyvalent et précis
 
 Chez La Cabine Podcasts, chaque intervenant dispose de son propre micro sur bras articulé, réglé à la bonne hauteur et distance.
 

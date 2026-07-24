@@ -55,11 +55,11 @@ La location de studio podcast à Saint-Denis s'adresse à :
 
 ## Comment se déroule une session ?
 
-1. **Prise de contact** — vous nous décrivez votre projet par WhatsApp ou via notre formulaire
-2. **Brief éditorial** — on définit ensemble le format, les questions, le déroulé
-3. **Session d'enregistrement** — 2h à 4h selon le nombre d'épisodes à enregistrer
-4. **Montage** — nos équipes s'occupent de la post-production si vous le souhaitez
-5. **Livraison** — fichiers audio et vidéo prêts à diffuser
+1. **Prise de contact**: vous nous décrivez votre projet par WhatsApp ou via notre formulaire
+2. **Brief éditorial**: on définit ensemble le format, les questions, le déroulé
+3. **Session d'enregistrement**: 2h à 4h selon le nombre d'épisodes à enregistrer
+4. **Montage**: nos équipes s'occupent de la post-production si vous le souhaitez
+5. **Livraison**: fichiers audio et vidéo prêts à diffuser
 
 ## Le studio mobile : on vient chez vous
 

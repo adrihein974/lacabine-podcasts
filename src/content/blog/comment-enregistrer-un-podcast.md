@@ -8,7 +8,7 @@ imageAlt: Enregistrement podcast en studio professionnel à La Réunion
 author: La Cabine Podcasts
 ---
 
-Vous voulez vous lancer dans le podcast mais vous ne savez pas par où commencer ? Voici le guide complet pour **enregistrer un podcast** dans les meilleures conditions — que vous soyez débutant ou créateur confirmé.
+Vous voulez vous lancer dans le podcast mais vous ne savez pas par où commencer ? Voici le guide complet pour **enregistrer un podcast** dans les meilleures conditions: que vous soyez débutant ou créateur confirmé.
 
 ## Étape 1 : définir votre concept
 
@@ -50,10 +50,10 @@ En studio professionnel, le traitement acoustique est intégré. Vous enregistre
 
 Quelques règles d'or :
 
-1. **Faites un test avant d'enregistrer** — vérifiez les niveaux (viser -12dB à -6dB)
-2. **Évitez les bruits parasites** — téléphone en silencieux, notifications désactivées, climatisation coupée
-3. **Parlez naturellement** — oubliez que vous êtes enregistré, adressez-vous à une personne
-4. **Enregistrez plus que nécessaire** — le montage retirera les hésitations et les silences longs
+1. **Faites un test avant d'enregistrer**: vérifiez les niveaux (viser -12dB à -6dB)
+2. **Évitez les bruits parasites**: téléphone en silencieux, notifications désactivées, climatisation coupée
+3. **Parlez naturellement**: oubliez que vous êtes enregistré, adressez-vous à une personne
+4. **Enregistrez plus que nécessaire**: le montage retirera les hésitations et les silences longs
 
 ## Étape 5 : le montage et la post-production
 

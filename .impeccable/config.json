@@ -20,6 +20,15 @@
         ],
         "createdAt": "2026-07-23T14:35:16.229Z",
         "reason": "False positive from SVG path data"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "src/content/blog/**"
+        ],
+        "createdAt": "2026-07-24T14:48:16.132Z",
+        "reason": "Règle éditoriale : pas de tiret cadratin dans les articles de blog"
       }
     ]
   }
