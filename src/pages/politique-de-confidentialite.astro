@@ -104,7 +104,7 @@ const description = "Politique de confidentialité du site lacabinepodcasts.com 
         <p>L'utilisateur est informé, lors de sa première visite, de la possibilité de paramétrer ses préférences via un bandeau de consentement et/ou les réglages de son navigateur. Le refus des cookies non essentiels n'affecte pas l'accès aux fonctionnalités principales du Site.</p>
         <div class="opt-out-block" id="optOutBlock">
           <p class="opt-out-label" id="optOutLabel">Désactiver le tracking sur ce navigateur</p>
-          <p class="opt-out-desc" id="optOutDesc">Vous pouvez vous opposer à tout moment à la mesure d'audience sur ce navigateur. Votre choix est conservé 1 an.</p>
+          <p class="opt-out-desc" id="optOutDesc">Vous pouvez vous opposer à tout moment à la mesure d'audience (Google Analytics) sur ce navigateur. Votre choix est conservé et s'applique à l'ensemble du site.</p>
           <button class="opt-out-btn" id="optOutBtn" type="button">Désactiver le tracking</button>
         </div>
       </section>
@@ -169,44 +169,38 @@ const description = "Politique de confidentialité du site lacabinepodcasts.com 
     const el = document.getElementById('footerYear');
     if (el) el.textContent = String(new Date().getFullYear());
 
-    // Opt-out GA tracking
+    // Opt-out GA tracking — utilise la même clé que la bannière (lcp-consent)
     const GA_ID = 'G-PK9JHLK9YF';
-    const OPT_OUT_KEY = 'ga-opt-out';
-    const btn = document.getElementById('optOutBtn');
+    const KEY = 'lcp-consent';
+    const btn = document.getElementById('optOutBtn') as HTMLButtonElement;
     const label = document.getElementById('optOutLabel');
     const desc = document.getElementById('optOutDesc');
     const block = document.getElementById('optOutBlock');
 
-    function applyOptOut() {
-      (window as any)[`ga-disable-${GA_ID}`] = true;
-    }
+    function applyRefused() { (window as any)['ga-disable-' + GA_ID] = true; }
 
-    function setOptedOut(value: boolean) {
-      if (value) {
-        localStorage.setItem(OPT_OUT_KEY, '1');
-        applyOptOut();
+    function render() {
+      const refused = localStorage.getItem(KEY) === 'refused';
+      if (refused) {
+        applyRefused();
         label.textContent = 'Le tracking est actuellement désactivé sur ce navigateur.';
         desc.textContent = 'Vous pouvez le réactiver à tout moment.';
         btn.textContent = 'Réactiver le tracking';
         block.classList.add('opted-out');
       } else {
-        localStorage.removeItem(OPT_OUT_KEY);
-        (window as any)[`ga-disable-${GA_ID}`] = false;
         label.textContent = 'Désactiver le tracking sur ce navigateur';
-        desc.textContent = 'Vous pouvez vous opposer à tout moment à la mesure d\'audience sur ce navigateur. Votre choix est conservé 1 an.';
+        desc.textContent = 'Vous pouvez vous opposer à tout moment à la mesure d\'audience (Google Analytics) sur ce navigateur. Votre choix est conservé et s\'applique à l\'ensemble du site.';
         btn.textContent = 'Désactiver le tracking';
         block.classList.remove('opted-out');
       }
     }
 
-    // Init state
-    if (localStorage.getItem(OPT_OUT_KEY)) {
-      applyOptOut();
-      setOptedOut(true);
-    }
+    render();
 
     btn.addEventListener('click', () => {
-      setOptedOut(!localStorage.getItem(OPT_OUT_KEY));
+      const isRefused = localStorage.getItem(KEY) === 'refused';
+      localStorage.setItem(KEY, isRefused ? 'accepted' : 'refused');
+      render();
     });
 
     // Back to top
