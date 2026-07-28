@@ -1,0 +1,973 @@
+---
+const title = "Studio Podcast, Vidéo & Photo à La Réunion | La Cabine Podcasts";
+const description = "Louez un studio podcast, vidéo ou photo à La Réunion. Équipement pro, accompagnement inclus, réservation simple. La Cabine Podcasts vous reçoit.";
+const siteUrl = "https://lacabinepodcasts.com";
+const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion`;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="studio podcast La Réunion, location studio podcast, studio vidéo La Réunion, location studio vidéo, studio photo La Réunion, location studio photo" />
+  <meta name="author" content="La Cabine Podcasts" />
+  <link rel="canonical" href={pageUrl} />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}/images/La%20Cabine%20Podcast%20--%20Studio%20Podcasts%20La%20R%C3%A9union%201200%20x%20630.png`} />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}/images/La%20Cabine%20Podcast%20--%20Studio%20Podcasts%20La%20R%C3%A9union%201200%20x%20630.png`} />
+
+  <!-- Google Analytics — chargé seulement après consentement -->
+  <script>
+    (function() {
+      const GA_ID = 'G-PK9JHLK9YF';
+      const consent = localStorage.getItem('lcp-consent');
+      if (consent === 'refused') { window['ga-disable-' + GA_ID] = true; return; }
+      if (consent === 'accepted') {
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', GA_ID);
+      }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://lacabinepodcasts.com/#business",
+        "name": "La Cabine Podcasts",
+        "url": "https://lacabinepodcasts.com/",
+        "telephone": "+262692450573",
+        "email": "lacabinepodcast@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "18 rue Rontaunay",
+          "addressLocality": "Saint-Denis",
+          "addressRegion": "La Réunion",
+          "postalCode": "97400",
+          "addressCountry": "FR"
+        },
+        "hasMap": "https://share.google/hQpVB647By0ciENMy",
+        "image": [
+          "https://lacabinepodcasts.com/images/studio1.webp",
+          "https://lacabinepodcasts.com/images/studio2.webp",
+          "https://lacabinepodcasts.com/images/studio3.webp"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Studios à La Réunion",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Location de studio podcast à La Réunion",
+                "serviceType": "Studio podcast",
+                "description": "Studio podcast professionnel à Saint-Denis avec traitement acoustique, micros, régie audio et décors personnalisables.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Location de studio vidéo à La Réunion",
+                "serviceType": "Studio vidéo",
+                "description": "Studio vidéo équipé de 3 caméras Sony 4K, régie multicaméra, éclairage professionnel et fond studio.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Location de studio photo à La Réunion",
+                "serviceType": "Studio photo",
+                "description": "Studio photo professionnel à La Réunion avec éclairage studio, fonds et matériel professionnel.",
+                "provider": { "@id": "https://lacabinepodcasts.com/#business" },
+                "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://lacabinepodcasts.com/studio-podcast-video-photo-reunion/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quels sont les tarifs des studios ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les tarifs varient selon le studio choisi (podcast, vidéo ou photo) et la durée de la session. Nous établissons un devis personnalisé selon votre projet. Contactez-nous sur WhatsApp pour un retour rapide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Dois-je apporter du matériel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, nos studios sont entièrement équipés. Vous n'avez pas besoin d'apporter de carte SD ni de disque dur : les fichiers vous sont remis via un lien de téléchargement sécurisé."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles formules proposez-vous ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nous proposons la location à l'heure ou à la journée, ainsi que des formules de production clé en main incluant direction éditoriale, captation et montage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où se trouve le studio ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Notre studio est situé au 18 Rue Rontaunay à Saint-Denis de La Réunion, au 2ème étage. Dans la rue du McDo, juste après l'Apoteek."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lacabinepodcasts.com/studio-podcast-video-photo-reunion/#webpage",
+        "url": "https://lacabinepodcasts.com/studio-podcast-video-photo-reunion/",
+        "name": "Studio Podcast, Vidéo & Photo à La Réunion | La Cabine Podcasts",
+        "description": "Louez un studio podcast, vidéo ou photo à La Réunion. Équipement pro, accompagnement inclus, réservation simple.",
+        "isPartOf": { "@id": "https://lacabinepodcasts.com/#website" },
+        "about": { "@id": "https://lacabinepodcasts.com/#business" },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="La Cabine Podcasts – Studio podcast La Réunion" width="220" height="66" />
+    </a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#studio">Studio</a></li>
+      <li><a href="/#realisations">Réalisations</a></li>
+      <li><a href="/regarder">Regarder</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <a href="https://wa.me/262692450573" class="btn btn-white nav-cta" target="_blank" rel="noopener">Réserver</a>
+  </div>
+</nav>
+
+<!-- ARTICLE PILLAR -->
+<main class="pillar-main">
+  <div class="pillar-container">
+
+    <!-- EN-TÊTE ARTICLE -->
+    <header class="article-header">
+      <p class="article-category">Nos Solutions</p>
+      <h1>Studio Podcast, Vidéo &amp; Photo à La Réunion</h1>
+      <p class="article-intro">À Saint-Denis de La Réunion, <a href="/">La Cabine Podcasts</a> met à votre disposition un studio professionnel polyvalent : podcast, vidéo et photo. Un seul lieu, une équipe dédiée, des équipements haut de gamme et une réservation simple. Que vous soyez entrepreneur, artiste, institution ou créateur de contenus, nos studios sont conçus pour vous faire prendre la parole avec professionnalisme.</p>
+    </header>
+
+    <!-- SOMMAIRE -->
+    <nav class="toc" aria-label="Sommaire">
+      <p class="toc-title">Sommaire</p>
+      <ol>
+        <li><a href="#studio-podcast">Studio Podcast à La Réunion</a></li>
+        <li><a href="#studio-video">Studio Vidéo à La Réunion</a></li>
+        <li><a href="#studio-photo">Studio Photo à La Réunion</a></li>
+        <li><a href="#pourquoi">Pourquoi choisir La Cabine Podcasts</a></li>
+        <li><a href="#ils-ont-enregistre">Ils ont enregistré chez nous</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <!-- ===== STUDIO PODCAST ===== -->
+    <section id="studio-podcast">
+      <h2>Studio Podcast à La Réunion</h2>
+
+      <p>Louer un <strong>studio podcast à La Réunion</strong> n'a jamais été aussi simple. Notre espace à Saint-Denis est entièrement équipé pour l'enregistrement audio et vidéo professionnel : traitement acoustique, micros de studio, régie audio dédiée, éclairage et décors personnalisables. Vous pouvez accueillir jusqu'à quatre intervenants simultanément, ce qui en fait l'espace idéal pour les interviews, les tables rondes, les émissions et les podcasts d'entreprise.</p>
+
+      <p>Le studio podcast de La Cabine s'adresse aussi bien aux créateurs indépendants qui cherchent à lancer leur premier format qu'aux marques, institutions et collectivités qui souhaitent déployer un podcast en marque blanche. Nous proposons la <a href="/#services">location simple de studio</a> comme la production clé en main, avec direction éditoriale, montage et diffusion multi-plateformes.</p>
+
+      <h3>Ce que comprend notre studio podcast</h3>
+      <ul>
+        <li>Traitement acoustique professionnel pour une prise de son irréprochable</li>
+        <li>4 micros de studio avec régie audio dédiée</li>
+        <li>3 caméras Sony 4K pour la captation vidéo du podcast</li>
+        <li>Éclairage professionnel et décors personnalisables</li>
+        <li>Jusqu'à 4 intervenants en simultané</li>
+        <li>Livraison des fichiers audio et vidéo via lien sécurisé</li>
+        <li>Opérateur technique présent à chaque session</li>
+      </ul>
+
+      <p>Si vous démarrez votre aventure podcast et que vous vous demandez <a href="/blog/comment-enregistrer-un-podcast">comment enregistrer un podcast professionnel</a>, notre équipe vous accompagne de la première idée jusqu'à la diffusion. Nous avons détaillé les équipements disponibles dans notre article sur le <a href="/blog/studio-enregistrement-podcast-equipements">matériel de studio d'enregistrement podcast</a>.</p>
+
+      <p>Vous cherchez un espace précis à Saint-Denis ? Retrouvez toutes les informations pratiques sur la <a href="/blog/location-studio-podcast-saint-denis">location de studio podcast à Saint-Denis</a>, avec les disponibilités et les modalités de réservation. Notre studio est également présenté en détail dans notre guide complet sur le <a href="/blog/studio-podcast-974">studio podcast à La Réunion (974)</a>.</p>
+    </section>
+
+    <!-- ===== STUDIO VIDÉO ===== -->
+    <section id="studio-video">
+      <h2>Studio Vidéo à La Réunion</h2>
+
+      <p>Notre <strong>studio vidéo à La Réunion</strong> est pensé pour les tournages qui demandent une image soignée et un son irréprochable. Trois caméras Sony 4K UHD, une régie multicaméra opérée en direct, un éclairage professionnel sur mesure et des fonds studio personnalisables : tout est en place pour produire vos interviews, vos vidéos de témoignage client, vos vidéos sales letter, vos tutoriels ou vos webinaires dans les meilleures conditions.</p>
+
+      <p>La <strong>location de studio vidéo à La Réunion</strong> s'adresse à toutes celles et tous ceux qui veulent produire du contenu vidéo professionnel sans disposer de leur propre matériel. Nos opérateurs gèrent la technique en temps réel : cadrage, éclairage, régie. Vous vous concentrez sur votre message, on s'occupe de l'image.</p>
+
+      <h3>Ce que comprend notre studio vidéo</h3>
+      <ul>
+        <li>3 caméras Sony 4K UHD pour des plans variés et une dynamique professionnelle</li>
+        <li>Régie vidéo multicaméra opérée en direct par un réalisateur</li>
+        <li>Éclairage professionnel adapté à votre usage (interview, produit, portrait)</li>
+        <li>Fond studio et décors personnalisables selon votre identité visuelle</li>
+        <li>Montage et post-production disponibles sur demande</li>
+        <li>Extraits réseaux sociaux inclus dans certaines formules</li>
+      </ul>
+
+      <p>Le studio vidéo est également au cœur de notre offre de <a href="/#services">production podcast vidéo</a>. Retrouvez nos réalisations audiovisuelles sur notre <a href="/regarder">page Regarder</a> et sur notre <a href="https://www.youtube.com/@LaCabinePodcasts" target="_blank" rel="noopener">chaîne YouTube</a>. Pour aller plus loin, consultez notre article dédié au <a href="/blog/studio-video-la-reunion">studio vidéo à La Réunion</a>.</p>
+    </section>
+
+    <!-- ===== STUDIO PHOTO ===== -->
+    <section id="studio-photo">
+      <h2>Studio Photo à La Réunion</h2>
+
+      <p>Complémentaire au studio podcast et vidéo, notre <strong>studio photo à La Réunion</strong> propose un espace professionnel pour les séances portrait, les shootings produit et les contenus de marque. Éclairage studio, fonds multiples et matériel haut de gamme sont disponibles à la demi-journée ou à la journée.</p>
+
+      <p>Le studio photo est géré en partenariat avec notre entité sœur <a href="https://www.instagram.com/lacabinestudio/" target="_blank" rel="noopener">La Cabine Studio</a>. Vous pouvez retrouver leurs réalisations photographiques directement sur leur compte Instagram.</p>
+
+      <h3>Ce que comprend notre studio photo</h3>
+      <ul>
+        <li>Éclairage studio professionnel modulable selon le rendu souhaité</li>
+        <li>Fonds multiples disponibles (couleurs, textures)</li>
+        <li>Adapté aux séances portrait, shooting produit et contenus de marque</li>
+        <li>Location à la demi-journée ou à la journée</li>
+        <li>Retouche et livraison disponibles sur demande</li>
+      </ul>
+
+      <p>Que vous ayez besoin de photos professionnelles pour votre site, vos réseaux sociaux ou votre communication institutionnelle, notre studio offre les conditions techniques nécessaires pour obtenir un rendu de qualité.</p>
+    </section>
+
+    <!-- ===== POURQUOI ===== -->
+    <section id="pourquoi">
+      <h2>Pourquoi choisir La Cabine Podcasts pour votre studio à La Réunion</h2>
+
+      <p>À La Réunion, peu d'espaces proposent un studio à la fois podcast, vidéo et photo, avec une équipe et un accompagnement intégrés. La Cabine Podcasts réunit ces trois usages au même endroit, 18 Rue Rontaunay à Saint-Denis, au 2ème étage — dans la rue du McDo, juste après l'Apoteek.</p>
+
+      <h3>Un espace tout-en-un</h3>
+      <p>Inutile de jongler entre plusieurs prestataires. Que vous produisiez un épisode de podcast, une vidéo de témoignage client et des photos pour votre communication dans la même journée, tout est disponible sur place. Cette flexibilité réduit les coûts logistiques et simplifie l'organisation de vos sessions de production.</p>
+
+      <h3>Une équipe dédiée à chaque session</h3>
+      <p>Deux opérateurs au minimum interviennent à chaque session : un technicien pour les réglages audio et vidéo, un réalisateur pour la direction artistique en temps réel. Vous arrivez, vous parlez, on s'occupe du reste. C'est le principe fondateur de notre <a href="/#services">offre de production clé en main</a>.</p>
+
+      <h3>Une réservation simple et rapide</h3>
+      <p>Un message WhatsApp suffit pour réserver. Pas de formulaire en douze étapes. Notre équipe revient vers vous rapidement pour confirmer les disponibilités et ajuster la formule à votre projet.</p>
+
+      <h3>Une expertise locale</h3>
+      <p>Nous connaissons les codes locaux, les enjeux de communication à La Réunion et les réalités du terrain. Depuis notre création, nous avons accompagné des entrepreneurs, des artistes, des institutions publiques et des associations réunionnaises dans la production de leurs contenus audio et vidéo. Retrouvez notre <a href="/#equipe">équipe</a> et nos <a href="/#realisations">réalisations</a> sur la page d'accueil.</p>
+
+      <h3>Des formats adaptés à tous les budgets</h3>
+      <p>Que vous souhaitiez simplement louer l'espace et le matériel, ou confier la totalité de votre projet à notre équipe (direction éditoriale, captation, montage, diffusion), nous proposons des formules sur mesure. Chaque devis est personnalisé selon votre objectif, votre format et le niveau de prestation souhaité.</p>
+    </section>
+
+    <!-- ===== ILS ONT ENREGISTRÉ CHEZ NOUS ===== -->
+    <section id="ils-ont-enregistre" class="section-temoins">
+      <h2>Ils ont enregistré chez nous</h2>
+      <p class="temoins-intro">Entrepreneurs, institutions, artistes, associations : nos studios accueillent les histoires qui méritent d'être racontées.</p>
+      <div class="temoins-grid">
+        <a class="temoin-card" href="https://youtu.be/5rVb6wqybk4?si=8gNrHTAkGIvJ7bB7" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-mariaz-tangaz.webp" alt="Mariaz Tangaz Le Podcast" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>Mariaz Tangaz : Le Podcast</strong>
+            <span>Hémisphère Event</span>
+          </div>
+        </a>
+        <a class="temoin-card" href="https://www.youtube.com/watch?v=OPWUuuq7PGw" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-gip-sap.webp" alt="GIP SAP – Département de La Réunion" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>GIP SAP</strong>
+            <span>Département de La Réunion</span>
+          </div>
+        </a>
+        <a class="temoin-card" href="https://podcast.ausha.co/koze-cite" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-koze-cite.webp" alt="Kozé Cité – La Cité des Métiers" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>Kozé Cité</strong>
+            <span>La Cité des Métiers</span>
+          </div>
+        </a>
+        <a class="temoin-card" href="https://youtu.be/RzTr5jL-jtE?si=gNbbLD3LRz6ZEbre" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-face-b.webp" alt="Face B : Derrière le dirigeant" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>Face B : Derrière le dirigeant</strong>
+            <span>La Cabine Podcasts</span>
+          </div>
+        </a>
+        <a class="temoin-card" href="https://youtube.com/playlist?list=PL8KUVqWMu0aSC5pUx6eOGku9JccQBF1l0&si=QY-HhcTPdlf3T1uk" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-escaliers.webp" alt="Les escaliers sont en papier" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>Les escaliers sont en papier</strong>
+            <span>La Cabine Podcasts</span>
+          </div>
+        </a>
+        <a class="temoin-card" href="https://youtube.com/playlist?list=PL8KUVqWMu0aRcXhCsrRcojWnSScpJvP2B&si=VqmRB1bDhuAxMoph" target="_blank" rel="noopener">
+          <div class="temoin-img-wrap">
+            <img src="/images/projet-kozman.webp" alt="Kozman" loading="lazy" />
+            <div class="temoin-play">▶</div>
+          </div>
+          <div class="temoin-info">
+            <strong>Kozman</strong>
+            <span>La Cabine Podcasts</span>
+          </div>
+        </a>
+      </div>
+      <p class="temoins-voir-plus"><a href="/regarder" class="text-link">Voir toutes nos réalisations →</a></p>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+      <h2>Questions fréquentes sur nos studios à La Réunion</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quels sont les tarifs des studios ?</summary>
+          <div class="faq-answer">
+            <p>Les tarifs varient selon le studio choisi (podcast, vidéo ou photo) et la durée de la session. Nous établissons un devis personnalisé selon votre projet et le niveau de prestation souhaité.</p>
+            <a href="https://wa.me/262692450573" class="btn btn-white btn-sm" target="_blank" rel="noopener">Demander un devis sur WhatsApp</a>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Dois-je apporter du matériel ?</summary>
+          <div class="faq-answer">
+            <p>Non. Nos studios sont entièrement équipés : micros, caméras, éclairage, régie. Vous n'avez pas besoin d'apporter de carte SD ni de disque dur. Les fichiers vous sont remis via un lien de téléchargement sécurisé dans les délais indiqués.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Quelles formules proposez-vous ?</summary>
+          <div class="faq-answer">
+            <p>Nous proposons deux types de formules :</p>
+            <ul>
+              <li><strong>Location simple :</strong> vous louez l'espace et l'équipement, avec un opérateur technique présent.</li>
+              <li><strong>Production clé en main :</strong> nous prenons en charge la direction éditoriale, la captation, le montage et la diffusion.</li>
+            </ul>
+            <p>Contactez-nous pour identifier la formule la plus adaptée à votre projet.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Où se trouve le studio ?</summary>
+          <div class="faq-answer">
+            <p>Notre studio est situé au <strong>18 Rue Rontaunay, au 2ème étage, à Saint-Denis de La Réunion</strong>. Dans la rue du McDo, juste après l'Apoteek. <a href="https://share.google/hQpVB647By0ciENMy" target="_blank" rel="noopener" class="text-link">Voir sur Google Maps →</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final-article">
+      <h2>Prêt à enregistrer à La Réunion ?</h2>
+      <p>Podcast, vidéo ou photo : nos studios sont disponibles pour votre projet. Contactez-nous pour une réponse rapide et un devis sur mesure.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Réserver sur WhatsApp</a>
+        <a href="https://form.typeform.com/to/GBzndp6A" class="btn btn-outline" target="_blank" rel="noopener">Demander un devis</a>
+      </div>
+    </section>
+
+    <!-- ===== VOIR AUSSI ===== -->
+    <section class="voir-aussi">
+      <h2>Nos autres solutions</h2>
+      <div class="voir-aussi-grid">
+        <a class="voir-aussi-card" href="/creation-contenu-influenceurs-reunion">
+          <h3>Création de Contenus &amp; Marketing d'Influence</h3>
+          <p>Stratégie de contenu, influence et présence digitale à La Réunion.</p>
+          <span class="voir-aussi-link">Découvrir →</span>
+        </a>
+        <a class="voir-aussi-card" href="/video-sales-letter-temoignages-clients-reunion">
+          <h3>Vidéo Sales Letter &amp; Témoignages Clients</h3>
+          <p>Produisez vos VSL et vos témoignages vidéo avec une équipe pro à La Réunion.</p>
+          <span class="voir-aussi-link">Découvrir →</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" />
+        <p>Studio de création de podcasts à La Réunion</p>
+        <address>18 rue Rontaunay, Saint-Denis, La Réunion</address>
+        <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation secondaire">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#studio">Studio</a></li>
+          <li><a href="/#realisations">Réalisations</a></li>
+          <li><a href="/#equipe">Équipe</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/blog">Blog &amp; Ressources</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-solutions" aria-label="Nos solutions">
+        <h4>Nos Solutions</h4>
+        <ul>
+          <li><a href="/studio-podcast-video-photo-reunion">Studio Podcast, Vidéo &amp; Photo</a></li>
+          <li><a href="/creation-contenu-influenceurs-reunion">Création de Contenus &amp; Influence</a></li>
+          <li><a href="/video-sales-letter-temoignages-clients-reunion">Vidéo Sales Letter &amp; Témoignages</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h4>Retrouvez-nous</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/lacabinepodcasts" aria-label="Instagram La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LaCabinePodcasts" aria-label="YouTube La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS" aria-label="Spotify La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61561358285099" aria-label="Facebook La Cabine Podcasts" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="footerYear">2026</span> La Cabine Podcasts · Saint-Denis, La Réunion · <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-inner">
+    <p class="cookie-text">Nous utilisons <strong>Google Analytics</strong> (audience) et des vidéos <strong>YouTube</strong> (traceurs tiers). Vous pouvez accepter ou refuser ces traceurs.</p>
+    <div class="cookie-actions">
+      <a href="/politique-de-confidentialite" class="cookie-link">En savoir plus</a>
+      <button id="cookieRefuse" class="cookie-btn cookie-refuse">Refuser</button>
+      <button id="cookieAccept" class="cookie-btn cookie-accept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background-color: #174A96;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); opacity: 0.92; }
+  .btn-white { background: #ffffff; color: #174A96; }
+  .btn-outline { background: transparent; color: #ffffff; border: 2px solid rgba(255,255,255,0.5); }
+  .btn-outline:hover { border-color: #ffffff; }
+  .btn-sm { padding: 0.6rem 1.3rem; font-size: 0.88rem; margin-top: 1rem; }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(23, 74, 150, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav-logo img { height: 56px; width: auto; }
+  .nav-links { display: flex; list-style: none; gap: 1.75rem; margin-left: auto; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: opacity 0.15s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta { margin-left: 1rem; }
+  .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto; }
+  .nav-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.2s; }
+
+  /* ARTICLE LAYOUT */
+  .pillar-main {
+    padding: 5rem 0 6rem;
+  }
+  .pillar-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ARTICLE HEADER */
+  .article-header {
+    margin-bottom: 3rem;
+  }
+  .article-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 1rem;
+  }
+  .article-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
+  }
+  .article-intro {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.75;
+  }
+  .article-intro a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 1;
+    transition: opacity 0.15s;
+  }
+  .article-intro a:hover { opacity: 0.75; }
+
+  /* SOMMAIRE */
+  .toc {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+  .toc-title {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+  .toc ol {
+    list-style: decimal;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toc a {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.15s;
+  }
+  .toc a:hover { opacity: 1; }
+
+  /* ARTICLE SECTIONS */
+  .pillar-container section {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .pillar-container section:last-child {
+    border-bottom: none;
+  }
+
+  .pillar-container h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+  .pillar-container h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+  }
+  .pillar-container p {
+    font-size: 0.97rem;
+    line-height: 1.8;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+  .pillar-container ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0 1.25rem;
+    padding-left: 0.5rem;
+  }
+  .pillar-container ul li {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    display: flex;
+    gap: 0.6rem;
+    line-height: 1.55;
+  }
+  .pillar-container ul li::before { content: "›"; opacity: 0.5; flex-shrink: 0; }
+
+  /* Inline links in article */
+  .pillar-container a:not(.btn):not(.temoin-card):not(.toc a) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .pillar-container a:not(.btn):not(.temoin-card):not(.toc a):hover { opacity: 1; }
+
+  /* TEMOINS BLOC */
+  .section-temoins { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .temoins-intro {
+    font-size: 0.97rem;
+    opacity: 0.65;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+  .temoins-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .temoin-card {
+    display: block;
+    text-decoration: none !important;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .temoin-card:hover { transform: translateY(-4px); }
+  .temoin-img-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    margin-bottom: 0.75rem;
+    background: rgba(255,255,255,0.06);
+  }
+  .temoin-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .temoin-card:hover .temoin-img-wrap img { transform: scale(1.04); }
+  .temoin-play {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.25); font-size: 1.4rem; opacity: 0; transition: opacity 0.2s;
+  }
+  .temoin-card:hover .temoin-play { opacity: 1; }
+  .temoin-info { display: flex; flex-direction: column; gap: 0.2rem; }
+  .temoin-info strong { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.9rem; font-weight: 700; }
+  .temoin-info span { font-size: 0.8rem; opacity: 0.5; }
+  .temoins-voir-plus { margin-top: 0.5rem; }
+  .text-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.65;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.15s;
+  }
+  .text-link:hover { opacity: 1; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+  .faq-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 1.1rem 1.4rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.97rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 1.2rem; font-weight: 300; opacity: 0.5; flex-shrink: 0; }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-item summary:hover { background: rgba(255,255,255,0.04); }
+  .faq-answer {
+    padding: 0 1.4rem 1.1rem;
+    font-size: 0.93rem;
+    line-height: 1.7;
+    opacity: 0.75;
+  }
+  .faq-answer p { margin-bottom: 0.6rem; }
+  .faq-answer ul { padding-left: 1rem; margin: 0.5rem 0; gap: 0.25rem; }
+  .faq-answer a { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* CTA FINAL ARTICLE */
+  .cta-final-article {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .cta-final-article h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .cta-final-article p { font-size: 0.97rem; opacity: 0.7; margin-bottom: 1.75rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* VOIR AUSSI */
+  .voir-aussi h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+  .voir-aussi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .voir-aussi-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .voir-aussi-card--coming { opacity: 0.55; }
+  .coming-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.1);
+    padding: 0.2rem 0.65rem;
+    border-radius: 50px;
+    width: fit-content;
+  }
+  .voir-aussi-card h3 { font-size: 0.97rem; }
+  .voir-aussi-card p { font-size: 0.85rem; opacity: 0.6; line-height: 1.5; margin: 0; }
+  .voir-aussi-link-disabled { font-size: 0.85rem; opacity: 0.3; cursor: not-allowed; font-weight: 500; }
+
+  /* FOOTER */
+  .footer {
+    background: rgba(0,0,0,0.3);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-brand img { opacity: 0.9; }
+  .footer-brand p { font-size: 0.9rem; opacity: 0.55; }
+  .footer-brand address { font-size: 0.85rem; opacity: 0.45; font-style: normal; }
+  .footer-brand a { font-size: 0.85rem; opacity: 0.55; transition: opacity 0.15s; }
+  .footer-brand a:hover { opacity: 1; }
+  .footer-nav h4, .footer-solutions h4, .footer-legal h4, .footer-social h4 {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.4; margin-bottom: 1.25rem;
+  }
+  .footer-nav ul, .footer-solutions ul, .footer-legal ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-nav a, .footer-solutions a, .footer-legal a { font-size: 0.88rem; opacity: 0.65; transition: opacity 0.15s; text-decoration: none; }
+  .footer-nav a:hover, .footer-solutions a:hover, .footer-legal a:hover { opacity: 1; }
+  .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .social-links a { opacity: 0.55; transition: opacity 0.15s; }
+  .social-links a:hover { opacity: 1; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    opacity: 0.4;
+  }
+  .footer-bottom a { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* COOKIE BANNER */
+  .cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .cookie-banner.cookie-visible { transform: translateY(0); }
+  .cookie-banner.cookie-hide { transform: translateY(100%); }
+  .cookie-inner {
+    background: #0d1b3e;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cookie-text { font-size: 0.88rem; opacity: 0.85; flex: 1; min-width: 200px; line-height: 1.5; }
+  .cookie-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; }
+  .cookie-link { font-size: 0.82rem; opacity: 0.55; text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.15s; }
+  .cookie-link:hover { opacity: 0.9; }
+  .cookie-btn {
+    padding: 0.5rem 1.1rem; border-radius: 50px;
+    font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.85rem;
+    cursor: pointer; border: none; transition: transform 0.15s, opacity 0.15s;
+  }
+  .cookie-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+  .cookie-refuse { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+  .cookie-accept { background: #fff; color: #174A96; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .temoins-grid { grid-template-columns: repeat(2, 1fr); }
+    .voir-aussi-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 70px 0 0; background: #174A96; padding: 2rem 1.5rem; gap: 1.5rem; z-index: 99; }
+    .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+    .temoins-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .cta-final-article { padding: 1.75rem 1.25rem; }
+  }
+</style>
+
+<script>
+  const burger = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  }
+
+  const fy = document.getElementById('footerYear');
+  if (fy) fy.textContent = String(new Date().getFullYear());
+
+  (function() {
+    const GA_ID = 'G-PK9JHLK9YF';
+    const banner = document.getElementById('cookieBanner');
+    const btnAccept = document.getElementById('cookieAccept');
+    const btnRefuse = document.getElementById('cookieRefuse');
+    if (!banner) return;
+    const consent = localStorage.getItem('lcp-consent');
+    if (!consent) setTimeout(() => banner.classList.add('cookie-visible'), 800);
+    function hideBanner() { banner.classList.add('cookie-hide'); banner.classList.remove('cookie-visible'); }
+    if (btnAccept) {
+      btnAccept.addEventListener('click', () => {
+        localStorage.setItem('lcp-consent', 'accepted');
+        hideBanner();
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', GA_ID);
+      });
+    }
+    if (btnRefuse) {
+      btnRefuse.addEventListener('click', () => {
+        localStorage.setItem('lcp-consent', 'refused');
+        window['ga-disable-' + GA_ID] = true;
+        hideBanner();
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
