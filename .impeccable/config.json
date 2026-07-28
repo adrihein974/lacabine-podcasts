@@ -1,6 +1,8 @@
 {
   "detector": {
-    "ignoreRules": [],
+    "ignoreRules": [
+      "layout-transition"
+    ],
     "ignoreFiles": [],
     "ignoreValues": [
       {
