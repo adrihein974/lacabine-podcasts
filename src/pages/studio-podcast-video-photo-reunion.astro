@@ -177,6 +177,7 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion`;
 <body>
 
 <!-- NAV -->
+<div id="readProgress" class="read-progress" aria-hidden="true"></div>
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
@@ -927,6 +928,17 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion`;
   .back-to-top { position: fixed; bottom: 2rem; right: 1.5rem; z-index: 90; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.65); font-size: 1.15rem; cursor: pointer; opacity: 0; transform: translateY(8px); transition: opacity 0.25s, transform 0.25s, background 0.2s; backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; }
   .back-to-top.visible { opacity: 1; transform: translateY(0); }
   .back-to-top:hover { background: rgba(255,255,255,0.2); color: #fff; }
+  .read-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: rgba(255,255,255,0.55);
+    z-index: 200;
+    transition: width 0.1s linear;
+    pointer-events: none;
+  }
+
 </style>
 
 <script>

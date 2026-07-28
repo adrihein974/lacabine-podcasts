@@ -541,7 +541,9 @@ const siteUrl = "https://lacabinepodcasts.com";
     <h2>Nos services</h2>
     <div class="services-grid">
       <article class="service-card">
-        <div class="service-icon">🎙️</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </div>
         <h3>Location de studio podcast</h3>
         <p>Notre studio à Saint-Denis est équipé pour l'enregistrement audio et vidéo professionnel.</p>
         <ul>
@@ -553,7 +555,9 @@ const siteUrl = "https://lacabinepodcasts.com";
         </ul>
       </article>
       <article class="service-card">
-        <div class="service-icon">🎬</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
+        </div>
         <h3>Production clé en main</h3>
         <p>De l'idée à la diffusion. Nous créons votre podcast de A à Z.</p>
         <ul>
@@ -565,7 +569,9 @@ const siteUrl = "https://lacabinepodcasts.com";
         </ul>
       </article>
       <article class="service-card">
-        <div class="service-icon">✍️</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.864a.5.5 0 0 1-.62-.62l.865-2.872a2 2 0 0 1 .506-.854z"/></svg>
+        </div>
         <h3>Direction éditoriale</h3>
         <p>Un bon podcast commence avant d'appuyer sur REC. Nous co-construisons avec vous :</p>
         <ul>
@@ -575,7 +581,9 @@ const siteUrl = "https://lacabinepodcasts.com";
         </ul>
       </article>
       <article class="service-card">
-        <div class="service-icon">📡</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.343 17.657A8 8 0 1 1 17.657 6.343"/><path d="M9.172 14.828a4 4 0 1 1 5.656-5.656"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+        </div>
         <h3>Diffusion &amp; promotion</h3>
         <p>Votre podcast mérite d'être entendu. Nous assurons la diffusion sur :</p>
         <ul>
@@ -586,7 +594,9 @@ const siteUrl = "https://lacabinepodcasts.com";
         </ul>
       </article>
       <article class="service-card service-card--full">
-        <div class="service-icon">🏢</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+        </div>
         <h3>Podcast marque blanche</h3>
         <p>Pour les entreprises, collectivités et institutions. Créez votre média propriétaire et prenez la parole autrement. Chaque épisode devient un actif à 360° qui travaille pour vous pendant 6 à 18 mois.</p>
         <a href="https://wa.me/262692450573" class="btn btn-white" target="_blank" rel="noopener">Nous contacter</a>
@@ -715,6 +725,7 @@ const siteUrl = "https://lacabinepodcasts.com";
     <h2>Nos réalisations</h2>
     <p class="section-sub">Des podcasts qui donnent la parole aux entrepreneurs, artistes, créateurs et acteurs du territoire.</p>
   </div>
+  <p class="swipe-hint" aria-hidden="true">← Glissez pour voir plus →</p>
   <div class="projets-track-wrapper">
     <div class="projets-track" id="projetsTrack">
       <!-- PROJET 1 -->
@@ -882,14 +893,6 @@ const siteUrl = "https://lacabinepodcasts.com";
         <div class="faq-answer">Absolument. C'est précisément notre rôle de vous accompagner de A à Z, de la première idée jusqu'à la diffusion.</div>
       </details>
     </div>
-  </div>
-</section>
-
-<!-- TEASER RÉALISATIONS -->
-<section class="teaser-realisations">
-  <div class="container">
-    <p class="teaser-text">Découvrez les podcasts produits dans notre studio à La Réunion.</p>
-    <a href="#realisations" class="teaser-link">Découvrir nos réalisations <span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -1115,6 +1118,13 @@ const siteUrl = "https://lacabinepodcasts.com";
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(0.8); }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-dot { animation: none; }
+    .typewriter-cursor { animation: none; opacity: 1; }
+    .process-vline::after { transition: none; }
+    .marquee-track { animation: none !important; transform: none !important; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  }
 
   .hero-sub {
     font-size: 1.05rem;
@@ -1247,7 +1257,8 @@ const siteUrl = "https://lacabinepodcasts.com";
   .service-card:hover { background: rgba(23, 74, 150, 0.1); transform: translateY(-3px); }
   .service-card--full { grid-column: 1 / -1; display: flex; align-items: center; gap: 2rem; }
   .service-card--full .btn { margin-top: 0; flex-shrink: 0; }
-  .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .service-icon { width: 36px; height: 36px; margin-bottom: 1rem; color: #174A96; }
+  .service-icon svg { width: 100%; height: 100%; }
   .service-card h3 { margin-bottom: 0.75rem; }
   .service-card p { color: rgba(23, 74, 150, 0.7); font-size: 0.95rem; margin-bottom: 1rem; }
   .service-card ul {
@@ -1404,6 +1415,27 @@ const siteUrl = "https://lacabinepodcasts.com";
     scrollbar-width: none;
     padding: 0 1.5rem 1rem;
     margin-bottom: 0;
+    position: relative;
+  }
+  .swipe-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.35;
+    margin-bottom: 0.75rem;
+    transition: opacity 0.4s;
+  }
+  .swipe-hint.hidden { opacity: 0; pointer-events: none; }
+  @media (pointer: coarse) { .swipe-hint { display: block; } }
+  .projets-track-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 1rem;
+    width: 80px;
+    background: linear-gradient(to left, rgba(12,36,80,0.85) 0%, transparent 100%);
+    pointer-events: none;
   }
   .projets-track-wrapper::-webkit-scrollbar { display: none; }
   .projets-track-wrapper.grabbing { cursor: grabbing; }
@@ -1628,8 +1660,8 @@ const siteUrl = "https://lacabinepodcasts.com";
   .footer-brand a:hover { opacity: 1; }
   .footer-solutions h4, .footer-legal h4 { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5; margin-bottom: 1rem; }
   .footer-solutions ul, .footer-legal ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-solutions a, .footer-legal a { font-size: 0.9rem; opacity: 0.65; transition: opacity 0.15s; }
-  .footer-solutions a, .footer-legal a:hover { opacity: 1; }
+  .footer-solutions a, .footer-legal a { font-size: 0.9rem; opacity: 0.8; transition: opacity 0.15s; }
+  .footer-solutions a:hover, .footer-legal a:hover { opacity: 1; }
   .footer-nav h4, .footer-social h4 {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 0.85rem;
@@ -1640,10 +1672,10 @@ const siteUrl = "https://lacabinepodcasts.com";
     margin-bottom: 1rem;
   }
   .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-nav a { font-size: 0.9rem; opacity: 0.65; transition: opacity 0.15s; }
+  .footer-nav a { font-size: 0.9rem; opacity: 0.8; transition: opacity 0.15s; }
   .footer-nav a:hover { opacity: 1; }
   .social-links { display: flex; gap: 1rem; }
-  .social-links a { opacity: 0.5; transition: opacity 0.15s; }
+  .social-links a { opacity: 0.65; transition: opacity 0.15s; }
   .social-links a:hover { opacity: 1; }
   .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
@@ -1795,11 +1827,13 @@ const siteUrl = "https://lacabinepodcasts.com";
 
   // Bandeau défilant
   (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const track = document.getElementById('marqueeTrack');
     if (!track) return;
     let x = 0;
     const speed = 0.6;
     let halfW = 0;
+    let rafId;
     function getHalfW() {
       const items = track.children;
       const half = Math.floor(items.length / 2);
@@ -1812,7 +1846,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       x -= speed;
       if (Math.abs(x) >= halfW) x = 0;
       track.style.transform = `translateX(${x}px)`;
-      requestAnimationFrame(step);
+      rafId = requestAnimationFrame(step);
     }
     setTimeout(() => { halfW = getHalfW(); step(); }, 100);
   })();
@@ -1843,8 +1877,12 @@ const siteUrl = "https://lacabinepodcasts.com";
     setTimeout(next, HOLD);
   })();
 
-  // Drag-to-scroll bandeau projets
+  // Drag-to-scroll bandeau projets + swipe hint
   const wrapper = document.querySelector('.projets-track-wrapper');
+  const swipeHint = document.querySelector('.swipe-hint');
+  if (wrapper && swipeHint) {
+    wrapper.addEventListener('scroll', () => swipeHint.classList.add('hidden'), { once: true, passive: true });
+  }
   if (wrapper) {
     let isDown = false, startX, scrollLeft;
     wrapper.addEventListener('mousedown', e => {
