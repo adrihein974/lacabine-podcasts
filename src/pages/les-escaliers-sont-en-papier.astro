@@ -54,11 +54,20 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
       {
         "@type": "PodcastSeries",
         "@id": "https://lacabinepodcasts.com/les-escaliers-sont-en-papier/#podcast",
-        "name": "Les Escaliers Sont en Papier",
-        "url": "https://lacabinepodcasts.com/les-escaliers-sont-en-papier/",
-        "description": "Laurent CoolCool & Adrien Frédéric discutent avec une personne inspirante dont le parcours devrait vous intéresser.",
+        "name": "Les escaliers sont en papier",
+        "url": "https://lacabinepodcasts.com/les-escaliers-sont-en-papier",
+        "description": "Laurent CoolCool & Adrien Frédéric discutent des échecs et réussites d'artistes, entrepreneurs, artisans et visionnaires réunionnais. Un échange intimiste d'une heure avec un invité inspirant.",
         "inLanguage": "fr-FR",
-        "producer": { "@id": "https://lacabinepodcasts.com/#business" }
+        "numberOfEpisodes": 10,
+        "author": [
+          { "@type": "Person", "name": "Laurent CoolCool" },
+          { "@type": "Person", "name": "Adrien Frédéric" }
+        ],
+        "publisher": { "@id": "https://lacabinepodcasts.com/#business" },
+        "containsSeason": [
+          { "@type": "PodcastSeason", "seasonNumber": 1, "numberOfEpisodes": 6, "name": "Saison 1" },
+          { "@type": "PodcastSeason", "seasonNumber": 2, "numberOfEpisodes": 4, "name": "Saison 2" }
+        ]
       },
       {
         "@type": "WebPage",
@@ -416,6 +425,184 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
       .episodes-section { padding: 64px 0 80px; }
     }
 
+    /* HOSTS */
+    .hosts-section {
+      background: var(--blue);
+      padding: 100px 0 110px;
+    }
+    .hosts-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .hosts-header {
+      margin-bottom: 64px;
+    }
+    .hosts-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+    }
+    .hosts-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .hosts-names {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+    }
+    .hosts-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 72px;
+    }
+    .hosts-photos {
+      display: flex;
+      gap: -32px;
+      position: relative;
+    }
+    .host-orbit {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      flex-shrink: 0;
+    }
+    .host-orbit + .host-orbit {
+      margin-left: -48px;
+    }
+    .host-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      transform: translate(-50%, -50%) scale(var(--ring-scale, 1));
+      pointer-events: none;
+    }
+    .host-ring--1 { width: 280px; height: 280px; border-color: rgba(255,255,255,0.18); }
+    .host-ring--2 { width: 340px; height: 340px; border-color: rgba(255,255,255,0.10); }
+    .host-ring--3 { width: 410px; height: 410px; border-color: rgba(255,255,255,0.05); }
+    .host-photo {
+      position: absolute;
+      top: 0; left: 0;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid rgba(255,255,255,0.25);
+      box-shadow: 0 0 40px rgba(0,0,0,0.35);
+      transform: rotate(var(--host-rotate, 0deg));
+      will-change: transform;
+    }
+    .hosts-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hosts-desc {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.68);
+      max-width: 540px;
+    }
+
+    /* NEWSLETTER */
+    .newsletter-section {
+      background: rgba(255,255,255,0.06);
+      border-top: 0.5px solid rgba(255,255,255,0.1);
+      border-bottom: 0.5px solid rgba(255,255,255,0.1);
+      padding: 80px 0;
+    }
+    .nl-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 48px;
+      text-align: center;
+    }
+    .nl-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+    .nl-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .nl-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .nl-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--blue);
+      font-family: 'Hanken Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px; border-radius: 50px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    }
+    .nl-cta:hover { background: rgba(255,255,255,0.88); transform: translateY(-2px); }
+
+    /* SEO BLOCK */
+    .seo-block {
+      background: rgba(0,0,0,0.15);
+      padding: 64px 0;
+      border-top: 0.5px solid rgba(255,255,255,0.07);
+    }
+    .seo-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .seo-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+      letter-spacing: 0;
+    }
+    .seo-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .seo-body p {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.28);
+    }
+
+    @media (max-width: 860px) {
+      .hosts-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hosts-photos { justify-content: center; }
+      .hosts-desc { max-width: 100%; }
+      .hosts-container, .nl-container, .seo-container { padding: 0 24px; }
+      .hosts-section { padding: 64px 0 72px; }
+    }
+    @media (max-width: 500px) {
+      .host-orbit { width: 180px; height: 180px; }
+      .host-photo { width: 180px; height: 180px; }
+      .host-orbit + .host-orbit { margin-left: -36px; }
+      .host-ring--1 { width: 210px; height: 210px; }
+      .host-ring--2 { width: 255px; height: 255px; }
+      .host-ring--3 { width: 310px; height: 310px; }
+    }
+
     /* FOOTER */
     .footer {
       background: rgba(0,0,0,0.25);
@@ -432,7 +619,7 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
     .footer-brand p, .footer-brand address { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 12px; font-style: normal; line-height: 1.6; }
     .footer-brand a { color: rgba(255,255,255,0.5); text-decoration: none; display: block; margin-top: 4px; }
     .footer-brand a:hover { color: #fff; }
-    .footer-brand img { filter: brightness(0) invert(1); opacity: 0.8; }
+    .footer-brand img { filter: brightness(0) invert(1); opacity: 0.8; width: 140px; height: auto; display: block; }
     .footer nav h4 { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
     .footer nav ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer nav ul li a { font-size: 0.875rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color .2s; }
@@ -831,12 +1018,85 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
   </div>
 </section>
 
+<!-- HOSTS -->
+<section class="hosts-section">
+  <div class="hosts-container">
+    <header class="hosts-header">
+      <p class="hosts-eyebrow">Le podcast</p>
+      <h2 class="hosts-title">Les créateurs du podcast</h2>
+      <p class="hosts-names">Laurent CoolCool &amp; Adrien Frédéric</p>
+    </header>
+
+    <div class="hosts-layout">
+      <div class="hosts-photos">
+        <div class="host-orbit" id="hostOrbit1">
+          <div class="host-ring host-ring--1"></div>
+          <div class="host-ring host-ring--2"></div>
+          <div class="host-ring host-ring--3"></div>
+          <img
+            src="/images/laurent-coolcool.jpg"
+            alt="Laurent CoolCool — co-créateur des Escaliers Sont en Papier"
+            class="host-photo host-photo--rotate"
+            id="hostPhoto1"
+            width="240" height="240"
+            loading="lazy"
+          />
+        </div>
+        <div class="host-orbit" id="hostOrbit2">
+          <div class="host-ring host-ring--1"></div>
+          <div class="host-ring host-ring--2"></div>
+          <div class="host-ring host-ring--3"></div>
+          <img
+            src="/images/adrien-frederic.jpg"
+            alt="Adrien Frédéric — co-créateur des Escaliers Sont en Papier"
+            class="host-photo host-photo--rotate"
+            id="hostPhoto2"
+            width="240" height="240"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="hosts-text">
+        <p class="hosts-desc">Les escaliers sont en papier, c'est le premier podcast de La Cabine Podcasts, celui par lequel tout a commencé. Laurent CoolCool et Adrien Frédéric partagent la même intuition&nbsp;: à La Réunion, les parcours les plus intéressants sont rarement mis en avant.</p>
+        <p class="hosts-desc">Artistes, entrepreneurs, artisans, visionnaires de La Réunion ou partis d'ailleurs — chaque épisode est un échange intimiste avec quelqu'un dont le parcours mérite qu'on s'y arrête.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="nl-container">
+    <p class="nl-eyebrow">Restez informé</p>
+    <h2 class="nl-title">Ne ratez pas la prochaine marche</h2>
+    <p class="nl-sub">Un nouvel épisode, une nouvelle histoire réunionnaise. Recevez-le en avant-première.</p>
+    <a href="https://form.typeform.com/to/d2xZp0b2" target="_blank" rel="noopener" class="nl-cta">
+      S'inscrire à la newsletter
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- SEO BLOCK -->
+<section class="seo-block" aria-label="À propos du podcast">
+  <div class="seo-container">
+    <h2 class="seo-title">Un podcast réunionnais sur les parcours qui se construisent</h2>
+    <div class="seo-body">
+      <p>Les escaliers sont en papier est un podcast La Réunion consacré aux trajectoires de celles et ceux qui font l'île. Chaque épisode donne la parole à un entrepreneur, un artiste, un artisan ou un visionnaire réunionnais.</p>
+      <p>Si vous cherchez un podcast entrepreneur Réunion, vous y trouverez le parcours de Goulam Jaffar à la tête du Groupe LACORP, la reconstruction de Malo Rossini autour du Bistro Fostin, ou l'aventure de Sébastien Swami avec LACED RUN.</p>
+      <p>Côté culture, les interviews d'artistes réunionnais réunissent Maya Kamaty et son projet Sovaz, le producteur SSKYRON, ou VISCLO entre La Réunion et le 93. Et pour la scène humour, les épisodes avec Brice Liie et Marie-Alice Sinaman racontent l'envers du stand up réunionnais.</p>
+      <p>Tous les épisodes sont disponibles en podcast et en vidéo, sur YouTube, Spotify et les principales plateformes d'écoute.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" />
+        <img src="/logo.png" alt="La Cabine Podcasts" width="140" />
         <p>Studio de création de podcasts à La Réunion</p>
         <address>18 rue Rontaunay, Saint-Denis, La Réunion</address>
         <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a>
@@ -943,6 +1203,17 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
       if (vinylImg) {
         vinylImg.style.setProperty('--vinyl-rotate', rotateDeg + 'deg');
       }
+    }, { passive: true });
+  }
+
+  // Host photos rotation on scroll
+  const hostPhotos = document.querySelectorAll('.host-photo--rotate');
+  if (hostPhotos.length) {
+    window.addEventListener('scroll', function() {
+      const deg = window.scrollY * 0.08;
+      hostPhotos.forEach(function(p, i) {
+        p.style.setProperty('--host-rotate', (i % 2 === 0 ? deg : -deg) + 'deg');
+      });
     }, { passive: true });
   }
 
