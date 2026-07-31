@@ -268,6 +268,154 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
       background: var(--blue-dark);
     }
 
+    /* EPISODES SECTION */
+    .episodes-section {
+      background: #000fa8;
+      padding: 100px 0 120px;
+    }
+    .ep-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .ep-header {
+      margin-bottom: 64px;
+    }
+    .ep-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+    }
+    .ep-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 36px;
+    }
+    .season-tabs {
+      display: flex;
+      gap: 10px;
+    }
+    .season-tab {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .season-tab:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    .season-tab.active {
+      background: #fff;
+      border-color: #fff;
+      color: #000fa8;
+    }
+
+    .season-panel { display: block; }
+    .season-panel.hidden { display: none; }
+
+    .ep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .ep-card {
+      background: rgba(255,255,255,0.06);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .25s, background .25s;
+    }
+    .ep-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.1);
+    }
+    .ep-thumb-link { display: block; }
+    .ep-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: rgba(0,0,0,0.3);
+    }
+    .ep-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
+    }
+    .ep-card:hover .ep-thumb img { transform: scale(1.04); }
+    .ep-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: #fff;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .ep-card:hover .ep-play { opacity: 1; }
+    .ep-body {
+      padding: 20px 22px 22px;
+    }
+    .ep-badge {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 10px;
+    }
+    .ep-guest {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .ep-headline {
+      font-size: 0.9rem; font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+    .ep-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 18px;
+    }
+    .ep-ctas {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .ep-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 8px 14px; border-radius: 50px;
+      text-decoration: none;
+      transition: opacity .15s, transform .15s;
+    }
+    .ep-btn:hover { opacity: 0.82; transform: translateY(-1px); }
+    .ep-btn-yt { background: #FF0000; color: #fff; }
+    .ep-btn-sp { background: #1DB954; color: #fff; }
+
+    @media (max-width: 900px) {
+      .ep-grid { grid-template-columns: repeat(2, 1fr); }
+      .ep-container { padding: 0 24px; }
+    }
+    @media (max-width: 560px) {
+      .ep-grid { grid-template-columns: 1fr; }
+      .episodes-section { padding: 64px 0 80px; }
+    }
+
     /* FOOTER */
     .footer {
       background: rgba(0,0,0,0.25);
@@ -401,8 +549,287 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
   </div>
 </section>
 
-<!-- EPISODES (phase 2) -->
-<section id="section-episodes"></section>
+<!-- EPISODES -->
+<section id="section-episodes" class="episodes-section">
+  <div class="ep-container">
+
+    <header class="ep-header">
+      <p class="ep-eyebrow">Le podcast</p>
+      <h2 class="ep-title">LES ÉPISODES</h2>
+
+      <!-- Season tabs -->
+      <div class="season-tabs" role="tablist" aria-label="Saisons">
+        <button class="season-tab active" data-season="1" role="tab" aria-selected="true">Saison 1</button>
+        <button class="season-tab" data-season="2" role="tab" aria-selected="false">Saison 2</button>
+      </div>
+    </header>
+
+    <!-- SAISON 1 -->
+    <div class="season-panel" data-panel="1">
+      <div class="ep-grid">
+
+        <article class="ep-card">
+          <a href="https://youtu.be/5VwIiWZDRLo" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/5VwIiWZDRLo/hqdefault.jpg" alt="Chef Julien Tarmalingom — Des échecs cuisants au grand restaurant" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E1</span>
+            <p class="ep-guest">Chef Julien Tarmalingom</p>
+            <h3 class="ep-headline">Des échecs cuisants au grand restaurant</h3>
+            <p class="ep-sub">Chef à domicile, Les Mets Tissés</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/5VwIiWZDRLo" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/7vzflxTGNXxXl0AO9wlOPW?si=Eh93GE3XT_2nL1TUHHd5OQ" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/yv2DYa7F-Jk" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/yv2DYa7F-Jk/hqdefault.jpg" alt="Maya Kamaty — La voix qui a trouvé sa voie" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E2</span>
+            <p class="ep-guest">Maya Kamaty</p>
+            <h3 class="ep-headline">La voix qui a trouvé sa voie</h3>
+            <p class="ep-sub">Artiste (Sovaz)</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/yv2DYa7F-Jk" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/0YdhmOhNPEY7bWuOTr0jWi?si=y_Dsqkj7Qp6T5F7nzzJguA" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/IDlAdf6bcho" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/IDlAdf6bcho/hqdefault.jpg" alt="Goulam Jaffar — Il a transformé la faim en succès" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E3</span>
+            <p class="ep-guest">Goulam Jaffar</p>
+            <h3 class="ep-headline">Il a transformé la faim en succès</h3>
+            <p class="ep-sub">Gérant Groupe LACORP</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/IDlAdf6bcho" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/3ywDRNTuZ3ui4x8JVyullF?si=o8n_BLJuTXKEqZoYHtxNag" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/hrKsCS02VVU" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/hrKsCS02VVU/hqdefault.jpg" alt="SSKYRON — Quand la singularité rassemble" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E4</span>
+            <p class="ep-guest">SSKYRON</p>
+            <h3 class="ep-headline">Quand la singularité rassemble</h3>
+            <p class="ep-sub">Producteur, compositeur et DA réunionnais</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/hrKsCS02VVU" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/3ywDRNTuZ3ui4x8JVyullF?si=o8n_BLJuTXKEqZoYHtxNag" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/YSLUGwC9jrw" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/YSLUGwC9jrw/hqdefault.jpg" alt="Sébastien Swami LACED RUN — La passion du streetwear comme art de vivre" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E5</span>
+            <p class="ep-guest">Sébastien Swami</p>
+            <h3 class="ep-headline">La passion du streetwear comme art de vivre</h3>
+            <p class="ep-sub">LACED RUN Shop</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/YSLUGwC9jrw" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/7uRBpBkdgM8Gm7d7T0Ewmh?si=e9nj1XChR3ChQFCFSGC1xQ" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/ZNrewutOb7g" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/ZNrewutOb7g/hqdefault.jpg" alt="Brice Liie — Par amour du stand up" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S1 · E6</span>
+            <p class="ep-guest">Brice Liie</p>
+            <h3 class="ep-headline">Par amour du stand up</h3>
+            <p class="ep-sub">Comédien, humouriste</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/ZNrewutOb7g" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/1ED6DDbxqiAjlU8LOBzP8U?si=JJxfP_WXR9uqGxOVdTji2Q" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- SAISON 2 -->
+    <div class="season-panel hidden" data-panel="2">
+      <div class="ep-grid">
+
+        <article class="ep-card">
+          <a href="https://youtu.be/NMBGkHxBIUg" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/NMBGkHxBIUg/hqdefault.jpg" alt="Malo Rossini — Il a tout perdu… et a reconstruit un empire en cuisine" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S2 · E1</span>
+            <p class="ep-guest">Malo Rossini</p>
+            <h3 class="ep-headline">Il a tout perdu… et a reconstruit un empire en cuisine</h3>
+            <p class="ep-sub">Bistro Fostin</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/NMBGkHxBIUg" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/6pEpC1MchIsnjhWZa8J8dn?si=VCmzHSyQShO2wNEAIBTHvw" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/0bb6hPGFWJ8" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/0bb6hPGFWJ8/hqdefault.jpg" alt="Marie-Alice Sinaman — Traverser les tempêtes avec le rire comme boussole" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S2 · E2</span>
+            <p class="ep-guest">Marie-Alice Sinaman</p>
+            <h3 class="ep-headline">Traverser les tempêtes avec le rire comme boussole</h3>
+            <p class="ep-sub">Comédienne, humouriste</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/0bb6hPGFWJ8" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/79JcTOHm2ZHJBEVu8enNRN?si=BgTrgEnFQ66LocZAloeTSg" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/NOLFRmEJduw" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/NOLFRmEJduw/hqdefault.jpg" alt="VISCLO — De La Réunion au 93, l'histoire d'un passeur de culture" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S2 · E3</span>
+            <p class="ep-guest">VISCLO</p>
+            <h3 class="ep-headline">De La Réunion au 93, l'histoire d'un passeur de culture</h3>
+            <p class="ep-sub">Producteur</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/NOLFRmEJduw" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/6Qw6dzCZU208IYSWMQNUfx?si=Xar7omDRTvyWXDCHmwfvNw" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <a href="https://youtu.be/QZjNUF-4K9Y" target="_blank" rel="noopener" class="ep-thumb-link">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/QZjNUF-4K9Y/hqdefault.jpg" alt="Le Petit Panda Voyageur — Voyager pour voir… ou pour devenir ?" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <span class="ep-badge">S2 · E4</span>
+            <p class="ep-guest">Le Petit Panda Voyageur</p>
+            <h3 class="ep-headline">Voyager pour voir… ou pour devenir ?</h3>
+            <p class="ep-sub">Créateurs de contenu</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/QZjNUF-4K9Y" target="_blank" rel="noopener" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/0lUTXaQmyAChG8VyzsaKAu?si=azECFW-_SwezD5qIASvp0w" target="_blank" rel="noopener" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -472,6 +899,18 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
 </div>
 
 <script>
+  // Season tabs
+  document.querySelectorAll('.season-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      const season = this.dataset.season;
+      document.querySelectorAll('.season-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      document.querySelectorAll('.season-panel').forEach(p => p.classList.add('hidden'));
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      document.querySelector('[data-panel="' + season + '"]').classList.remove('hidden');
+    });
+  });
+
   // Dropdown nav
   document.querySelectorAll('.nav-item-drop').forEach(function(d) {
     d.querySelector('.nav-drop-toggle').addEventListener('click', function(e) {
