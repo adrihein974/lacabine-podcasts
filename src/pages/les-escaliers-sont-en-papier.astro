@@ -523,7 +523,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       object-position: center center;
       border: 3px solid rgba(255,255,255,0.25);
       box-shadow: 0 0 40px rgba(0,0,0,0.35);
-      transform: rotate(calc(180deg + var(--host-rotate, 0deg)));
+      transform: rotate(var(--host-rotate, 0deg));
       will-change: transform;
     }
     .hosts-text {
@@ -639,7 +639,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       width: 280px; height: 280px;
       border-radius: 50%;
       object-fit: cover;
-      transform: translate(-50%, -50%) rotate(calc(180deg + var(--seo-rotate, 0deg)));
+      transform: translate(-50%, -50%) rotate(var(--seo-rotate, 0deg));
     }
 
     @media (max-width: 860px) {
@@ -647,8 +647,12 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       .hosts-photos { justify-content: center; }
       .hosts-desc { max-width: 100%; }
       .hosts-container, .nl-container { padding: 0 24px; }
-      .seo-container { padding: 0 24px; grid-template-columns: 1fr; }
-      .seo-visual { display: none; }
+      .seo-container { padding: 0 24px; grid-template-columns: 1fr; row-gap: 2.5rem; }
+      .seo-visual { width: 220px; height: 220px; margin: 0 auto; }
+      .seo-ring:nth-child(1) { width: 220px; height: 220px; }
+      .seo-ring:nth-child(2) { width: 280px; height: 280px; }
+      .seo-ring:nth-child(3) { width: 340px; height: 340px; }
+      .seo-img { width: 190px; height: 190px; }
       .hosts-section { padding: 64px 0 72px; }
     }
     @media (max-width: 500px) {
@@ -1308,22 +1312,28 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
     }, { passive: true });
   }
 
-  // Host photos rotation on scroll
+  // Host photos rotation on scroll — relative to section entry
   const hostPhotos = document.querySelectorAll('.host-photo--rotate');
   if (hostPhotos.length) {
+    const hostsSection = document.querySelector('.hosts-section');
     window.addEventListener('scroll', function() {
-      const deg = window.scrollY * 0.08;
+      const sectionTop = hostsSection ? hostsSection.getBoundingClientRect().top + window.scrollY : 0;
+      const relativeScroll = Math.max(0, window.scrollY - sectionTop + window.innerHeight * 0.5);
+      const deg = relativeScroll * 0.08;
       hostPhotos.forEach(function(p, i) {
         p.style.setProperty('--host-rotate', (i % 2 === 0 ? deg : -deg) + 'deg');
       });
     }, { passive: true });
   }
 
-  // SEO visual rotation on scroll
+  // SEO visual rotation on scroll — relative to section entry
   const seoImg = document.querySelector('.seo-img');
   if (seoImg) {
+    const seoSection = document.querySelector('.seo-block');
     window.addEventListener('scroll', function() {
-      seoImg.style.setProperty('--seo-rotate', (window.scrollY * 0.06) + 'deg');
+      const sectionTop = seoSection ? seoSection.getBoundingClientRect().top + window.scrollY : 0;
+      const rel = Math.max(0, window.scrollY - sectionTop + window.innerHeight * 0.5);
+      seoImg.style.setProperty('--seo-rotate', (rel * 0.06) + 'deg');
     }, { passive: true });
   }
 
