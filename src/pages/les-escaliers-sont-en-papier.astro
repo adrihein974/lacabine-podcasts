@@ -211,12 +211,13 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
 
     .vinyl-image {
       position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 160px; height: 160px;
+      transform: translate(-50%, -50%) rotate(var(--vinyl-rotate, 0deg));
+      width: 320px; height: 320px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255,255,255,0.3);
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      box-shadow: 0 0 60px rgba(0,0,0,0.5);
+      will-change: transform;
     }
 
     /* HERO CONTENT */
@@ -486,18 +487,23 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
     navLinks?.classList.toggle('open');
   });
 
-  // Vinyl ring scroll animation
+  // Vinyl ring scroll animation + image rotation
   const vinylStage = document.getElementById('vinylStage');
   if (vinylStage) {
     const rings = vinylStage.querySelectorAll('.vinyl-ring');
+    const vinylImg = vinylStage.querySelector('.vinyl-image');
     window.addEventListener('scroll', function() {
       const scrollY = window.scrollY;
       const heroH = document.getElementById('hero').offsetHeight;
       const progress = Math.min(scrollY / (heroH * 0.8), 1);
       const scale = 1 + progress * 0.45;
+      const rotateDeg = scrollY * 0.12;
       rings.forEach(function(r) {
         r.style.setProperty('--ring-scale', scale);
       });
+      if (vinylImg) {
+        vinylImg.style.setProperty('--vinyl-rotate', rotateDeg + 'deg');
+      }
     }, { passive: true });
   }
 
