@@ -1,8 +1,10 @@
 ---
 const siteUrl = "https://lacabinepodcasts.com";
 const pageUrl = `${siteUrl}/les-escaliers-sont-en-papier`;
-const title = "Les Escaliers Sont en Papier — Le podcast de La Cabine Podcasts";
-const description = "Laurent CoolCool & Adrien Frédéric discutent avec une personne inspirante dont le parcours devrait vous intéresser. Podcast produit par La Cabine Podcasts à La Réunion.";
+const title = "Les escaliers sont en papier | Podcast réunionnais 974";
+const description = "Laurent CoolCool & Adrien Frédéric reçoivent artistes, entrepreneurs et artisans réunionnais pour monter les marches de leur histoire.";
+const ogTitle = "Les escaliers sont en papier — Le podcast des parcours réunionnais";
+const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimiste avec celles et ceux qui font La Réunion.";
 ---
 
 <!DOCTYPE html>
@@ -12,7 +14,8 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <meta name="author" content="La Cabine Podcasts" />
+  <meta name="author" content="la cabine podcasts" />
+  <meta name="keywords" content="La cabine podcasts, studio podcast, goulam jaffar, marie alice sinnaman, Brice Liie, Marie-Alice Sinaman, Maya Kamaty, podcast la réunion, podcast 974" />
   <link rel="canonical" href={pageUrl} />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -20,9 +23,9 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content={pageUrl} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${siteUrl}/images/projet-escaliers.png`} />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:image" content={`${siteUrl}/images/escaliers-og.jpg`} />
   <meta property="og:locale" content="fr_FR" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -239,9 +242,11 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
     .vinyl-ring:nth-child(8) { width: 1400px; height: 1400px; border-color: rgba(255,255,255,0.02); }
 
     .vinyl-image {
+      border-radius: 50%;
+      object-fit: cover;
       position: absolute; top: 50%; left: 50%;
       transform: translate(-50%, -50%) rotate(var(--vinyl-rotate, 0deg));
-      width: 320px; height: 320px;
+      width: 416px; height: 416px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255,255,255,0.3);
@@ -731,10 +736,10 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
     <div class="vinyl-ring"></div>
     <div class="vinyl-ring"></div>
     <img
-      src="/images/projet-escaliers.webp"
+      src="/images/escaliers-cover.jpg"
       alt="Les Escaliers Sont en Papier — La Cabine Podcasts"
       class="vinyl-image"
-      width="160" height="160"
+      width="416" height="416"
       loading="eager"
     />
   </div>
