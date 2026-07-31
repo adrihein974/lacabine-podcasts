@@ -120,7 +120,7 @@ const categoryText: Record<string, string> = {
 {featured && (
   <section class="featured-section">
     <div class="container">
-      <a href={`/blog/${featured.slug}`} class="featured-card">
+      <a href={`/blog/${featured.id}`} class="featured-card">
         <div class="featured-image">
           <img src={featured.data.image} alt={featured.data.imageAlt} loading="eager" />
         </div>
@@ -152,7 +152,7 @@ const categoryText: Record<string, string> = {
       <h2 class="section-title">Tous les articles</h2>
       <div class="articles-grid">
         {rest.map((post) => (
-          <a href={`/blog/${post.slug}`} class="article-card">
+          <a href={`/blog/${post.id}`} class="article-card">
             <div class="article-image">
               <img src={post.data.image} alt={post.data.imageAlt} loading="lazy" />
             </div>
