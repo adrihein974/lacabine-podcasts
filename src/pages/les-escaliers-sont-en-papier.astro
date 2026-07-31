@@ -520,7 +520,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       width: 240px; height: 240px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center center;
       border: 3px solid rgba(255,255,255,0.25);
       box-shadow: 0 0 40px rgba(0,0,0,0.35);
       transform: rotate(calc(180deg + var(--host-rotate, 0deg)));
@@ -639,7 +639,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       width: 280px; height: 280px;
       border-radius: 50%;
       object-fit: cover;
-      transform: translate(-50%, -50%) rotate(var(--seo-rotate, 0deg));
+      transform: translate(-50%, -50%) rotate(calc(180deg + var(--seo-rotate, 0deg)));
     }
 
     @media (max-width: 860px) {
@@ -720,8 +720,36 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 540px) {
-      .vinyl-stage { display: none; }
-      .hero-content { padding: 48px 24px; }
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 32px;
+        min-height: 100svh;
+      }
+      .vinyl-stage {
+        position: relative;
+        top: auto; right: auto;
+        transform: none;
+        width: 240px; height: 240px;
+        opacity: 1;
+        flex-shrink: 0;
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+      .vinyl-ring:nth-child(1) { width: 160px; height: 160px; }
+      .vinyl-ring:nth-child(2) { width: 210px; height: 210px; }
+      .vinyl-ring:nth-child(3), .vinyl-ring:nth-child(4),
+      .vinyl-ring:nth-child(5), .vinyl-ring:nth-child(6),
+      .vinyl-ring:nth-child(7), .vinyl-ring:nth-child(8) { display: none; }
+      .vinyl-image { width: 200px; height: 200px; }
+      .hero-content {
+        padding: 0 24px 48px;
+        text-align: center;
+        max-width: 100%;
+      }
+      .hero-display-title { font-size: clamp(36px, 11vw, 52px); }
+      .hero-description { -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
