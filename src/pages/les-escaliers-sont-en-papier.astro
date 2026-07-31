@@ -586,20 +586,26 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
     /* SEO BLOCK */
     .seo-block {
       background: rgba(0,0,0,0.15);
-      padding: 64px 0;
+      padding: 80px 0;
       border-top: 0.5px solid rgba(255,255,255,0.07);
     }
     .seo-container {
-      max-width: 820px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
     }
+    .seo-text { max-width: 640px; }
     .seo-title {
       font-family: 'Hanken Grotesk', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 20px;
-      letter-spacing: 0;
+      font-size: 1.55rem; font-weight: 800;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
     }
     .seo-body {
       display: flex;
@@ -607,16 +613,42 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       gap: 14px;
     }
     .seo-body p {
-      font-size: 0.82rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.28);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.4);
+    }
+    .seo-visual {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      flex-shrink: 0;
+    }
+    .seo-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      transform: translate(-50%, -50%) scale(var(--ring-scale, 1));
+    }
+    .seo-ring:nth-child(1) { width: 320px; height: 320px; border-color: rgba(255,255,255,0.18); }
+    .seo-ring:nth-child(2) { width: 400px; height: 400px; border-color: rgba(255,255,255,0.09); }
+    .seo-ring:nth-child(3) { width: 480px; height: 480px; border-color: rgba(255,255,255,0.05); }
+    .seo-img {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      transform: translate(-50%, -50%) rotate(var(--seo-rotate, 0deg));
     }
 
     @media (max-width: 860px) {
       .hosts-layout { grid-template-columns: 1fr; gap: 48px; }
       .hosts-photos { justify-content: center; }
       .hosts-desc { max-width: 100%; }
-      .hosts-container, .nl-container, .seo-container { padding: 0 24px; }
+      .hosts-container, .nl-container { padding: 0 24px; }
+      .seo-container { padding: 0 24px; grid-template-columns: 1fr; }
+      .seo-visual { display: none; }
       .hosts-section { padding: 64px 0 72px; }
     }
     @media (max-width: 500px) {
@@ -1085,6 +1117,33 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
   </div>
 </section>
 
+<!-- SEO BLOCK -->
+<section class="seo-block" aria-label="À propos du podcast">
+  <div class="seo-container">
+    <div class="seo-text">
+      <h2 class="seo-title">Un podcast réunionnais sur les parcours qui se construisent</h2>
+      <div class="seo-body">
+        <p>Les escaliers sont en papier est un podcast réunionnais consacré aux trajectoires de celles et ceux qui font l'île. Chaque épisode donne la parole à un entrepreneur, un artiste, un artisan ou un visionnaire réunionnais.</p>
+        <p>Si vous cherchez un podcast sur le parcours d'entrepreneurs réunionnais vous y trouverez le parcours de Goulam Jaffar à la tête du Groupe LACORP, la reconstruction de Malo Rossini autour du Bistro Fostin, ou l'aventure de Sébastien Swami avec LACED RUN.</p>
+        <p>Côté culture, les interviews d'artistes réunionnais réunissent Maya Kamaty et son projet Sovaz, le producteur SSKYRON, ou VISCLO entre La Réunion et le 93. Et pour la scène humour, les épisodes avec Brice Liie et Marie-Alice Sinaman racontent l'envers du stand up réunionnais.</p>
+        <p>Tous les épisodes sont disponibles en podcast et en vidéo, sur YouTube, Spotify et les principales plateformes d'écoute.</p>
+      </div>
+    </div>
+    <div class="seo-visual" id="seoVisual" aria-hidden="true">
+      <div class="seo-ring"></div>
+      <div class="seo-ring"></div>
+      <div class="seo-ring"></div>
+      <img
+        src="/images/escaliers-cover.png"
+        alt="Les Escaliers Sont en Papier — podcast réunionnais"
+        class="seo-img"
+        width="280" height="280"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
   <div class="nl-container">
@@ -1095,19 +1154,6 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       S'inscrire à la newsletter
       <span aria-hidden="true">→</span>
     </a>
-  </div>
-</section>
-
-<!-- SEO BLOCK -->
-<section class="seo-block" aria-label="À propos du podcast">
-  <div class="seo-container">
-    <h2 class="seo-title">Un podcast réunionnais sur les parcours qui se construisent</h2>
-    <div class="seo-body">
-      <p>Les escaliers sont en papier est un podcast La Réunion consacré aux trajectoires de celles et ceux qui font l'île. Chaque épisode donne la parole à un entrepreneur, un artiste, un artisan ou un visionnaire réunionnais.</p>
-      <p>Si vous cherchez un podcast entrepreneur Réunion, vous y trouverez le parcours de Goulam Jaffar à la tête du Groupe LACORP, la reconstruction de Malo Rossini autour du Bistro Fostin, ou l'aventure de Sébastien Swami avec LACED RUN.</p>
-      <p>Côté culture, les interviews d'artistes réunionnais réunissent Maya Kamaty et son projet Sovaz, le producteur SSKYRON, ou VISCLO entre La Réunion et le 93. Et pour la scène humour, les épisodes avec Brice Liie et Marie-Alice Sinaman racontent l'envers du stand up réunionnais.</p>
-      <p>Tous les épisodes sont disponibles en podcast et en vidéo, sur YouTube, Spotify et les principales plateformes d'écoute.</p>
-    </div>
   </div>
 </section>
 
@@ -1242,6 +1288,14 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       hostPhotos.forEach(function(p, i) {
         p.style.setProperty('--host-rotate', (i % 2 === 0 ? deg : -deg) + 'deg');
       });
+    }, { passive: true });
+  }
+
+  // SEO visual rotation on scroll
+  const seoImg = document.querySelector('.seo-img');
+  if (seoImg) {
+    window.addEventListener('scroll', function() {
+      seoImg.style.setProperty('--seo-rotate', (window.scrollY * 0.06) + 'deg');
     }, { passive: true });
   }
 
