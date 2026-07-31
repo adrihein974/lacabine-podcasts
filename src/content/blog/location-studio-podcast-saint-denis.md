@@ -22,7 +22,7 @@ Louer un studio podcast, c'est accéder à un espace professionnel entièrement 
 
 ## Ce que propose La Cabine Podcasts
 
-Notre studio situé au **18 rue Rontaunay à Saint-Denis** accueille jusqu'à 4 intervenants simultanément. L'espace est conçu pour des interviews, des tables rondes, des témoignages et des émissions.
+Notre [studio podcast et vidéo à Saint-Denis](/studio-podcast-video-photo-reunion) situé au **18 rue Rontaunay** accueille jusqu'à 4 intervenants simultanément. L'espace est conçu pour des interviews, des tables rondes, des témoignages et des émissions.
 
 ### Équipements inclus dans la location
 
@@ -53,6 +53,8 @@ La location de studio podcast à Saint-Denis s'adresse à :
 - **Les artistes** qui veulent capturer leur univers en audio et en vidéo
 - **Les organisateurs d'événements** qui souhaitent capturer des conférences ou des tables rondes
 
+Si votre objectif va au-delà du simple enregistrement — stratégie éditoriale, présence sur les réseaux, partenariats avec des créateurs réunionnais — notre équipe [création de contenus & influence](/creation-contenu-influenceurs-reunion) peut vous accompagner de bout en bout.
+
 ## Comment se déroule une session ?
 
 1. **Prise de contact**: vous nous décrivez votre projet par WhatsApp ou via notre formulaire
@@ -68,3 +70,10 @@ Pas toujours possible de se déplacer ? Nous proposons également une solution d
 ## Réserver votre session
 
 Contactez-nous sur WhatsApp ou remplissez notre formulaire de devis. Nous vous répondons sous 24h et vous proposons un créneau adapté à vos disponibilités.
+
+---
+
+**À lire aussi :**
+- [Comment enregistrer un podcast : le guide complet](/blog/comment-enregistrer-un-podcast)
+- [Studio d'enregistrement podcast : équipements, configuration et conseils](/blog/studio-enregistrement-podcast-equipements)
+- [Studio podcast 974 : pourquoi enregistrer votre podcast à La Réunion](/blog/studio-podcast-974)

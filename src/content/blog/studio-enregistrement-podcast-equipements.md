@@ -34,7 +34,7 @@ En studio podcast professionnel, on travaille exclusivement avec des micros dyna
 - **Rode NT1**: bruit de fond extrêmement bas, idéal pour les voix délicates
 - **Audio-Technica AT4050**: polyvalent et précis
 
-Chez La Cabine Podcasts, chaque intervenant dispose de son propre micro sur bras articulé, réglé à la bonne hauteur et distance.
+Chez [La Cabine Podcasts](/studio-podcast-video-photo-reunion), chaque intervenant dispose de son propre micro sur bras articulé, réglé à la bonne hauteur et distance.
 
 ## L'interface audio et la régie
 
@@ -85,6 +85,13 @@ Une fois l'enregistrement terminé, le travail de post-production commence :
 
 La question que tout créateur se pose au démarrage. Notre réponse : **non, pas au début**.
 
-Investir dans du matériel professionnel sans maîtriser les bases de la prise de son et du montage, c'est risquer de gaspiller plusieurs milliers d'euros. Commencez par quelques sessions en studio pour comprendre ce dont vous avez réellement besoin, et investissez ensuite en connaissance de cause.
+Investir dans du matériel professionnel sans maîtriser les bases de la prise de son et du montage, c'est risquer de gaspiller plusieurs milliers d'euros. Commencez par quelques sessions dans notre [studio podcast à La Réunion](/studio-podcast-video-photo-reunion) pour comprendre ce dont vous avez réellement besoin, et investissez ensuite en connaissance de cause.
 
-La Cabine Podcasts propose des sessions à l'unité ou des formules récurrentes adaptées à toutes les fréquences de production.
+La Cabine Podcasts propose des sessions à l'unité ou des formules récurrentes adaptées à toutes les fréquences de production. Et si vous souhaitez transformer votre contenu en levier de communication, notre équipe [création de contenus](/creation-contenu-influenceurs-reunion) peut prendre en charge toute la stratégie de diffusion.
+
+---
+
+**À lire aussi :**
+- [Comment enregistrer un podcast : le guide complet](/blog/comment-enregistrer-un-podcast)
+- [Location studio podcast à Saint-Denis : tout ce qu'il faut savoir](/blog/location-studio-podcast-saint-denis)
+- [Studio vidéo à La Réunion : tournez votre podcast vidéo comme un pro](/blog/studio-video-la-reunion)
