@@ -523,7 +523,7 @@ const description = "Laurent CoolCool & Adrien Frédéric discutent avec une per
       object-position: center top;
       border: 3px solid rgba(255,255,255,0.25);
       box-shadow: 0 0 40px rgba(0,0,0,0.35);
-      transform: rotate(var(--host-rotate, 0deg));
+      transform: rotate(calc(180deg + var(--host-rotate, 0deg)));
       will-change: transform;
     }
     .hosts-text {
