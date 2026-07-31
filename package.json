@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:check": "astro build && node scripts/check-routes.mjs",
+    "check-routes": "node scripts/check-routes.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
