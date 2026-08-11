@@ -41,10 +41,10 @@ const categoryText: Record<string, string> = {
   <meta name="description" content={post.data.description} />
   <meta name="author" content={post.data.author} />
   <meta name="publisher" content="La Cabine Podcasts" />
-  <link rel="canonical" href={`${siteUrl}/blog/${post.id}`} />
+  <link rel="canonical" href={`${siteUrl}/blog/${post.id}/`} />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content={`${siteUrl}/blog/${post.id}`} />
+  <meta property="og:url" content={`${siteUrl}/blog/${post.id}/`} />
   <meta property="og:title" content={post.data.title} />
   <meta property="og:description" content={post.data.description} />
   <meta property="og:image" content={`${siteUrl}${post.data.image}`} />
@@ -68,7 +68,7 @@ const categoryText: Record<string, string> = {
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `${siteUrl}/blog/${post.id}`,
+    "@id": `${siteUrl}/blog/${post.id}/`,
     "headline": post.data.title,
     "description": post.data.description,
     "image": `${siteUrl}${post.data.image}`,
@@ -85,7 +85,7 @@ const categoryText: Record<string, string> = {
       "url": siteUrl,
       "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png` }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}/blog/${post.id}` },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}/blog/${post.id}/` },
     "articleSection": post.data.category,
     "inLanguage": "fr-FR",
     "timeRequired": `PT${minutes}M`
