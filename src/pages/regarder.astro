@@ -79,6 +79,22 @@ function formatDate(iso) {
     ]
   }
   </script>
+  <!-- Google Analytics — chargé seulement après consentement -->
+  <script>
+    (function() {
+      const GA_ID = 'G-PK9JHLK9YF';
+      const consent = localStorage.getItem('lcp-consent');
+      if (consent === 'refused') { window['ga-disable-' + GA_ID] = true; return; }
+      if (consent === 'accepted') {
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', GA_ID);
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -262,7 +278,11 @@ function formatDate(iso) {
     const KEY='lcp-consent';const banner=document.getElementById('cookieBanner');
     if(!localStorage.getItem(KEY))banner.classList.add('cookie-visible');
     function hide(){banner.classList.add('cookie-hide');setTimeout(()=>banner.remove(),400);}
-    document.getElementById('cookieAccept')?.addEventListener('click',()=>{localStorage.setItem(KEY,'accepted');hide();});
+    document.getElementById('cookieAccept')?.addEventListener('click',()=>{
+      localStorage.setItem(KEY,'accepted');hide();
+      var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF';document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PK9JHLK9YF');
+    });
     document.getElementById('cookieRefuse')?.addEventListener('click',()=>{localStorage.setItem(KEY,'refused');hide();});
   })();
 </script>

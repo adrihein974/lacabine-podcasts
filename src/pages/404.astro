@@ -21,6 +21,21 @@ const siteUrl = "https://lacabinepodcasts.com";
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <script>
+    (function() {
+      const GA_ID = 'G-PK9JHLK9YF';
+      const consent = localStorage.getItem('lcp-consent');
+      if (consent === 'refused') { window['ga-disable-' + GA_ID] = true; return; }
+      if (consent === 'accepted') {
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date()); gtag('config', GA_ID);
+      }
+    })();
+  </script>
 </head>
 <body>
 
