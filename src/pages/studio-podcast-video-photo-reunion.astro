@@ -65,9 +65,26 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
         "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://lacabinepodcasts.com/#business",
         "name": "La Cabine Podcasts",
+        "alternateName": "La Cabine Podcast",
         "url": "https://lacabinepodcasts.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://lacabinepodcasts.com/#logo",
+          "url": "https://lacabinepodcasts.com/logo.png",
+          "contentUrl": "https://lacabinepodcasts.com/logo.png",
+          "caption": "La Cabine Podcasts"
+        },
+        "image": [
+          "https://lacabinepodcasts.com/images/studio1.webp",
+          "https://lacabinepodcasts.com/images/studio2.webp",
+          "https://lacabinepodcasts.com/images/studio3.webp"
+        ],
+        "description": "Studio podcast professionnel basé à Saint-Denis de La Réunion. La Cabine Podcasts accompagne les créateurs de contenus, les marques, les établissements et les institutions publiques dans la conception, l'enregistrement, la production et la diffusion de podcasts audio et vidéo.",
         "telephone": "+262692450573",
         "email": "lacabinepodcast@gmail.com",
+        "priceRange": "À partir de 300 €",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Virement bancaire, carte bancaire",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "18 rue Rontaunay",
@@ -77,10 +94,24 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
           "addressCountry": "FR"
         },
         "hasMap": "https://share.google/hQpVB647By0ciENMy",
-        "image": [
-          "https://lacabinepodcasts.com/images/studio1.webp",
-          "https://lacabinepodcasts.com/images/studio2.webp",
-          "https://lacabinepodcasts.com/images/studio3.webp"
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/lacabinepodcasts/",
+          "https://www.linkedin.com/company/la-cabine-podcasts/",
+          "https://www.youtube.com/@lacabinepodcasts"
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
