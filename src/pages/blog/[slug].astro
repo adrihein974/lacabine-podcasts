@@ -115,22 +115,22 @@ const categoryText: Record<string, string> = {
       }
     ]
   })} />
-  <!-- Google Analytics — chargé seulement après consentement -->
+  <!-- Google Analytics + Consent Mode v2 -->
   <script>
-    (function() {
-      const GA_ID = 'G-PK9JHLK9YF';
-      const consent = localStorage.getItem('lcp-consent');
-      if (consent === 'refused') { window['ga-disable-' + GA_ID] = true; return; }
-      if (consent === 'accepted') {
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments);}
-        gtag('js', new Date()); gtag('config', GA_ID);
-      }
-    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var _consent = localStorage.getItem('lcp-consent');
+    gtag('consent', 'default', {
+      'analytics_storage': _consent === 'accepted' ? 'granted' : 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-PK9JHLK9YF', { 'anonymize_ip': true });
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
 </head>
 <body>
 
