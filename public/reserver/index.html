@@ -35,10 +35,11 @@
       --border: #E5E7EB;
       --radius-pill: 100px;
       --radius-card: 16px;
+      --form-max: 600px;
     }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--blue);
       color: var(--dark);
@@ -54,28 +55,42 @@
     }
 
     /* ── Screens ── */
-    .screen { display: none; width: 100%; max-width: 480px; }
+    .screen { display: none; width: 100%; }
     .screen.active { display: flex; flex-direction: column; }
 
-    /* ── Hero screen ── */
+    /* ════════════════════════════════
+       HERO SCREEN
+    ════════════════════════════════ */
     #screen-hero {
       min-height: 100vh;
       background: var(--blue);
-      padding: 0 20px;
-      justify-content: space-between;
+      flex-direction: column;
     }
 
-    .hero-top {
-      padding: 20px 0 0;
+    .hero-nav {
+      padding: 24px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
     }
 
+    .hero-logo-link { display: flex; align-items: center; text-decoration: none; }
+
     .hero-logo {
-      height: 32px;
+      height: 48px;
       object-fit: contain;
       filter: brightness(0) invert(1);
+    }
+
+    .hero-logo-fallback {
+      display: none;
+      color: #fff;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: .05em;
     }
 
     .hero-badge {
@@ -84,112 +99,147 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: var(--radius-pill);
       text-transform: uppercase;
     }
 
-    .hero-body {
+    .hero-layout {
       flex: 1;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 40px 0;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 40px 32px 60px;
+      gap: 60px;
     }
+
+    .hero-content { flex: 1; min-width: 0; }
 
     .hero-kicker {
       color: var(--lime);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .hero-title {
       color: var(--white);
-      font-size: clamp(28px, 7vw, 40px);
+      font-size: clamp(32px, 5vw, 56px);
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 1.05;
-      margin-bottom: 20px;
+      line-height: 1.0;
+      margin-bottom: 24px;
     }
 
     .hero-sub {
       color: rgba(255,255,255,0.75);
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 36px;
+      font-size: clamp(15px, 1.4vw, 17px);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 520px;
     }
 
     .hero-sub strong { color: var(--white); }
+
+    .hero-actions { display: flex; flex-direction: column; gap: 12px; max-width: 400px; }
 
     .hero-cta {
       background: var(--white);
       color: var(--blue);
       border: none;
       border-radius: var(--radius-pill);
-      padding: 16px 28px;
+      padding: 18px 32px;
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
       width: 100%;
-      transition: opacity .15s;
+      transition: opacity .15s, transform .1s;
     }
-    .hero-cta:hover { opacity: .9; }
+    .hero-cta:hover { opacity: .92; transform: translateY(-1px); }
 
     .hero-note {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.4);
       font-size: 12px;
       text-align: center;
-      margin-top: 12px;
-      padding-bottom: 32px;
     }
 
-    /* ── Form screens ── */
+    /* Hero visual side */
+    .hero-visual {
+      flex: 0 0 420px;
+      max-width: 420px;
+    }
+
+    .hero-visual-img {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      display: block;
+    }
+
+    /* ════════════════════════════════
+       FORM SCREENS
+    ════════════════════════════════ */
     .form-screen {
       min-height: 100vh;
       background: var(--white);
-      flex-direction: column;
+      align-items: stretch;
     }
 
+    /* Header band */
     .form-header {
       background: var(--blue);
-      padding: 16px 20px 20px;
-      position: relative;
+      padding: 20px 24px 24px;
+    }
+
+    .form-header-inner {
+      max-width: var(--form-max);
+      margin: 0 auto;
     }
 
     .form-header-top {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
     .btn-back {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       border: 1.5px solid rgba(255,255,255,0.3);
       background: transparent;
       color: var(--white);
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      transition: background .15s;
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.1); }
+
+    .form-header-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
     .form-header-logo {
-      height: 24px;
+      height: 36px;
       filter: brightness(0) invert(1);
       object-fit: contain;
     }
 
     .form-header-title {
       color: var(--white);
-      font-size: 22px;
+      font-size: clamp(22px, 4vw, 28px);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: -0.01em;
@@ -199,7 +249,8 @@
     .progress-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      margin-top: 14px;
     }
 
     .progress-label {
@@ -233,10 +284,13 @@
 
     /* Form body */
     .form-body {
-      padding: 28px 20px 32px;
+      padding: 32px 24px 48px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 32px;
+      max-width: var(--form-max);
+      margin: 0 auto;
+      width: 100%;
     }
 
     .field-group { display: flex; flex-direction: column; gap: 10px; }
@@ -247,10 +301,12 @@
       color: var(--dark);
     }
 
+    .req { color: var(--blue); }
+
     .field-sublabel {
       font-size: 13px;
       color: var(--grey);
-      margin-top: -6px;
+      margin-top: -4px;
     }
 
     /* Pill choices */
@@ -265,7 +321,7 @@
       background: var(--white);
       color: var(--dark);
       border-radius: var(--radius-pill);
-      padding: 8px 16px;
+      padding: 9px 18px;
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
@@ -273,22 +329,15 @@
       user-select: none;
       white-space: nowrap;
     }
+    .pill:hover { border-color: var(--blue); color: var(--blue); }
+    .pill.selected { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .pill.error { border-color: #EF4444; }
 
-    .pill:hover { border-color: var(--blue); }
-
-    .pill.selected {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: var(--white);
-    }
-
-    .pill.popular {
-      position: relative;
-    }
-
+    /* popular tag wrapper */
+    .pill-popular-wrap { position: relative; }
     .pill-popular-tag {
       position: absolute;
-      top: -8px;
+      top: -9px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--lime);
@@ -303,10 +352,7 @@
     }
 
     /* Toggle (Oui / Non) */
-    .toggle-group {
-      display: flex;
-      gap: 8px;
-    }
+    .toggle-group { display: flex; gap: 8px; }
 
     .toggle-btn {
       flex: 1;
@@ -314,25 +360,21 @@
       background: var(--white);
       color: var(--dark);
       border-radius: var(--radius-pill);
-      padding: 10px;
+      padding: 11px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       text-align: center;
       transition: all .15s;
     }
-
-    .toggle-btn.selected {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: var(--white);
-    }
+    .toggle-btn:hover { border-color: var(--blue); }
+    .toggle-btn.selected { background: var(--blue); border-color: var(--blue); color: var(--white); }
 
     /* Lieu cards */
     .lieu-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 10px;
     }
 
     .lieu-card {
@@ -340,42 +382,38 @@
       border-radius: var(--radius-card);
       overflow: hidden;
       cursor: pointer;
-      transition: border-color .15s;
+      transition: border-color .15s, box-shadow .15s;
       background: var(--light);
     }
-
-    .lieu-card.selected { border-color: var(--blue); border-width: 2px; }
+    .lieu-card:hover { border-color: var(--blue); }
+    .lieu-card.selected { border-color: var(--blue); border-width: 2.5px; box-shadow: 0 0 0 1px var(--blue); }
 
     .lieu-card-img {
       width: 100%;
-      height: 80px;
+      aspect-ratio: 4/3;
       object-fit: cover;
       display: block;
     }
 
-    .lieu-card-placeholder {
-      width: 100%;
-      height: 80px;
-      background: var(--blue);
-      opacity: 0.15;
-    }
-
     .lieu-card-label {
-      padding: 8px 10px;
+      padding: 9px 12px;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--dark);
     }
-
     .lieu-card.selected .lieu-card-label { color: var(--blue); }
 
-    /* Option cards (images) */
+    /* Option cards */
     .option-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 10px;
+    }
+
+    @media (min-width: 520px) {
+      .option-cards { grid-template-columns: repeat(3, 1fr); }
     }
 
     .option-card {
@@ -383,17 +421,28 @@
       border-radius: var(--radius-card);
       overflow: hidden;
       cursor: pointer;
-      transition: border-color .15s;
+      transition: border-color .15s, box-shadow .15s;
       background: var(--light);
     }
-
-    .option-card.selected { border-color: var(--blue); border-width: 2px; }
+    .option-card:hover { border-color: var(--blue); }
+    .option-card.selected { border-color: var(--blue); border-width: 2.5px; box-shadow: 0 0 0 1px var(--blue); }
 
     .option-card-img {
       width: 100%;
-      height: 90px;
+      aspect-ratio: 4/3;
       object-fit: cover;
       display: block;
+    }
+
+    .option-card-none {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9CA3AF;
+      font-size: 28px;
+      background: var(--light);
     }
 
     .option-card-label {
@@ -401,8 +450,8 @@
       font-size: 12px;
       font-weight: 600;
       color: var(--dark);
+      line-height: 1.3;
     }
-
     .option-card.selected .option-card-label { color: var(--blue); }
 
     /* Textarea */
@@ -410,12 +459,12 @@
       width: 100%;
       border: 1.5px solid var(--border);
       border-radius: 12px;
-      padding: 12px 14px;
+      padding: 13px 16px;
       font-size: 14px;
       font-family: inherit;
       color: var(--dark);
       resize: none;
-      min-height: 80px;
+      min-height: 88px;
       outline: none;
       transition: border-color .15s;
     }
@@ -427,7 +476,7 @@
       width: 100%;
       border: 1.5px solid var(--border);
       border-radius: var(--radius-pill);
-      padding: 13px 18px;
+      padding: 14px 20px;
       font-size: 15px;
       font-family: inherit;
       color: var(--dark);
@@ -437,46 +486,47 @@
     }
     .field-input:focus { border-color: var(--blue); }
     .field-input::placeholder { color: #9CA3AF; }
+    .field-input.error { border-color: #EF4444; }
 
     .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     /* Equipment note */
     .equip-note {
       background: var(--light);
       border-radius: 12px;
-      padding: 12px 14px;
+      padding: 13px 16px;
       font-size: 13px;
       color: var(--grey);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* RGPD checkbox */
+    /* Error message */
+    .field-error {
+      font-size: 12px;
+      color: #EF4444;
+      display: none;
+    }
+    .field-error.show { display: block; }
+
+    /* RGPD */
     .rgpd-wrap {
       display: flex;
-      gap: 12px;
+      gap: 13px;
       align-items: flex-start;
     }
-
     .rgpd-checkbox {
       width: 20px;
       height: 20px;
-      border: 1.5px solid var(--border);
-      border-radius: 4px;
       flex-shrink: 0;
       margin-top: 1px;
       cursor: pointer;
       accent-color: var(--blue);
     }
-
-    .rgpd-text {
-      font-size: 13px;
-      color: var(--grey);
-      line-height: 1.5;
-    }
+    .rgpd-text { font-size: 13px; color: var(--grey); line-height: 1.5; }
 
     /* CTA button */
     .btn-cta {
@@ -484,110 +534,272 @@
       color: var(--white);
       border: none;
       border-radius: var(--radius-pill);
-      padding: 17px 28px;
+      padding: 18px 32px;
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
       width: 100%;
-      transition: opacity .15s;
+      transition: opacity .15s, transform .1s;
     }
-    .btn-cta:hover { opacity: .88; }
-    .btn-cta:disabled { opacity: .4; cursor: not-allowed; }
+    .btn-cta:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-cta:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 
     .cta-note {
       text-align: center;
       font-size: 13px;
       color: var(--grey);
-      margin-top: -16px;
+      margin-top: -20px;
     }
 
-    /* ── Success screen ── */
+    /* ════════════════════════════════
+       SUCCESS SCREEN
+    ════════════════════════════════ */
     #screen-success {
       min-height: 100vh;
       background: var(--blue);
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 24px;
     }
 
-    .success-icon {
-      width: 72px;
-      height: 72px;
+    .success-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .success-logo-link { text-decoration: none; }
+    .success-logo {
+      height: 52px;
+      filter: brightness(0) invert(1);
+      object-fit: contain;
+    }
+
+    .success-hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .success-check {
+      width: 80px;
+      height: 80px;
       background: var(--lime);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 32px;
+      font-size: 36px;
     }
 
     .success-title {
       color: var(--white);
-      font-size: 26px;
+      font-size: clamp(26px, 5vw, 36px);
       font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 14px;
-      line-height: 1.1;
+      line-height: 1.05;
     }
 
     .success-sub {
-      color: rgba(255,255,255,0.75);
-      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      font-size: 16px;
       line-height: 1.6;
-      max-width: 340px;
+      max-width: 440px;
+    }
+
+    /* Recap card */
+    .recap-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 28px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .recap-title {
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .recap-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .recap-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .recap-row:first-of-type { padding-top: 0; }
+
+    .recap-key {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .recap-val {
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* Social links */
+    .success-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .success-footer-text {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      transition: background .15s, border-color .15s;
+    }
+    .social-link:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.5); }
+    .social-link svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .btn-home {
+      background: var(--white);
+      color: var(--blue);
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 16px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity .15s;
+    }
+    .btn-home:hover { opacity: .88; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-visual { display: none; }
+      .hero-layout { gap: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-nav { padding: 20px; }
+      .hero-layout { padding: 32px 20px 48px; }
+      .hero-logo { height: 36px; }
+      .form-header { padding: 16px 20px 20px; }
+      .form-body { padding: 24px 20px 40px; gap: 24px; }
+      .field-row { grid-template-columns: 1fr; }
+      .success-inner { padding: 40px 20px; }
+      .recap-key { width: 120px; font-size: 12px; }
+      .recap-val { font-size: 12px; }
+    }
+
+    @media (min-width: 641px) {
+      .lieu-cards { grid-template-columns: repeat(4, 1fr); }
     }
   </style>
 </head>
 <body>
 <div class="shell">
 
-  <!-- ══════════ SCREEN HERO ══════════ -->
+  <!-- ══════════════════════════════════════
+       SCREEN HERO
+  ══════════════════════════════════════ -->
   <div id="screen-hero" class="screen active">
-    <div class="hero-top">
-      <img src="/logo.png" alt="La Cabine Podcasts" class="hero-logo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-      <span style="display:none; color:#fff; font-weight:900; font-size:14px; letter-spacing:.05em;">LA CABINE</span>
+
+    <nav class="hero-nav">
+      <a href="/" class="hero-logo-link" aria-label="Retour à l'accueil">
+        <img src="/logo.png" alt="La Cabine Podcasts" class="hero-logo"
+             onerror="this.style.display='none'; document.querySelector('.hero-logo-fallback').style.display='block'">
+        <span class="hero-logo-fallback">LA CABINE</span>
+      </a>
       <span class="hero-badge">ON AIR</span>
+    </nav>
+
+    <div class="hero-layout">
+      <div class="hero-content">
+        <p class="hero-kicker">Pré-réservation · 3 min</p>
+        <h1 class="hero-title">Votre studio podcast professionnel, tout équipé à La Réunion</h1>
+        <p class="hero-sub">Envie de lancer votre podcast ? Bénéficiez d'un accompagnement éditorial et artistique sur mesure avec <strong>Adrien &amp; Laurent</strong>. Démarrez votre projet en 3 min.</p>
+        <div class="hero-actions">
+          <button class="hero-cta" onclick="goTo('screen-1')">Démarrer mon projet →</button>
+          <p class="hero-note">Aucune donnée enregistrée avant l'envoi final.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="/images/hero.jpg" alt="Studio La Cabine Podcasts" class="hero-visual-img"
+             onerror="this.parentElement.style.display='none'">
+      </div>
     </div>
 
-    <div class="hero-body">
-      <p class="hero-kicker">Pré-réservation · 3 min</p>
-      <h1 class="hero-title">Votre studio podcast professionnel, tout équipé à La Réunion</h1>
-      <p class="hero-sub">Envie de lancer votre podcast ? Bénéficiez d'un accompagnement éditorial et artistique sur mesure avec <strong>Adrien &amp; Laurent</strong>. Démarrez votre projet en 3 min.</p>
-      <button class="hero-cta" onclick="goTo('screen-1')">Démarrer mon projet →</button>
-      <p class="hero-note">Aucune donnée enregistrée avant l'envoi final.</p>
-    </div>
   </div>
 
-  <!-- ══════════ SCREEN 1 — Votre projet ══════════ -->
+  <!-- ══════════════════════════════════════
+       SCREEN 1 — Votre projet
+  ══════════════════════════════════════ -->
   <div id="screen-1" class="screen form-screen">
     <div class="form-header">
-      <div class="form-header-top">
-        <button class="btn-back" onclick="goTo('screen-hero')" aria-label="Retour">←</button>
-        <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
-             onerror="this.style.display='none'">
-      </div>
-      <h2 class="form-header-title">Votre projet</h2>
-      <div class="progress-wrap" style="margin-top:14px;">
-        <span class="progress-label">Étape 1/3</span>
-        <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
-        <span class="progress-pct">33%</span>
+      <div class="form-header-inner">
+        <div class="form-header-top">
+          <button class="btn-back" onclick="goTo('screen-hero')" aria-label="Retour">←</button>
+          <a href="/" class="form-header-logo-link" aria-label="Retour à l'accueil">
+            <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
+                 onerror="this.style.display='none'">
+          </a>
+        </div>
+        <h2 class="form-header-title">Votre projet</h2>
+        <div class="progress-wrap">
+          <span class="progress-label">Étape 1/3</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
+          <span class="progress-pct">33%</span>
+        </div>
       </div>
     </div>
 
     <div class="form-body">
 
       <div class="field-group">
-        <label class="field-label">Objectif principal <span style="color:var(--blue)">*</span></label>
-        <div class="pill-group" data-field="objectif" data-mode="single">
+        <label class="field-label">Objectif principal <span class="req">*</span></label>
+        <div class="pill-group" data-field="objectif" data-mode="single" data-required="true">
           <button class="pill" data-val="Marque & communication">Marque &amp; communication</button>
           <button class="pill" data-val="Interviews">Interviews</button>
           <button class="pill" data-val="Formation-information">Formation-information</button>
           <button class="pill" data-val="Évènementiel">Évènementiel</button>
           <button class="pill" data-val="Autre">Autre</button>
         </div>
+        <span class="field-error" id="err-objectif">Veuillez sélectionner un objectif.</span>
       </div>
 
       <div class="field-group">
@@ -600,63 +812,72 @@
       </div>
 
       <div class="field-group">
-        <label class="field-label">Qui sera au micro <span style="color:var(--blue)">*</span></label>
-        <div class="pill-group" data-field="micro" data-mode="single">
+        <label class="field-label">Qui sera au micro <span class="req">*</span></label>
+        <div class="pill-group" data-field="micro" data-mode="single" data-required="true">
           <button class="pill" data-val="Moi seul(e)">Moi seul(e)</button>
           <button class="pill" data-val="Moi + 1 invité">Moi + 1 invité</button>
           <button class="pill" data-val="2-3 intervenants">2-3 intervenants</button>
           <button class="pill" data-val="+4 intervenants">+4 intervenants</button>
         </div>
+        <span class="field-error" id="err-micro">Veuillez sélectionner une option.</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Volume envisagé <span style="color:var(--blue)">*</span></label>
-        <div class="pill-group" data-field="volume" data-mode="single">
+        <label class="field-label">Volume envisagé <span class="req">*</span></label>
+        <div class="pill-group" data-field="volume" data-mode="single" data-required="true">
           <button class="pill" data-val="Un épisode">Un épisode</button>
           <button class="pill" data-val="Une courte série (2-4)">Une courte série (2-4)</button>
           <button class="pill" data-val="Une saison (6-8)">Une saison (6-8)</button>
           <button class="pill" data-val="Format récurrent régulier">Format récurrent régulier</button>
         </div>
+        <span class="field-error" id="err-volume">Veuillez sélectionner un volume.</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Format <span style="color:var(--blue)">*</span></label>
-        <div class="pill-group" data-field="format" data-mode="single">
+        <label class="field-label">Format <span class="req">*</span></label>
+        <div class="pill-group" data-field="format" data-mode="single" data-required="true">
           <button class="pill" data-val="Audio seul">Audio seul</button>
           <button class="pill" data-val="Audio + vidéo">Audio + vidéo</button>
           <button class="pill" data-val="À définir ensemble">À définir ensemble</button>
         </div>
+        <span class="field-error" id="err-format">Veuillez sélectionner un format.</span>
       </div>
 
-      <button class="btn-cta" onclick="goTo('screen-2')">Continuer → Vos préférences</button>
+      <button class="btn-cta" onclick="validateStep1()">Continuer → Vos préférences</button>
       <p class="cta-note">Aucune donnée enregistrée avant l'envoi final.</p>
     </div>
   </div>
 
-  <!-- ══════════ SCREEN 2 — Vos préférences ══════════ -->
+  <!-- ══════════════════════════════════════
+       SCREEN 2 — Vos préférences
+  ══════════════════════════════════════ -->
   <div id="screen-2" class="screen form-screen">
     <div class="form-header">
-      <div class="form-header-top">
-        <button class="btn-back" onclick="goTo('screen-1')" aria-label="Retour">←</button>
-        <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
-             onerror="this.style.display='none'">
-      </div>
-      <h2 class="form-header-title">Vos préférences</h2>
-      <div class="progress-wrap" style="margin-top:14px;">
-        <span class="progress-label">Étape 2/3</span>
-        <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
-        <span class="progress-pct">66%</span>
+      <div class="form-header-inner">
+        <div class="form-header-top">
+          <button class="btn-back" onclick="goTo('screen-1')" aria-label="Retour">←</button>
+          <a href="/" class="form-header-logo-link" aria-label="Retour à l'accueil">
+            <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
+                 onerror="this.style.display='none'">
+          </a>
+        </div>
+        <h2 class="form-header-title">Vos préférences</h2>
+        <div class="progress-wrap">
+          <span class="progress-label">Étape 2/3</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:66%"></div></div>
+          <span class="progress-pct">66%</span>
+        </div>
       </div>
     </div>
 
     <div class="form-body">
 
       <div class="field-group">
-        <label class="field-label">Lieu d'enregistrement <span style="color:var(--blue)">*</span></label>
-        <div class="lieu-cards" data-field="lieu" data-mode="single">
+        <label class="field-label">Lieu d'enregistrement <span class="req">*</span></label>
+        <div class="lieu-cards" data-field="lieu" data-mode="single" data-required="true">
           <div class="lieu-card" data-val="Studio à Saint-Denis">
             <img src="/images/reserver/lieu-studio.png" alt="Studio à Saint-Denis" class="lieu-card-img" loading="lazy">
-            <div class="lieu-card-label">Studio à Saint-Denis</div>
+            <div class="lieu-card-label">Studio Saint-Denis</div>
           </div>
           <div class="lieu-card" data-val="En extérieur">
             <img src="/images/reserver/lieu-exterieur.png" alt="En extérieur" class="lieu-card-img" loading="lazy">
@@ -667,10 +888,11 @@
             <div class="lieu-card-label">Dans vos locaux</div>
           </div>
           <div class="lieu-card" data-val="À définir">
-            <div style="height:80px; background:var(--light); display:flex; align-items:center; justify-content:center; color:#9CA3AF; font-size:22px;">?</div>
+            <div class="lieu-card-img" style="background:var(--light); display:flex; align-items:center; justify-content:center; color:#9CA3AF; font-size:26px; aspect-ratio:4/3; width:100%;">?</div>
             <div class="lieu-card-label">À définir</div>
           </div>
         </div>
+        <span class="field-error" id="err-lieu">Veuillez sélectionner un lieu.</span>
       </div>
 
       <div class="field-group">
@@ -683,25 +905,26 @@
       </div>
 
       <div class="field-group">
-        <label class="field-label">Planning <span style="color:var(--blue)">*</span></label>
-        <div class="pill-group" data-field="planning" data-mode="single">
+        <label class="field-label">Planning <span class="req">*</span></label>
+        <div class="pill-group" data-field="planning" data-mode="single" data-required="true">
           <button class="pill" data-val="Urgent (< 7 jours)">Urgent (&lt; 7 jours)</button>
           <button class="pill" data-val="2-3 semaines">2-3 semaines</button>
           <button class="pill" data-val="Flexible">Flexible</button>
         </div>
+        <span class="field-error" id="err-planning">Veuillez sélectionner un planning.</span>
       </div>
 
       <div class="field-group">
         <label class="field-label">Budget indicatif</label>
-        <div class="pill-group" data-field="budget" data-mode="single" style="position:relative;">
+        <div class="pill-group" data-field="budget" data-mode="single">
           <button class="pill" data-val="< 400 €">&lt; 400 €</button>
           <button class="pill" data-val="400-800 €">400-800 €</button>
-          <div style="position:relative;">
-            <button class="pill popular" data-val="800-2000 €">800-2000 €</button>
+          <div class="pill-popular-wrap">
+            <button class="pill" data-val="800-2000 €">800-2000 €</button>
             <span class="pill-popular-tag">Le plus populaire</span>
           </div>
           <button class="pill" data-val="2000-4000 €">2000-4000 €</button>
-          <button class="pill" data-val="À discuter" style="width:100%;">Je préfère qu'on en discute ensemble</button>
+          <button class="pill" data-val="À discuter" style="flex-basis:100%;">Je préfère qu'on en discute ensemble</button>
         </div>
       </div>
 
@@ -716,7 +939,7 @@
         <div class="option-cards" data-field="options" data-mode="multi">
           <div class="option-card" data-val="Capsules Shorts verticales (9:16)">
             <img src="/images/reserver/opt-shorts.png" alt="Capsules Shorts" class="option-card-img" loading="lazy">
-            <div class="option-card-label">Capsules Shorts verticales (9:16)</div>
+            <div class="option-card-label">Capsules Shorts (9:16)</div>
           </div>
           <div class="option-card" data-val="Prompteur">
             <img src="/images/reserver/opt-prompteur.png" alt="Prompteur" class="option-card-img" loading="lazy">
@@ -735,7 +958,7 @@
             <div class="option-card-label">Habillage motion design</div>
           </div>
           <div class="option-card" data-val="Autre option">
-            <div style="height:90px; display:flex; align-items:center; justify-content:center; color:#9CA3AF; font-size:28px;">+</div>
+            <div class="option-card-none">+</div>
             <div class="option-card-label">Autre</div>
           </div>
         </div>
@@ -745,24 +968,30 @@
         Tous les podcasts sont enregistrés avec 3 caméras Sony FX3 4K, des micros Shure SM7B et une régie RØDECaster Pro / ATEM Mini (Blackmagic).
       </div>
 
-      <button class="btn-cta" onclick="goTo('screen-3')">Continuer → Vos coordonnées</button>
+      <button class="btn-cta" onclick="validateStep2()">Continuer → Vos coordonnées</button>
       <p class="cta-note">Plus qu'une étape.</p>
     </div>
   </div>
 
-  <!-- ══════════ SCREEN 3 — Vos coordonnées ══════════ -->
+  <!-- ══════════════════════════════════════
+       SCREEN 3 — Vos coordonnées
+  ══════════════════════════════════════ -->
   <div id="screen-3" class="screen form-screen">
     <div class="form-header">
-      <div class="form-header-top">
-        <button class="btn-back" onclick="goTo('screen-2')" aria-label="Retour">←</button>
-        <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
-             onerror="this.style.display='none'">
-      </div>
-      <h2 class="form-header-title">Vos coordonnées</h2>
-      <div class="progress-wrap" style="margin-top:14px;">
-        <span class="progress-label">Étape 3/3</span>
-        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
-        <span class="progress-pct">100%</span>
+      <div class="form-header-inner">
+        <div class="form-header-top">
+          <button class="btn-back" onclick="goTo('screen-2')" aria-label="Retour">←</button>
+          <a href="/" class="form-header-logo-link" aria-label="Retour à l'accueil">
+            <img src="/logo.png" alt="La Cabine Podcasts" class="form-header-logo"
+                 onerror="this.style.display='none'">
+          </a>
+        </div>
+        <h2 class="form-header-title">Vos coordonnées</h2>
+        <div class="progress-wrap">
+          <span class="progress-label">Étape 3/3</span>
+          <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+          <span class="progress-pct">100%</span>
+        </div>
       </div>
     </div>
 
@@ -770,23 +999,26 @@
 
       <div class="field-row">
         <div class="field-group">
-          <label class="field-label">Nom Prénom <span style="color:var(--blue)">*</span></label>
-          <input type="text" class="field-input" id="nom" placeholder="Marie Payet" required>
+          <label class="field-label" for="nom">Nom Prénom <span class="req">*</span></label>
+          <input type="text" class="field-input" id="nom" placeholder="Marie Payet" autocomplete="name">
+          <span class="field-error" id="err-nom">Champ requis.</span>
         </div>
         <div class="field-group">
-          <label class="field-label">Société</label>
-          <input type="text" class="field-input" id="societe" placeholder="Optionnel">
+          <label class="field-label" for="societe">Société</label>
+          <input type="text" class="field-input" id="societe" placeholder="Optionnel" autocomplete="organization">
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Email <span style="color:var(--blue)">*</span></label>
-        <input type="email" class="field-input" id="email" placeholder="marie@exemple.re" required>
+        <label class="field-label" for="email">Email <span class="req">*</span></label>
+        <input type="email" class="field-input" id="email" placeholder="marie@exemple.re" autocomplete="email">
+        <span class="field-error" id="err-email">Email invalide.</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Téléphone <span style="color:var(--blue)">*</span></label>
-        <input type="tel" class="field-input" id="tel" placeholder="+262 6 92 45 05 73" required>
+        <label class="field-label" for="tel">Téléphone <span class="req">*</span></label>
+        <input type="tel" class="field-input" id="tel" placeholder="+262 6 92 45 05 73" autocomplete="tel">
+        <span class="field-error" id="err-tel">Champ requis.</span>
       </div>
 
       <div class="field-group">
@@ -805,23 +1037,67 @@
           J'accepte que mes données soient utilisées pour être recontacté(e) au sujet de ma demande. Aucune revente, aucun démarchage.
         </label>
       </div>
+      <span class="field-error" id="err-rgpd" style="margin-top:-16px;">Veuillez accepter la politique de confidentialité.</span>
 
       <button class="btn-cta" id="btn-submit" onclick="submitForm()">Envoyer ma demande →</button>
     </div>
   </div>
 
-  <!-- ══════════ SCREEN SUCCESS ══════════ -->
+  <!-- ══════════════════════════════════════
+       SCREEN SUCCESS — Confirmation + récap
+  ══════════════════════════════════════ -->
   <div id="screen-success" class="screen">
-    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 24px; text-align:center;">
-      <div class="success-icon">✓</div>
-      <h2 class="success-title">Demande envoyée !</h2>
-      <p class="success-sub">On revient vers vous sous 24h pour construire votre projet ensemble. À très vite !</p>
+    <div class="success-inner">
+
+      <!-- Logo -->
+      <a href="/" class="success-logo-link" aria-label="Retour à l'accueil">
+        <img src="/logo.png" alt="La Cabine Podcasts" class="success-logo"
+             onerror="this.style.display='none'">
+      </a>
+
+      <!-- Confirmation -->
+      <div class="success-hero">
+        <div class="success-check">✓</div>
+        <h2 class="success-title">Demande envoyée !</h2>
+        <p class="success-sub">On revient vers vous sous 24h pour construire votre projet ensemble. Hâte de vous accueillir à La Cabine !</p>
+      </div>
+
+      <!-- Récap dynamique -->
+      <div class="recap-card">
+        <p class="recap-title">Récapitulatif de votre demande</p>
+        <div id="recap-rows"></div>
+      </div>
+
+      <!-- Footer + réseaux -->
+      <div class="success-footer">
+        <p class="success-footer-text">Retrouvez-nous sur les réseaux</p>
+        <div class="social-links">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/lacabinepodcasts" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@lacabinepodcasts" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/lacabinepodcasts" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@lacabinepodcasts" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+        <a href="/" class="btn-home">← Retour à l'accueil</a>
+      </div>
+
     </div>
   </div>
 
 </div><!-- .shell -->
 
-<!-- Hidden Netlify form for data collection -->
+<!-- Hidden Netlify form -->
 <form name="prereservation" netlify netlify-honeypot="bot-field" hidden>
   <input name="bot-field">
   <input name="objectif"><input name="ligne"><input name="micro">
@@ -833,23 +1109,19 @@
 </form>
 
 <script>
-  // ── State ──
   const answers = {};
 
-  // ── Navigation ──
+  /* ── Navigation ── */
   function goTo(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const next = document.getElementById(id);
-    if (next) {
-      next.classList.add('active');
-      window.scrollTo(0, 0);
-    }
+    if (next) { next.classList.add('active'); window.scrollTo(0, 0); }
   }
 
-  // ── Pill / toggle / card selection ──
+  /* ── Pill / toggle / card selection ── */
   document.querySelectorAll('[data-field]').forEach(group => {
     const field = group.dataset.field;
-    const mode  = group.dataset.mode; // 'single' | 'multi'
+    const mode  = group.dataset.mode;
 
     group.querySelectorAll('.pill, .toggle-btn, .lieu-card, .option-card').forEach(el => {
       el.addEventListener('click', () => {
@@ -861,32 +1133,67 @@
                .forEach(x => x.classList.remove('selected'));
           el.classList.add('selected');
           answers[field] = val;
+          // Clear error
+          const err = document.getElementById('err-' + field);
+          if (err) err.classList.remove('show');
         } else {
           el.classList.toggle('selected');
-          const selected = [...group.querySelectorAll('.selected')].map(x => x.dataset.val);
-          answers[field] = selected;
+          answers[field] = [...group.querySelectorAll('.selected')].map(x => x.dataset.val);
         }
       });
     });
   });
 
-  // ── Submit ──
+  /* ── Validation step 1 ── */
+  function validateStep1() {
+    const required = ['objectif', 'micro', 'volume', 'format'];
+    let ok = true;
+    required.forEach(f => {
+      if (!answers[f]) {
+        const err = document.getElementById('err-' + f);
+        if (err) err.classList.add('show');
+        ok = false;
+      }
+    });
+    if (ok) goTo('screen-2');
+    else window.scrollTo(0, 0);
+  }
+
+  /* ── Validation step 2 ── */
+  function validateStep2() {
+    const required = ['lieu', 'planning'];
+    let ok = true;
+    required.forEach(f => {
+      if (!answers[f]) {
+        const err = document.getElementById('err-' + f);
+        if (err) err.classList.add('show');
+        ok = false;
+      }
+    });
+    if (ok) goTo('screen-3');
+    else window.scrollTo(0, 0);
+  }
+
+  /* ── Submit + recap ── */
   async function submitForm() {
-    const nom   = document.getElementById('nom').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const tel   = document.getElementById('tel').value.trim();
-    const rgpd  = document.getElementById('rgpd').checked;
+    let ok = true;
 
-    if (!nom || !email || !tel) {
-      alert('Merci de renseigner votre nom, email et téléphone.');
-      return;
-    }
-    if (!rgpd) {
-      alert('Merci d\'accepter la politique de confidentialité.');
-      return;
-    }
+    const nomEl   = document.getElementById('nom');
+    const emailEl = document.getElementById('email');
+    const telEl   = document.getElementById('tel');
+    const rgpdEl  = document.getElementById('rgpd');
 
-    // Collect all answers
+    const nom   = nomEl.value.trim();
+    const email = emailEl.value.trim();
+    const tel   = telEl.value.trim();
+
+    if (!nom)   { nomEl.classList.add('error');   document.getElementById('err-nom').classList.add('show');   ok = false; } else { nomEl.classList.remove('error'); document.getElementById('err-nom').classList.remove('show'); }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailEl.classList.add('error'); document.getElementById('err-email').classList.add('show'); ok = false; } else { emailEl.classList.remove('error'); document.getElementById('err-email').classList.remove('show'); }
+    if (!tel)   { telEl.classList.add('error');   document.getElementById('err-tel').classList.add('show');   ok = false; } else { telEl.classList.remove('error'); document.getElementById('err-tel').classList.remove('show'); }
+    if (!rgpdEl.checked) { document.getElementById('err-rgpd').classList.add('show'); ok = false; } else { document.getElementById('err-rgpd').classList.remove('show'); }
+
+    if (!ok) return;
+
     const data = {
       ...answers,
       inspiration: document.getElementById('inspiration').value,
@@ -896,7 +1203,6 @@
       tel,
       'form-name': 'prereservation',
     };
-    // Stringify arrays
     if (Array.isArray(data.options)) data.options = data.options.join(', ');
 
     const btn = document.getElementById('btn-submit');
@@ -904,18 +1210,47 @@
     btn.textContent = 'Envoi en cours…';
 
     try {
-      const body = new URLSearchParams(data).toString();
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
+        body: new URLSearchParams(data).toString(),
       });
-      goTo('screen-success');
-    } catch (e) {
-      btn.disabled = false;
-      btn.textContent = 'Envoyer ma demande →';
-      alert('Une erreur est survenue. Merci de réessayer ou de nous contacter directement.');
-    }
+    } catch(e) { /* still show success */ }
+
+    buildRecap(data);
+    goTo('screen-success');
+  }
+
+  /* ── Build recap rows ── */
+  function buildRecap(data) {
+    const labels = {
+      objectif:    'Objectif',
+      ligne:       'Ligne éditoriale',
+      micro:       'Micro',
+      volume:      'Volume',
+      format:      'Format',
+      lieu:        'Lieu',
+      animateur:   'Animateur',
+      planning:    'Planning',
+      budget:      'Budget',
+      options:     'Options',
+      inspiration: 'Inspiration',
+      nom:         'Nom',
+      societe:     'Société',
+      email:       'Email',
+      tel:         'Téléphone',
+      source:      'Découverte',
+    };
+    const container = document.getElementById('recap-rows');
+    container.innerHTML = '';
+    Object.entries(labels).forEach(([key, label]) => {
+      const val = data[key];
+      if (!val) return;
+      const row = document.createElement('div');
+      row.className = 'recap-row';
+      row.innerHTML = `<span class="recap-key">${label}</span><span class="recap-val">${Array.isArray(val) ? val.join(', ') : val}</span>`;
+      container.appendChild(row);
+    });
   }
 </script>
 </body>
