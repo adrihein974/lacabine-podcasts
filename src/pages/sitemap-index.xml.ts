@@ -10,7 +10,7 @@ const staticPages = [
   { url: `${siteUrl}/les-escaliers-sont-en-papier/`, priority: '0.8', changefreq: 'monthly' },
   { url: `${siteUrl}/regarder/`, priority: '0.7', changefreq: 'weekly' },
   { url: `${siteUrl}/blog/`, priority: '0.8', changefreq: 'weekly' },
-  { url: `${siteUrl}/pre-reservation/`, priority: '0.8', changefreq: 'monthly' },
+  { url: `${siteUrl}/reserver/`, priority: '0.8', changefreq: 'monthly' },
   { url: `${siteUrl}/mentions-legales/`, priority: '0.2', changefreq: 'yearly' },
   { url: `${siteUrl}/politique-de-confidentialite/`, priority: '0.2', changefreq: 'yearly' },
 ];
