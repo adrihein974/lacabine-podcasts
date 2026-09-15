@@ -802,7 +802,7 @@
 
       <div class="field-group">
         <label class="field-label">Ligne éditoriale</label>
-        <div class="pill-group" data-field="ligne" data-mode="single">
+        <div class="pill-group" data-field="ligne_editoriale" data-mode="single">
           <button class="pill" data-val="Oui, déjà définie">Oui, déjà définie</button>
           <button class="pill" data-val="Partiellement">Partiellement</button>
           <button class="pill" data-val="Non, besoin d'accompagnement">Non, besoin d'accompagnement</button>
@@ -1014,9 +1014,9 @@
       </div>
 
       <div class="field-group">
-        <label class="field-label" for="tel">Téléphone <span class="req">*</span></label>
-        <input type="tel" class="field-input" id="tel" placeholder="+262 6 92 45 05 73" autocomplete="tel">
-        <span class="field-error" id="err-tel">Champ requis.</span>
+        <label class="field-label" for="telephone">Téléphone <span class="req">*</span></label>
+        <input type="tel" class="field-input" id="telephone" placeholder="+262 6 92 45 05 73" autocomplete="tel">
+        <span class="field-error" id="err-telephone">Champ requis.</span>
       </div>
 
       <div class="field-group">
@@ -1038,6 +1038,7 @@
       <span class="field-error" id="err-rgpd" style="margin-top:-16px;">Veuillez accepter la politique de confidentialité.</span>
 
       <button class="btn-cta" id="btn-submit" onclick="submitForm()">Envoyer ma demande →</button>
+      <span class="field-error" id="submit-error" style="display:none;text-align:center;margin-top:8px;">Une erreur est survenue. Veuillez réessayer ou nous écrire à hello@adrienfrederic.com.</span>
     </div>
   </div>
 
@@ -1095,15 +1096,16 @@
 
 </div><!-- .shell -->
 
-<!-- Hidden Netlify form -->
-<form name="prereservation" netlify netlify-honeypot="bot-field" hidden>
+<!-- Hidden Netlify form — détecté au build, envoi via fetch JS -->
+<form name="reservation" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="reservation">
   <input name="bot-field">
-  <input name="objectif"><input name="ligne"><input name="micro">
+  <input name="objectif"><input name="ligne_editoriale"><input name="micro">
   <input name="volume"><input name="format"><input name="lieu">
   <input name="animateur"><input name="planning"><input name="budget">
   <input name="inspiration"><input name="options">
   <input name="nom"><input name="societe"><input name="email">
-  <input name="tel"><input name="source">
+  <input name="telephone"><input name="source"><input name="rgpd">
 </form>
 
 <script>
@@ -1176,18 +1178,18 @@
   async function submitForm() {
     let ok = true;
 
-    const nomEl   = document.getElementById('nom');
-    const emailEl = document.getElementById('email');
-    const telEl   = document.getElementById('tel');
-    const rgpdEl  = document.getElementById('rgpd');
+    const nomEl       = document.getElementById('nom');
+    const emailEl     = document.getElementById('email');
+    const telephoneEl = document.getElementById('telephone');
+    const rgpdEl      = document.getElementById('rgpd');
 
-    const nom   = nomEl.value.trim();
-    const email = emailEl.value.trim();
-    const tel   = telEl.value.trim();
+    const nom       = nomEl.value.trim();
+    const email     = emailEl.value.trim();
+    const telephone = telephoneEl.value.trim();
 
-    if (!nom)   { nomEl.classList.add('error');   document.getElementById('err-nom').classList.add('show');   ok = false; } else { nomEl.classList.remove('error'); document.getElementById('err-nom').classList.remove('show'); }
+    if (!nom)   { nomEl.classList.add('error');       document.getElementById('err-nom').classList.add('show');       ok = false; } else { nomEl.classList.remove('error');       document.getElementById('err-nom').classList.remove('show'); }
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailEl.classList.add('error'); document.getElementById('err-email').classList.add('show'); ok = false; } else { emailEl.classList.remove('error'); document.getElementById('err-email').classList.remove('show'); }
-    if (!tel)   { telEl.classList.add('error');   document.getElementById('err-tel').classList.add('show');   ok = false; } else { telEl.classList.remove('error'); document.getElementById('err-tel').classList.remove('show'); }
+    if (!telephone) { telephoneEl.classList.add('error'); document.getElementById('err-telephone').classList.add('show'); ok = false; } else { telephoneEl.classList.remove('error'); document.getElementById('err-telephone').classList.remove('show'); }
     if (!rgpdEl.checked) { document.getElementById('err-rgpd').classList.add('show'); ok = false; } else { document.getElementById('err-rgpd').classList.remove('show'); }
 
     if (!ok) return;
@@ -1198,32 +1200,39 @@
       nom,
       societe: document.getElementById('societe').value,
       email,
-      tel,
-      'form-name': 'prereservation',
+      telephone,
+      rgpd: rgpdEl.checked ? 'Oui' : '',
+      'form-name': 'reservation',
     };
     if (Array.isArray(data.options)) data.options = data.options.join(', ');
 
     const btn = document.getElementById('btn-submit');
+    const errSubmit = document.getElementById('submit-error');
     btn.disabled = true;
     btn.textContent = 'Envoi en cours…';
+    errSubmit.style.display = 'none';
 
     try {
-      await fetch('/', {
+      const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data).toString(),
       });
-    } catch(e) { /* still show success */ }
-
-    buildRecap(data);
-    goTo('screen-success');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      buildRecap(data);
+      goTo('screen-success');
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer ma demande →';
+      errSubmit.style.display = 'block';
+    }
   }
 
   /* ── Build recap rows ── */
   function buildRecap(data) {
     const labels = {
       objectif:    'Objectif',
-      ligne:       'Ligne éditoriale',
+      ligne_editoriale: 'Ligne éditoriale',
       micro:       'Micro',
       volume:      'Volume',
       format:      'Format',
@@ -1236,7 +1245,7 @@
       nom:         'Nom',
       societe:     'Société',
       email:       'Email',
-      tel:         'Téléphone',
+      telephone:   'Téléphone',
       source:      'Découverte',
     };
     const container = document.getElementById('recap-rows');
