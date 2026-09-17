@@ -270,6 +270,7 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
         </ul>
       </li>
       <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
   </div>
@@ -368,7 +369,7 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
     <section id="pourquoi">
       <h2>Pourquoi choisir La Cabine Podcasts pour votre studio à La Réunion</h2>
 
-      <p>À La Réunion, peu d'espaces proposent un studio à la fois podcast, vidéo et photo, avec une équipe et un accompagnement intégrés. La Cabine Podcasts réunit ces trois usages au même endroit, 18 Rue Rontaunay à Saint-Denis, au 2ème étage — dans la rue du McDo, juste après l'Apoteek.</p>
+      <p>À La Réunion, peu d'espaces proposent un studio à la fois podcast, vidéo et photo, avec une équipe et un accompagnement intégrés. La Cabine Podcasts réunit ces trois usages au même endroit, 18 Rue Rontaunay à Saint-Denis, au 2ème étage, dans la rue du McDo, juste après l'Apoteek.</p>
 
       <h3>Un espace tout-en-un</h3>
       <p>Inutile de jongler entre plusieurs prestataires. Que vous produisiez un épisode de podcast, une vidéo de témoignage client et des photos pour votre communication dans la même journée, tout est disponible sur place. Cette flexibilité réduit les coûts logistiques et simplifie l'organisation de vos sessions de production.</p>
@@ -695,6 +696,8 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
   .nav-links a { font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; }
   .nav-cta { margin-left: 1rem; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
   .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.2s; }
 
@@ -1026,6 +1029,7 @@ const pageUrl = `${siteUrl}/studio-podcast-video-photo-reunion/`;
     .nav-links { display: none; }
     .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 70px 0 0; background: #174A96; padding: 2rem 1.5rem; gap: 1.5rem; z-index: 99; }
     .nav-cta { display: none; }
+    .nav-cta-mobile { display: list-item; }
     .nav-burger { display: flex; }
     .temoins-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }

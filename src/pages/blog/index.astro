@@ -70,7 +70,7 @@ const categoryText: Record<string, string> = {
     "@context": "https://schema.org",
     "@type": "Blog",
     "@id": "https://lacabinepodcasts.com/blog/#blog",
-    "name": "Blog & Ressources — La Cabine Podcasts",
+    "name": "Blog & Ressources | La Cabine Podcasts",
     "description": "Conseils, guides et actualités sur le podcast professionnel à La Réunion.",
     "url": "https://lacabinepodcasts.com/blog/",
     "publisher": { "@id": "https://lacabinepodcasts.com/#business" },
@@ -139,6 +139,7 @@ const categoryText: Record<string, string> = {
         </ul>
       </li>
       <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
   </div>
@@ -313,6 +314,8 @@ const categoryText: Record<string, string> = {
   .btn-white { background: #ffffff; color: #174A96; }
   .btn-white:hover { background: #e8f0fe; }
   .nav-cta { margin-left: auto; flex-shrink: 0; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
 
   /* HERO */
   .blog-hero {
@@ -428,6 +431,7 @@ const categoryText: Record<string, string> = {
   @media (max-width: 600px) {
     .nav-links { display: none; }
     .nav-burger { display: flex; }
+    .nav-cta-mobile { display: list-item; }
     .articles-grid { grid-template-columns: 1fr; }
     .featured-content { padding: 2rem 1.5rem; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }

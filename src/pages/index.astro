@@ -395,7 +395,7 @@ const siteUrl = "https://lacabinepodcasts.com";
       {
         "@type": "ProfessionalService",
         "@id": "https://lacabinepodcasts.com/#professional-service",
-        "name": "La Cabine Podcasts — Studio de production à La Réunion",
+        "name": "La Cabine Podcasts : Studio de production à La Réunion",
         "description": "Studio de création, d'enregistrement et de production de podcasts audio et vidéo à La Réunion. Location de studio, création de contenus, vidéos de vente.",
         "url": "https://lacabinepodcasts.com/",
         "provider": { "@id": "https://lacabinepodcasts.com/#business" },
@@ -434,6 +434,7 @@ const siteUrl = "https://lacabinepodcasts.com";
         </ul>
       </li>
       <li><a href="#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
   </div>
@@ -875,19 +876,19 @@ const siteUrl = "https://lacabinepodcasts.com";
     <div class="temoignages-grid">
       <blockquote class="temoignage-card">
         <p>"Pro et bienveillant 🥳"</p>
-        <footer>— Marie-Alice Sinaman, Artiste</footer>
+        <footer>Marie-Alice Sinaman, Artiste</footer>
       </blockquote>
       <blockquote class="temoignage-card">
         <p>"Du professionnalisme, de la technique, du matos dernier cri et tout cela dans un lieu cosy. Une ambiance de travail bienveillante, sans stress et amicale. Une journée de boulot comme on les voudrait toute!"</p>
-        <footer>— Dorothée Make Up</footer>
+        <footer>Dorothée Make Up</footer>
       </blockquote>
       <blockquote class="temoignage-card">
         <p>"Une expérience fluide du début à la fin."</p>
-        <footer>— Mélanie P., La Cité des Métiers</footer>
+        <footer>Mélanie P., La Cité des Métiers</footer>
       </blockquote>
       <blockquote class="temoignage-card">
         <p>"Bien plus qu'un studio : un véritable accompagnement avec une deadline courte."</p>
-        <footer>— Mélanie G., GIP SAP</footer>
+        <footer>Mélanie G., GIP SAP</footer>
       </blockquote>
     </div>
   </div>
@@ -1097,6 +1098,8 @@ const siteUrl = "https://lacabinepodcasts.com";
   }
   .nav-links a:hover { opacity: 1; }
   .nav-cta { margin-left: 1rem; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
   .nav-burger {
     display: none;
     flex-direction: column;
@@ -1816,6 +1819,7 @@ const siteUrl = "https://lacabinepodcasts.com";
     .nav-links.open { display: flex; }
     .nav-burger { display: flex; }
     .nav-cta { display: none; }
+    .nav-cta-mobile { display: list-item; }
 
     .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; min-height: auto; }
     .hero-image { order: -1; }
@@ -1986,7 +1990,7 @@ const siteUrl = "https://lacabinepodcasts.com";
         id="cabine-iframe"
         src=""
         data-src="https://www.youtube.com/embed/1lG0yq9tHZ8?autoplay=1&rel=0"
-        title="La Cabine Podcasts — vidéo de présentation"
+        title="La Cabine Podcasts : vidéo de présentation"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen

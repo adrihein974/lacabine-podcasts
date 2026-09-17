@@ -2,7 +2,7 @@
 import episode from '../data/episode.json';
 
 const siteUrl = "https://lacabinepodcasts.com";
-const pageTitle = `À la une — ${episode.title} | La Cabine Podcasts`;
+const pageTitle = `À la une : ${episode.title} | La Cabine Podcasts`;
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -44,7 +44,7 @@ function formatDate(iso) {
         "@type": "CollectionPage",
         "@id": "https://lacabinepodcasts.com/regarder/#webpage",
         "url": "https://lacabinepodcasts.com/regarder/",
-        "name": "Regarder — Réalisations vidéo | La Cabine Podcasts",
+        "name": "Regarder : Réalisations vidéo | La Cabine Podcasts",
         "description": "Découvrez les réalisations vidéo de La Cabine Podcasts : podcasts, interviews, captations événementielles à La Réunion.",
         "isPartOf": { "@id": "https://lacabinepodcasts.com/#website" },
         "about": { "@id": "https://lacabinepodcasts.com/#business" },
@@ -116,6 +116,7 @@ function formatDate(iso) {
         </ul>
       </li>
       <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
@@ -168,7 +169,7 @@ function formatDate(iso) {
       <div class="embed-frame embed-frame--spotify">
         <iframe
           src={`${episode.spotify_embed_url}?utm_source=generator&theme=0`}
-          title={`${episode.title} — Spotify`}
+          title={`${episode.title} sur Spotify`}
           frameborder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
@@ -352,6 +353,8 @@ function formatDate(iso) {
   .nav-links a { font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; }
   .nav-cta { margin-left: 1rem; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
   .nav-burger {
     display: none;
     flex-direction: column;
@@ -572,6 +575,7 @@ function formatDate(iso) {
     .nav-links.open { display: flex; }
     .nav-burger { display: flex; }
     .nav-cta { display: none; }
+    .nav-cta-mobile { display: list-item; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   }
   .cookie-banner { position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,20,50,0.97);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.1);padding:1.1rem 1.5rem;transform:translateY(100%);transition:transform 0.35s ease;pointer-events:none; }

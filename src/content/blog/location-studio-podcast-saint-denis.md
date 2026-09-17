@@ -53,7 +53,7 @@ La location de studio podcast à Saint-Denis s'adresse à :
 - **Les artistes** qui veulent capturer leur univers en audio et en vidéo
 - **Les organisateurs d'événements** qui souhaitent capturer des conférences ou des tables rondes
 
-Si votre objectif va au-delà du simple enregistrement — stratégie éditoriale, présence sur les réseaux, partenariats avec des créateurs réunionnais — notre équipe [création de contenus & influence](/creation-contenu-influenceurs-reunion) peut vous accompagner de bout en bout.
+Si votre objectif va au-delà du simple enregistrement (stratégie éditoriale, présence sur les réseaux, partenariats avec des créateurs réunionnais), notre équipe [création de contenus & influence](/creation-contenu-influenceurs-reunion) peut vous accompagner de bout en bout.
 
 ## Comment se déroule une session ?
 

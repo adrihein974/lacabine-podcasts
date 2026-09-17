@@ -3,7 +3,7 @@ const siteUrl = "https://lacabinepodcasts.com";
 const pageUrl = `${siteUrl}/les-escaliers-sont-en-papier/`;
 const title = "Les escaliers sont en papier | Podcast réunionnais 974";
 const description = "Laurent CoolCool & Adrien Frédéric reçoivent artistes, entrepreneurs et artisans réunionnais pour monter les marches de leur histoire.";
-const ogTitle = "Les escaliers sont en papier — Le podcast des parcours réunionnais";
+const ogTitle = "Les escaliers sont en papier : Le podcast des parcours réunionnais";
 const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimiste avec celles et ceux qui font La Réunion.";
 ---
 
@@ -82,7 +82,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
         "@type": "WebPage",
         "@id": "https://lacabinepodcasts.com/les-escaliers-sont-en-papier/#webpage",
         "url": "https://lacabinepodcasts.com/les-escaliers-sont-en-papier/",
-        "name": "Les Escaliers Sont en Papier — Le podcast de La Cabine Podcasts",
+        "name": "Les Escaliers Sont en Papier : Le podcast de La Cabine Podcasts",
         "description": "Laurent CoolCool & Adrien Frédéric discutent avec une personne inspirante dont le parcours devrait vous intéresser.",
         "isPartOf": { "@id": "https://lacabinepodcasts.com/#website" },
         "about": { "@id": "https://lacabinepodcasts.com/#business" },
@@ -168,6 +168,8 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
     .btn:hover { transform: translateY(-2px); opacity: 0.92; }
     .btn-white { background: #fff; color: #174A96; }
     .nav-cta { margin-left: 1rem; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
     .nav-burger {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto;
@@ -203,6 +205,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       .nav-links.open { display: flex; }
       .nav-burger { display: flex; }
       .nav-cta { display: none; }
+    .nav-cta-mobile { display: list-item; }
       .nav-drop-menu { position: static; transform: none; background: rgba(0,0,0,0.2); border: none; border-radius: 8px; min-width: unset; margin-top: 5px; display: none; }
       .nav-item-drop.open .nav-drop-menu { display: block; }
     }
@@ -782,6 +785,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
         </ul>
       </li>
       <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
   </div>
@@ -801,7 +805,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
     <div class="vinyl-ring"></div>
     <img
       src="/images/escaliers-cover.png"
-      alt="Les Escaliers Sont en Papier — La Cabine Podcasts"
+      alt="Les Escaliers Sont en Papier | La Cabine Podcasts"
       class="vinyl-image"
       width="416" height="416"
       loading="eager"
@@ -1144,7 +1148,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
           <div class="host-ring host-ring--3"></div>
           <img
             src="/images/team-laurent.webp"
-            alt="Laurent CoolCool — co-créateur des Escaliers Sont en Papier"
+            alt="Laurent CoolCool, co-créateur des Escaliers Sont en Papier"
             class="host-photo host-photo--rotate"
             id="hostPhoto1"
             width="240" height="240"
@@ -1157,7 +1161,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
           <div class="host-ring host-ring--3"></div>
           <img
             src="/images/team-adrien.webp"
-            alt="Adrien Frédéric — co-créateur des Escaliers Sont en Papier"
+            alt="Adrien Frédéric, co-créateur des Escaliers Sont en Papier"
             class="host-photo host-photo--rotate"
             id="hostPhoto2"
             width="240" height="240"
@@ -1192,7 +1196,7 @@ const ogDescription = "Échecs, doutes, réussites. Une heure d'échange intimis
       <div class="seo-ring"></div>
       <img
         src="/images/escaliers-cover.png"
-        alt="Les Escaliers Sont en Papier — podcast réunionnais"
+        alt="Les Escaliers Sont en Papier, podcast réunionnais"
         class="seo-img"
         width="280" height="280"
         loading="lazy"

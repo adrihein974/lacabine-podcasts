@@ -227,6 +227,7 @@ const pageUrl = `${siteUrl}/video-sales-letter-temoignages-clients-reunion/`;
         </ul>
       </li>
       <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
     </ul>
     <a href="/reserver/" class="btn btn-white nav-cta">Réserver</a>
   </div>
@@ -491,6 +492,8 @@ const pageUrl = `${siteUrl}/video-sales-letter-temoignages-clients-reunion/`;
   .nav-links a { font-size: 0.9rem; font-weight: 500; opacity: 0.8; transition: opacity 0.15s; }
   .nav-links a:hover { opacity: 1; }
   .nav-cta { margin-left: 1rem; }
+  .nav-cta-mobile { display: none; }
+  .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
   .nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
 
@@ -579,6 +582,7 @@ const pageUrl = `${siteUrl}/video-sales-letter-temoignages-clients-reunion/`;
     .nav-links { display: none; }
     .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 70px 0 0; background: #174A96; padding: 2rem 1.5rem; gap: 1.5rem; z-index: 99; }
     .nav-cta { display: none; }
+    .nav-cta-mobile { display: list-item; }
     .nav-burger { display: flex; }
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
     .cta-final-article { padding: 1.75rem 1.25rem; }
