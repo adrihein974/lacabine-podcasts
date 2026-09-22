@@ -1,20 +1,12 @@
 ---
-// Inclure dans le <head> de chaque page, AVANT les fonts.
-// Consent Mode v2 : GA se charge immédiatement en mode anonymisé.
-// Passe en mode complet quand l'utilisateur accepte les cookies.
+// Inclure dans le <head> de chaque page.
 ---
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  var _consent = localStorage.getItem('lcp-consent');
-  gtag('consent', 'default', {
-    'analytics_storage': _consent === 'accepted' ? 'granted' : 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500
-  });
   gtag('js', new Date());
-  gtag('config', 'G-PK9JHLK9YF', { 'anonymize_ip': true });
+
+  gtag('config', 'G-PK9JHLK9YF');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>

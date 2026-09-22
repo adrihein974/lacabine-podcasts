@@ -47,24 +47,15 @@ const siteUrl = "https://lacabinepodcasts.com";
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
-
-  <!-- Google Analytics + Consent Mode v2 -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    // Consent Mode v2 : anonymisé par défaut, complet après acceptation
-    var consent = localStorage.getItem('lcp-consent');
-    gtag('consent', 'default', {
-      'analytics_storage': consent === 'accepted' ? 'granted' : 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'wait_for_update': 500
-    });
     gtag('js', new Date());
-    gtag('config', 'G-PK9JHLK9YF', { 'anonymize_ip': true });
+
+    gtag('config', 'G-PK9JHLK9YF');
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -2213,21 +2204,8 @@ const siteUrl = "https://lacabinepodcasts.com";
 
 <script>
   (function() {
-    const GA_ID = 'G-PK9JHLK9YF';
     const KEY = 'lcp-consent';
     const banner = document.getElementById('cookieBanner');
-
-    function loadGA() {
-      if ((window as any)._gaLoaded) return;
-      (window as any)._gaLoaded = true;
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(s);
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag(...args: any[]) { (window as any).dataLayer.push(args); }
-      gtag('js', new Date()); gtag('config', GA_ID);
-    }
 
     function hideBanner() {
       banner.classList.add('cookie-hide');
@@ -2241,18 +2219,11 @@ const siteUrl = "https://lacabinepodcasts.com";
     document.getElementById('cookieAccept')?.addEventListener('click', () => {
       localStorage.setItem(KEY, 'accepted');
       hideBanner();
-      // Mettre à jour le consentement GA en temps réel
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': 'granted' });
-      }
     });
 
     document.getElementById('cookieRefuse')?.addEventListener('click', () => {
       localStorage.setItem(KEY, 'refused');
       hideBanner();
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { 'analytics_storage': 'denied' });
-      }
     });
   })();
 </script>

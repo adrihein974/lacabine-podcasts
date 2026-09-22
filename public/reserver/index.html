@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PK9JHLK9YF');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Réservation studio podcast La Réunion | La Cabine Podcasts — Saint-Denis</title>
@@ -59,34 +67,6 @@
       "target": "https://lacabinepodcasts.com/reserver/"
     }
   }
-  </script>
-  <!-- Google Analytics 4 — chargé uniquement après consentement -->
-  <script>
-    (function() {
-      if (localStorage.getItem('lcp-consent') === 'accepted') {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF';
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-PK9JHLK9YF');
-      }
-      document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('cookieAccept') && document.getElementById('cookieAccept').addEventListener('click', function() {
-          localStorage.setItem('lcp-consent', 'accepted');
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF';
-          document.head.appendChild(s);
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-PK9JHLK9YF');
-        });
-      });
-    })();
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
