@@ -1,0 +1,876 @@
+---
+const siteUrl = "https://lacabinepodcasts.com";
+const pageUrl = `${siteUrl}/kozman/`;
+const title = "KOZMAN, les récits intimes | Podcast La Cabine Podcasts";
+const description = "Une série de podcasts immersifs qui donne la parole à celles et ceux qui osent partager un morceau de leur vie. Moments de bascule, secrets jamais révélés, héritages réunionnais.";
+const ogTitle = "KOZMAN, les récits intimes : le podcast de La Cabine Podcasts";
+const ogDescription = "Des histoires brutes, bouleversantes et profondément humaines. Une nouvelle production signée La Cabine Podcasts.";
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="La Cabine Podcasts" />
+  <meta name="keywords" content="KOZMAN, podcast intime, récits personnels, La Réunion, podcast 974, IOP insuffisance ovarienne, cancer du sein, La Cabine Podcasts" />
+  <link rel="canonical" href={pageUrl} />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={pageUrl} />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:image" content={`${siteUrl}/images/La%20Cabine%20Podcast%20--%20Studio%20Podcasts%20La%20R%C3%A9union%201200%20x%20630.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={ogDescription} />
+  <meta name="twitter:image" content={`${siteUrl}/images/La%20Cabine%20Podcast%20--%20Studio%20Podcasts%20La%20R%C3%A9union%201200%20x%20630.png`} />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK9JHLK9YF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PK9JHLK9YF');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "PodcastSeries",
+        "@id": "https://lacabinepodcasts.com/kozman/#podcast",
+        "name": "KOZMAN",
+        "url": "https://lacabinepodcasts.com/kozman/",
+        "description": "Une série de podcasts immersifs qui donne la parole à celles et ceux qui osent partager un morceau de leur vie. Moments de bascule, secrets jamais révélés, expériences uniques ou héritages réunionnais.",
+        "inLanguage": "fr-FR",
+        "numberOfEpisodes": 2,
+        "author": [
+          { "@type": "Person", "name": "Laurent CoolCool" },
+          { "@type": "Person", "name": "Adrien Frédéric" }
+        ],
+        "publisher": { "@id": "https://lacabinepodcasts.com/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lacabinepodcasts.com/kozman/#webpage",
+        "url": "https://lacabinepodcasts.com/kozman/",
+        "name": "KOZMAN, les récits intimes",
+        "description": "Une série de podcasts immersifs qui donne la parole à celles et ceux qui osent partager un morceau de leur vie.",
+        "isPartOf": { "@id": "https://lacabinepodcasts.com/#website" },
+        "about": { "@id": "https://lacabinepodcasts.com/#business" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lacabinepodcasts.com/#website",
+        "url": "https://lacabinepodcasts.com/",
+        "name": "La Cabine Podcasts",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://lacabinepodcasts.com/#business" }
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://lacabinepodcasts.com/#business",
+        "name": "La Cabine Podcasts",
+        "url": "https://lacabinepodcasts.com/",
+        "telephone": "+262692450573",
+        "email": "lacabinepodcast@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "18 rue Rontaunay",
+          "addressLocality": "Saint-Denis",
+          "addressRegion": "La Réunion",
+          "postalCode": "97400",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://lacabinepodcasts.com/kozman/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lacabinepodcasts.com/" },
+          { "@type": "ListItem", "position": 2, "name": "KOZMAN", "item": "https://lacabinepodcasts.com/kozman/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --mauve: #7B3FA0;
+      --mauve-dark: #5C2D78;
+      --rose: #C8409A;
+      --rose-light: #E060B8;
+      --white: #fff;
+      --dark: #1a0a24;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(44, 12, 70, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 1.5rem; height: 70px;
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .nav-logo img { display: block; height: 56px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; margin-left: auto; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: #fff; text-decoration: none; opacity: 0.8; transition: opacity .15s; }
+    .nav-links a:hover, .nav-links a[aria-current] { opacity: 1; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: transform 0.15s, opacity 0.15s; white-space: nowrap; text-decoration: none; }
+    .btn:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-white { background: #fff; color: var(--mauve-dark); }
+    .nav-cta { margin-left: 1rem; }
+    .nav-cta-mobile { display: none; }
+    .btn-lime { background: #C8F03A; color: #111827; font-weight: 700; border-radius: 10px; padding: 0.65rem 1.5rem; text-decoration: none; display: inline-block; }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px; margin-left: auto;
+    }
+    .nav-burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.2s; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-item-drop { position: relative; }
+    .nav-drop-toggle { display: inline-flex; align-items: center; gap: 4px; }
+    .nav-caret { font-size: 9px; display: inline-block; transition: transform .2s; }
+    .nav-item-drop:hover .nav-caret { transform: rotate(180deg); }
+    .nav-drop-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(8,8,8,0.96); backdrop-filter: blur(10px);
+      border: 0.5px solid rgba(255,255,255,0.12); border-radius: 10px;
+      min-width: 220px; padding: 12px 5px 5px; list-style: none; z-index: 200;
+    }
+    .nav-item-drop:hover .nav-drop-menu,
+    .nav-item-drop.open .nav-drop-menu { display: block; }
+    .nav-drop-menu li a {
+      display: block; padding: 9px 12px; border-radius: 6px;
+      font-size: 13px; color: rgba(255,255,255,0.75); opacity: 1 !important;
+      transition: background .15s, color .15s;
+    }
+    .nav-drop-menu li a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; gap: 1rem; position: absolute; top: 70px; left: 0; right: 0; background: #2c0c46; padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .nav-links.open { display: flex; }
+      .nav-burger { display: flex; }
+      .nav-cta { display: none; }
+      .nav-cta-mobile { display: list-item; }
+      .nav-drop-menu { position: static; transform: none; background: rgba(0,0,0,0.2); border: none; border-radius: 8px; min-width: unset; margin-top: 5px; display: none; }
+      .nav-item-drop.open .nav-drop-menu { display: block; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: #2a0a40;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('/images/kozman-background.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.75;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(20,5,35,0.3) 0%, rgba(20,5,35,0.15) 50%, rgba(20,5,35,0.7) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 800px;
+      text-align: center;
+      padding: 80px 24px;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-logo-img {
+      width: clamp(240px, 55vw, 480px);
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+      filter: brightness(0) invert(1);
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .hero-description {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      margin-bottom: 16px;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin-bottom: 44px;
+    }
+    .hero-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: var(--mauve-dark);
+      font-family: 'Hanken Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.01em;
+      padding: 16px 36px; border-radius: 50px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    }
+    .hero-cta:hover { background: rgba(255,255,255,0.92); transform: translateY(-2px); }
+
+    /* ── EPISODES ── */
+    .episodes-section {
+      padding: 100px 0 120px;
+      background: var(--dark);
+    }
+    .ep-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .ep-header { margin-bottom: 64px; text-align: center; }
+    .ep-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+    .ep-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .ep-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 32px;
+    }
+    @media (max-width: 560px) {
+      .ep-grid { grid-template-columns: 1fr; }
+    }
+
+    .ep-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .ep-card:hover { transform: translateY(-4px); border-color: rgba(200,64,154,0.3); }
+
+    .ep-thumb-link { display: block; position: relative; }
+    .ep-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #1a0a24;
+    }
+    .ep-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+    .ep-card:hover .ep-thumb img { transform: scale(1.04); }
+    .ep-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px; height: 56px;
+      background: rgba(200,64,154,0.88);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      color: #fff;
+      backdrop-filter: blur(4px);
+      transition: background .2s, transform .2s;
+    }
+    .ep-card:hover .ep-play { background: var(--rose); transform: translate(-50%, -50%) scale(1.1); }
+
+    .ep-body { padding: 24px; }
+    .ep-num {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose-light);
+      margin-bottom: 10px;
+    }
+    .ep-headline {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(16px, 1.5vw, 19px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .ep-sub {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .ep-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ep-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600;
+      text-decoration: none;
+      transition: opacity .15s, transform .15s;
+    }
+    .ep-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .ep-btn-yt { background: #FF0000; color: #fff; }
+    .ep-btn-sp { background: #1DB954; color: #fff; }
+
+    /* ── HOSTS ── */
+    .hosts-section {
+      background: linear-gradient(135deg, #2c0a45 0%, #1a0530 50%, #2a0840 100%);
+      padding: 100px 0 120px;
+    }
+    .hosts-container {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    }
+    .hosts-header { text-align: center; margin-bottom: 64px; }
+    .hosts-eyebrow {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+    .hosts-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .hosts-names {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .hosts-layout {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hosts-photos {
+      display: flex;
+      gap: 32px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .host-orbit {
+      position: relative;
+      width: 220px; height: 220px;
+    }
+    .host-ring {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(200,64,154,0.2);
+    }
+    .host-ring--1 { width: 100%; height: 100%; }
+    .host-ring--2 { width: 118%; height: 118%; border-color: rgba(200,64,154,0.12); }
+    .host-ring--3 { width: 138%; height: 138%; border-color: rgba(200,64,154,0.07); }
+    .host-photo {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--host-rotate, 0deg));
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(200,64,154,0.4);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      will-change: transform;
+    }
+
+    .hosts-text { flex: 1; min-width: 280px; }
+    .hosts-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .hosts-desc:last-child { margin-bottom: 0; }
+
+    @media (max-width: 768px) {
+      .hosts-layout { flex-direction: column; gap: 48px; }
+      .hosts-photos { gap: 24px; }
+      .host-orbit { width: 160px; height: 160px; }
+      .host-photo { width: 144px; height: 144px; }
+    }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--rose) 0%, var(--mauve) 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .nl-container { max-width: 600px; margin: 0 auto; }
+    .nl-eyebrow {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+    .nl-title {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .nl-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .nl-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--mauve-dark);
+      font-family: 'Hanken Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px; border-radius: 50px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    }
+    .nl-cta:hover { background: rgba(255,255,255,0.92); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0c0014;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 0 32px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p, .footer-brand address { margin-top: 12px; font-style: normal; line-height: 1.6; }
+    .footer-brand a { color: rgba(255,255,255,0.65); text-decoration: none; }
+    .footer-brand a:hover { color: #fff; }
+    .footer-nav h4, .footer-solutions h4, .footer-legal h4, .footer-social h4 {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-nav ul, .footer-solutions ul, .footer-legal ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-nav a, .footer-solutions a, .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color .15s; }
+    .footer-nav a:hover, .footer-solutions a:hover, .footer-legal a:hover { color: #fff; }
+    .social-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .social-links a { color: rgba(255,255,255,0.55); transition: color .15s; }
+    .social-links a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; text-align: center; }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+    .footer-bottom a:hover { color: #fff; }
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 540px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    /* ── MISC ── */
+    .back-top {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 44px; height: 44px;
+      background: rgba(200,64,154,0.85); color: #fff;
+      border: none; border-radius: 50%; font-size: 18px;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity .3s, transform .2s;
+      z-index: 90;
+    }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .back-top:hover { transform: translateY(-3px); }
+
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(20,5,35,0.97);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 24px; z-index: 9999;
+      display: none;
+    }
+    .cookie-banner.cookie-visible { display: block; }
+    .cookie-banner.cookie-hide { animation: slideDown .4s forwards; }
+    @keyframes slideDown { to { transform: translateY(100%); opacity: 0; } }
+    .cookie-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .cookie-text { flex: 1; font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+    .cookie-actions { display: flex; align-items: center; gap: 10px; }
+    .cookie-link { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-decoration: underline; }
+    .cookie-btn { padding: 8px 18px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; cursor: pointer; border: none; }
+    .cookie-refuse { background: rgba(255,255,255,0.1); color: #fff; }
+    .cookie-accept { background: var(--rose); color: #fff; }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="La Cabine Podcasts — Accueil">
+      <img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#studio">Studio</a></li>
+      <li class="nav-item-drop">
+        <a href="/regarder" class="nav-drop-toggle">Regarder <span class="nav-caret" aria-hidden="true">&#9660;</span></a>
+        <ul class="nav-drop-menu">
+          <li><a href="/regarder">Toutes les vidéos</a></li>
+          <li><a href="/les-escaliers-sont-en-papier">Les escaliers sont en papier</a></li>
+          <li><a href="/kozman" aria-current="page">KOZMAN</a></li>
+        </ul>
+      </li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li class="nav-cta-mobile"><a href="/reserver/" class="btn btn-lime nav-cta-link">Réserver →</a></li>
+    </ul>
+    <a href="/reserver/" class="btn btn-white nav-cta">Réserver →</a>
+    <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-label="KOZMAN">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <img
+      src="/images/kozman-logo.png"
+      alt="KOZMAN"
+      class="hero-logo-img"
+      width="480" height="160"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <p class="hero-eyebrow">Le podcast de récits intimes</p>
+    <p class="hero-description">
+      Une série de podcasts immersifs qui donne la parole à celles et ceux qui osent partager un morceau de leur vie.
+      Moments de bascule, secrets jamais révélés, expériences uniques ou héritages réunionnais : chaque épisode est une plongée dans l'intime, portée par une narration sensible et un sound design immersif.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">✨ Des histoires brutes, bouleversantes et profondément humaines.</span>
+      <span class="hero-tag">🎧 Une nouvelle production signée La Cabine Podcasts.</span>
+    </div>
+    <a href="#section-episodes" class="hero-cta">
+      Écouter les épisodes ↓
+    </a>
+  </div>
+</section>
+
+<!-- EPISODES -->
+<section class="episodes-section" id="section-episodes" aria-labelledby="ep-heading">
+  <div class="ep-container">
+    <header class="ep-header">
+      <p class="ep-eyebrow">Le podcast</p>
+      <h1 class="ep-title" id="ep-heading">KOZMAN, les récits intimes</h1>
+    </header>
+
+    <div role="region" aria-label="Épisodes">
+      <p class="ep-eyebrow" style="text-align:center;margin-bottom:40px;">LES ÉPISODES</p>
+      <div class="ep-grid">
+
+        <!-- EP 1 -->
+        <article class="ep-card">
+          <a href="https://youtu.be/1OwOqaFXucw?si=jJk1n4haJdaozygR" target="_blank" rel="noopener noreferrer" class="ep-thumb-link" aria-label="Regarder l'épisode 1 sur YouTube">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/1OwOqaFXucw/hqdefault.jpg" alt="Flore : Les trois petites lettres (IOP). L'insuffisance ovarienne prématurée" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <p class="ep-num">Épisode 1</p>
+            <h2 class="ep-headline">Flore : Les trois petites lettres (IOP). L'insuffisance ovarienne prématurée</h2>
+            <p class="ep-sub">À 32 ans, Flore rêvait d'agrandir sa famille. Le jour où elle se sent enfin prête à accueillir un second enfant, son corps dit stop : ménopause précoce, insuffisance ovarienne prématurée (IOP) symbole du deuil brutal d'un projet de vie.</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/1OwOqaFXucw?si=jJk1n4haJdaozygR" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/2cpvUC4blRqiaQAEHqONwi?si=d4354e36238947ac" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EP 2 -->
+        <article class="ep-card">
+          <a href="https://youtu.be/aBM-b-ZgDTY?si=_ZMdCqdgacPGhqmx" target="_blank" rel="noopener noreferrer" class="ep-thumb-link" aria-label="Regarder l'épisode 2 sur YouTube">
+            <div class="ep-thumb">
+              <img src="https://img.youtube.com/vi/aBM-b-ZgDTY/hqdefault.jpg" alt="Virgilia : Entre deux battements" loading="lazy" />
+              <span class="ep-play" aria-hidden="true">▶</span>
+            </div>
+          </a>
+          <div class="ep-body">
+            <p class="ep-num">Épisode 2</p>
+            <h2 class="ep-headline">Virgilia : Entre deux battements</h2>
+            <p class="ep-sub">Enceinte de six mois, Virgilia Hess apprend qu'elle est atteinte d'un cancer du sein. À l'occasion d'Octobre Rose, KOZMAN partage son histoire, celle d'un combat aussi intime qu'inspirant.</p>
+            <div class="ep-ctas">
+              <a href="https://youtu.be/aBM-b-ZgDTY?si=_ZMdCqdgacPGhqmx" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn-yt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Regarder
+              </a>
+              <a href="https://open.spotify.com/episode/7LkMjGcOZlTlD8yo62KgSO?si=399258e319df45a4" target="_blank" rel="noopener noreferrer" class="ep-btn ep-btn-sp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Écouter
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="hosts-section" aria-labelledby="hosts-heading">
+  <div class="hosts-container">
+    <header class="hosts-header">
+      <p class="hosts-eyebrow">Le podcast</p>
+      <h2 class="hosts-title" id="hosts-heading">Les créateurs du podcast</h2>
+      <p class="hosts-names">Laurent CoolCool &amp; Adrien Frédéric</p>
+    </header>
+
+    <div class="hosts-layout">
+      <div class="hosts-photos">
+        <div class="host-orbit" id="hostOrbit1">
+          <div class="host-ring host-ring--1"></div>
+          <div class="host-ring host-ring--2"></div>
+          <div class="host-ring host-ring--3"></div>
+          <img
+            src="/images/team-laurent.webp"
+            alt="Laurent CoolCool, co-créateur de KOZMAN"
+            class="host-photo host-photo--rotate"
+            id="hostPhoto1"
+            width="200" height="200"
+            loading="lazy"
+          />
+        </div>
+        <div class="host-orbit" id="hostOrbit2">
+          <div class="host-ring host-ring--1"></div>
+          <div class="host-ring host-ring--2"></div>
+          <div class="host-ring host-ring--3"></div>
+          <img
+            src="/images/team-adrien.webp"
+            alt="Adrien Frédéric, co-créateur de KOZMAN"
+            class="host-photo host-photo--rotate"
+            id="hostPhoto2"
+            width="200" height="200"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="hosts-text">
+        <p class="hosts-desc">KOZMAN, c'est une nouvelle série signée La Cabine Podcasts, qui prend un tournant différent des Escaliers Sont en Papier. Ici, pas de parcours professionnels ni de success stories : Laurent CoolCool et Adrien Frédéric donnent la parole à celles et ceux qui osent partager l'intime.</p>
+        <p class="hosts-desc">Des histoires de vie rarement racontées, portées par une narration sensible et un sound design immersif. Des récits bruts et profondément humains, ancrés dans la réalité réunionnaise. <a href="/regarder" style="color:inherit;opacity:0.8;text-decoration:underline;text-underline-offset:3px;">Voir toutes les productions</a> de La Cabine Podcasts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" aria-label="Newsletter">
+  <div class="nl-container">
+    <p class="nl-eyebrow">Restez informé</p>
+    <h2 class="nl-title">Ne ratez pas la prochaine marche</h2>
+    <p class="nl-sub">Un nouvel épisode, une nouvelle histoire réunionnaise. Recevez-le en avant-première.</p>
+    <a href="https://form.typeform.com/to/d2xZp0b2" target="_blank" rel="noopener noreferrer" class="nl-cta">
+      S'inscrire à la newsletter →
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" aria-label="La Cabine Podcasts — Accueil" style="display:inline-block;line-height:0;"><img src="/logo.png" alt="La Cabine Podcasts" width="140" height="42" /></a>
+        <p>Studio de création de podcasts à La Réunion</p>
+        <address>18 rue Rontaunay, Saint-Denis, La Réunion</address>
+        <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a>
+      </div>
+      <nav class="footer-nav" aria-label="Navigation secondaire">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/reserver/">Réserver</a></li>
+          <li><a href="/#studio">Studio</a></li>
+          <li><a href="/#realisations">Réalisations</a></li>
+          <li><a href="/#equipe">Équipe</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/blog">Blog &amp; Ressources</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-solutions" aria-label="Nos solutions">
+        <h4>Nos Solutions</h4>
+        <ul>
+          <li><a href="/studio-podcast-video-photo-reunion">Studio Podcast, Vidéo &amp; Photo</a></li>
+          <li><a href="/creation-contenu-influenceurs-reunion">Création de Contenus &amp; Influence</a></li>
+          <li><a href="/video-sales-letter-temoignages-clients-reunion">Vidéo Sales Letter &amp; Témoignages</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="/mentions-legales">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h4>Retrouvez-nous</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/lacabinepodcasts" aria-label="Instagram La Cabine Podcasts" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@LaCabinePodcasts" aria-label="YouTube La Cabine Podcasts" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/show/2P7G6jbg9LFDUCyCmc4aNS" aria-label="Spotify La Cabine Podcasts" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61561358285099" aria-label="Facebook La Cabine Podcasts" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="footerYear"></span> La Cabine Podcasts · Saint-Denis, La Réunion · <a href="mailto:lacabinepodcast@gmail.com">lacabinepodcast@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" class="cookie-banner" aria-live="polite">
+  <div class="cookie-inner">
+    <p class="cookie-text">Nous utilisons <strong>Google Analytics</strong> pour analyser l'audience. Vous pouvez accepter ou refuser ces cookies non essentiels.</p>
+    <div class="cookie-actions">
+      <a href="/politique-de-confidentialite" class="cookie-link">En savoir plus</a>
+      <button id="cookieRefuse" class="cookie-btn cookie-refuse">Refuser</button>
+      <button id="cookieAccept" class="cookie-btn cookie-accept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Dropdown nav
+  document.querySelectorAll('.nav-item-drop').forEach(function(d) {
+    d.querySelector('.nav-drop-toggle').addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) { e.preventDefault(); d.classList.toggle('open'); }
+    });
+  });
+
+  // Burger menu
+  const burger = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+  burger?.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navLinks?.classList.toggle('open');
+  });
+
+  // Host photos rotation on scroll
+  const hostPhotos = document.querySelectorAll('.host-photo--rotate');
+  if (hostPhotos.length) {
+    const hostsSection = document.querySelector('.hosts-section');
+    window.addEventListener('scroll', function() {
+      const sectionTop = hostsSection ? hostsSection.getBoundingClientRect().top + window.scrollY : 0;
+      const rel = Math.max(0, window.scrollY - sectionTop + window.innerHeight * 0.5);
+      const deg = rel * 0.07;
+      hostPhotos.forEach(function(p, i) {
+        p.style.setProperty('--host-rotate', (i % 2 === 0 ? deg : -deg) + 'deg');
+      });
+    }, { passive: true });
+  }
+
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    backTop?.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  backTop?.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear().toString();
+
+  // Cookie banner
+  (function(){
+    const KEY = 'lcp-consent';
+    const banner = document.getElementById('cookieBanner');
+    if (!localStorage.getItem(KEY)) banner.classList.add('cookie-visible');
+    function hide() { banner.classList.add('cookie-hide'); setTimeout(() => banner.remove(), 400); }
+    document.getElementById('cookieAccept')?.addEventListener('click', () => { localStorage.setItem(KEY, 'accepted'); hide(); });
+    document.getElementById('cookieRefuse')?.addEventListener('click', () => { localStorage.setItem(KEY, 'refused'); hide(); });
+  })();
+</script>
+
+</body>
+</html>

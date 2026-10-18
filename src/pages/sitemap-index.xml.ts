@@ -8,6 +8,7 @@ const staticPages = [
   { url: `${siteUrl}/creation-contenu-influenceurs-reunion/`, priority: '0.9', changefreq: 'monthly' },
   { url: `${siteUrl}/video-sales-letter-temoignages-clients-reunion/`, priority: '0.9', changefreq: 'monthly' },
   { url: `${siteUrl}/les-escaliers-sont-en-papier/`, priority: '0.8', changefreq: 'monthly' },
+  { url: `${siteUrl}/kozman/`, priority: '0.8', changefreq: 'monthly' },
   { url: `${siteUrl}/regarder/`, priority: '0.7', changefreq: 'weekly' },
   { url: `${siteUrl}/blog/`, priority: '0.8', changefreq: 'weekly' },
   { url: `${siteUrl}/reserver/`, priority: '0.8', changefreq: 'monthly' },
