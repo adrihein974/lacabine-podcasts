@@ -226,6 +226,13 @@
       aspect-ratio: 3/4;
       display: block;
     }
+    .hero-visual-video {
+      width: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      display: block;
+    }
 
     /* ════════════════════════════════
        FORM SCREENS
@@ -803,9 +810,16 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="/images/reserver/studio-hero.png" alt="Studio La Cabine Podcasts — vue d'ensemble régie et plateau" class="hero-visual-img"
-             loading="eager" fetchpriority="high"
-             onerror="this.parentElement.style.display='none'">
+        <video
+          class="hero-visual-video"
+          src="/images/reserver/studio-hero.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        ></video>
       </div>
     </div>
 
